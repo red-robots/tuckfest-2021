@@ -1680,7 +1680,7 @@ body.home #banner .eventDate span{display:inline-block;background:#235b4e;color:
 #primary-menu>li:after{display:none}
 #primary-menu>li:hover{opacity:.65}
 #primary-menu>li:hover:before{-webkit-transform:translateX(-50%) translateY(0);transform:translateX(-50%) translateY(0);opacity:1}
-.boxed-content{width:100%;float:left;margin-top:80px;margin-bottom:50px}
+.boxed-content{width:100%;float:left;margin-top:80px;margin-bottom:50px;text-align:center}
 .boxed-content .inside{border:1px solid #f3e3cc;padding:40px 10vw;font-size:20px;font-weight:400;line-height:1.5}
 .boxed-content p:last-child{margin-bottom:0}
 body.home #site-navigation,body.home #site-navigation .desktop,body.home #site-navigation .menu-main-menu-container{width:100%;float:left}
