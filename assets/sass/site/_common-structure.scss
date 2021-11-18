@@ -1,0 +1,866 @@
+
+body {
+	font-family: $font-copy;
+	background: {
+		size: 100%;
+		color: $color-tan;
+	}
+	&.home {
+		.site-content {
+			// background-image: url(images/background-mountains.svg);
+		}
+	}
+	&.logged-in {
+		// margin-top: 32px;
+		// #page {margin-top: 32px;}
+		#masthead {
+			@media screen and (min-width: $tabwidth) {top: 32px;}
+		}
+	}
+	&.search {
+		article, header.page-header {
+			width: 90%;
+			margin: 20px auto;
+			float: none;
+		}
+		h2 {
+			a {
+				color: $color-orange;
+				text-decoration: none;
+			}
+		}
+	}
+}
+.clear {clear: both;}
+.wrapper {
+	width: 100%;
+	margin: 0px auto;
+	// padding: 20px;
+	clear: both;
+	@media screen and (min-width: $tabwidth) {
+		width: 100%;
+		padding: 0 10px;
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: 80%;
+		padding: 0px;
+	}
+	&.pagecontent {
+		padding: 40px 20px 0 20px;
+		clear: both;
+		@media screen and (min-width: $tabwidth) {
+			// padding: 40px 0 0 0;
+		}
+		@media screen and (min-width: $deskwidth) {
+			padding: 40px 0 0 0;
+		}
+	}
+}
+.sub-wrapper {
+	width: 100%;
+	margin: 0px auto;
+	clear: both;
+	@media screen and (min-width: $tabwidth) {
+		width: 100%;
+		padding: 0 10px;
+	}
+	@media screen and (min-width: $deskwidth) {
+		max-width: 700px;
+		width: 80%;
+		padding: 40px 0;
+	}
+}
+#primary {
+	width: 100%;
+	float: left;
+	position: relative;
+	z-index: 2;
+}
+#content {
+	// margin-top: 85px;
+	@media screen and (min-width: $tabwidth) {
+			
+	}
+	@media screen and (min-width: $deskwidth) {
+		
+	}
+	&.no-subnav {
+		margin-top: 45px;
+	}
+
+}
+.site-content {
+	width: 100%;
+	position: relative;
+	float: left;
+	z-index: 2;
+	padding-bottom: 50px;
+	@media screen and (min-width: $tabwidth) {
+		padding-bottom: 120px;
+	}
+	@media screen and (min-width: $tabwidth) {
+		padding-bottom: 280px;
+	}
+	
+}
+.bottom-graphic {
+	position: fixed;
+	z-index: 1;
+	bottom: 0;
+	right: 0;
+	line-height: 0;
+	img {
+		width: 100%;
+	}
+	&.scrolled {
+		position: absolute;
+	}
+	&.hitit {
+		position: absolute;
+	}
+}
+body.page-template-default,
+body.term-deep-water-solo {
+	.bottom-graphic {
+		position: absolute;
+	}
+}
+body {
+	&.home,
+	&.page-template-page-special-title,
+	&.page-template-page-schedule,
+	&.page-template-page-faq,
+	&.page-template-page-photos,
+	&.page-id-2625,
+	&.parent-pageid-27,
+	&.parent-pageid-21,
+	&.page-id-52
+	{
+
+		.bottom-graphic {
+			width: 50%;
+			@media screen and (min-width: $tabwidth) {
+				width: 35%;
+			}
+		}
+	}
+	&.page-template-page-artists,
+	&.tax-competition_type
+	
+	{
+		.bottom-graphic {width: 66%;}
+	}
+	&.tax-demo_clinic_type
+	 {
+		.bottom-graphic {width: 25%;}
+	}
+}
+.page-wrapper {
+	width: 100%;
+	margin: 90px auto  0px auto;
+	padding: 20px;
+	
+	@media screen and (min-width: $tabwidth) {
+		width: 90%;
+		padding: 0px;
+		margin: 0px auto;
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: 90%;
+		padding: 0px;
+	}
+	&.scrolled {
+		margin: 60px auto  0px auto;
+		@media screen and (min-width: $tabwidth) {
+			margin: 0px auto;
+		}
+	}
+}
+.mobile-wrapper {
+	width: 60%;
+	margin: 0 auto;
+	
+	padding: 0;
+	@media screen and (min-width: $tabwidth) {
+		width: 100%;
+		padding: 0;
+		background-color: #fff;
+	}
+}
+#dimmer {
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	background-color: rgba(#000, .5);
+	height: 0;
+	position: fixed;
+	&.activate {
+		height: 100vh;
+	}
+}
+.site {
+	width: 100%;
+	margin: 0px auto;
+	// padding: 20px;
+	// background-color: #fff;
+	overflow:hidden;
+	position: relative;
+	
+	@media screen and (min-width: $tabwidth) {
+		// width: 90%;
+	}
+	@media screen and (min-width: $deskwidth) {
+		// width: 80%;
+		// padding: 3.5%;
+	}
+}
+#masthead {
+	width: 100%;
+	position: fixed;
+	z-index:1000;
+	padding: 10px 0;
+	background: {
+		// image: url(images/mobile-bg.png);
+		// repeat: no-repeat;
+		// size: cover;
+		color: $color-tan;
+	}
+	top: 0;
+	
+	@media screen and (min-width: $tabwidth) {
+		background-image: none;
+		position: relative;
+		height: auto;
+		height: auto;
+		position: fixed;
+		padding: 0;
+		top: 0;
+		left: 0;
+		background-color: $color-tan;
+	}
+}
+#masthead.scrolled {
+	// height: 60px;
+	@media screen and (min-width: $tabwidth) {
+		
+	}
+}
+#banner {
+	width: 100%;
+	float: left;
+	position: relative;
+	img {
+		width: 100%;
+	}
+	&.home {
+		border-bottom: 5px solid $color-gold;
+	}
+	.logo-w-date {
+		width: 60%;
+		position: absolute;
+		top: 20%;
+		left: 20%;
+		z-index: 1000000;
+		img {
+			width: 100%;
+
+		}
+	}
+}
+.content-wrapper {
+	width: 100%;
+	margin: 0px auto;
+	padding: 0px;
+	
+	@media screen and (min-width: $tabwidth) {
+		width: 100%;
+	}
+	@media screen and (min-width: $deskwidth) {
+		// width: 940px;
+		// padding: 40px 0;
+	}
+}
+.content-area {
+	width: 100%;
+	margin: 0px auto;
+	
+	@media screen and (min-width: $tabwidth) {
+		width: 66%;
+		float: left;
+		margin: 0;
+	}
+	@media screen and (min-width: $deskwidth) {
+		/*width: 1200px;*/
+	}
+}
+
+.widget-area {
+	width: 100%;
+	margin: 0px auto;
+	
+	@media screen and (min-width: $tabwidth) {
+		width: 26%;
+		float: right;
+		margin: 0;
+	}
+	@media screen and (min-width: $deskwidth) {
+		/*width: 1200px;*/
+	}
+}
+
+/* Logo */
+.logo , h1.logo {
+	width: 160px;
+	margin: 10px auto;
+	position: relative;
+	z-index: 10000000;
+	@media screen and (min-width: $tabwidth) {
+		width: 180px;
+		margin: 15px 0 15px 15px;
+		float: left;
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: 220px;
+		margin: 25px 0;
+	}
+	img {
+		width: 100%;
+		line-height: 0;
+	}
+}
+.logo a, h1.logo a {
+	width: 100%;
+	display: block;
+	line-height: 0;
+	@media screen and (min-width: $tabwidth) {
+	
+	}
+	@media screen and (min-width: $deskwidth) {
+		
+	}
+}
+.logo.mobile , h1.logo.mobile {
+	display: block;
+	position: absolute;
+    left: 50%;
+    top: 0px;
+    transform: translate(-50%, 0);
+	@media screen and (min-width: $tabwidth) {
+		display: none;
+	}
+}
+header.blue {
+	width: 100%;
+	float: left;
+	
+	h1 {
+		width: auto;
+		padding: 40px 40px 40px 20px;
+		position: relative;
+		background-color: $color-blue;
+		color: $color-tan;
+		font: {
+			family: $font-coco;
+			size: 40px;
+		}
+		&:before {
+			width: 800px;
+			position: absolute;
+			left: -800px;
+			top: 0;
+			height: 100%;
+			background-color: $color-blue;
+			content: '';
+		}
+		@media screen and (min-width: $tabwidth) {
+			padding: 40px 40px 40px 20px;
+		}
+		@media screen and (min-width: $deskwidth) {
+			padding: 40px 40px 40px 0;
+		}
+	}
+}
+.coming-soon {
+	.lefty, .righty {
+		width: 100%;
+		background-color: $color-orange;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		z-index: 10;
+		@media screen and (min-width: $tabwidth) {
+			width: 50%;
+			float: left;
+			height: 90vh;
+		}
+		h2 {
+			span.tan {color: $color-tan;}
+			span.blue {color: $color-blue;}
+			span.orange {color: $color-orange;}
+			span.dark-orange {color: $color-dark-orange;}
+		}
+	}
+	.lefty {
+		background-color: $color-blue;
+	}
+	.righty {
+		
+		.img {
+			width: 40%;
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
+header.special-title,
+.left, .lefty
+{
+	width: 100%;
+	float: left;
+	position: relative;
+	background-color: $color-blue;
+	padding: 50px 0;
+	h1, h2 {
+		line-height: 1.2;
+		font: {
+			size: 32px;
+			family: $font-coco;
+		}
+		@media screen and (min-width: $tabwidth) {
+			font-size: 42px;
+		}
+		@media screen and (min-width: $deskwidth) {
+			font-size: 50px;
+		}
+		span {
+			width: 100%;
+			float: left;
+			padding: 0 0 0 20px;
+			@media screen and (min-width: $deskwidth) {
+				padding: 0;
+			}
+			&.tan {color: $color-tan;}
+			&.orange {color: $color-orange;}
+			&.dark-orange {color: $color-dark-orange;}
+			&.center {text-align: center;}
+			&.small {
+				font-size: 26px;
+				@media screen and (min-width: $tabwidth) {
+					font-size: 32px;
+				}
+				@media screen and (min-width: $deskwidth) {
+					font-size: 36px;
+				}
+			}
+		}
+
+	}
+	h2 {
+		width: auto;
+		margin-left: 20%;
+	}
+	.waves {
+		width: 25px;
+		position: absolute;
+		right: 5%;
+		top: 70%;
+		z-index: 100000;
+		@media screen and (min-width: $tabwidth) {
+			width: 50px;
+			top: 50%;
+		}
+	}
+	.dots {
+		width: 25px;
+		position: absolute;
+		left: 5%;
+		top: 70%;
+		z-index: 100000;
+		@media screen and (min-width: $tabwidth) {
+			width: 50px;
+			top: 15%;
+		}
+	}
+}
+.mobile-header-scroll {
+	width: 65%;
+	margin: 0 auto 20px auto;
+	background-color: rgba(#fff, 1);
+	padding: 2%;
+	overflow: hidden;
+	@include transition(all ease .4s);
+	position: relative;
+	z-index: 100001;
+	@media screen and (min-width: $tabwidth) {
+		display: none;
+	}
+	@media screen and (min-width: $deskwidth) {
+		
+	}
+	&.scrolled {
+		height: 0;
+		padding: 0;
+	}
+}
+.event-date, .event-date-mobile {
+	width: 100%;
+	text-align: center;
+	font-family: $font-heading;
+	text-transform: uppercase;
+	font-size: 8px;
+	color: $color-green;
+	letter-spacing: 5px;
+	margin: 0px 0 0px 0;
+	display: none;
+	@media screen and (min-width: $tabwidth) {
+		font-size: 20px;
+		letter-spacing: 12px;
+		margin: 20px 0 30px 0;
+		display: block;
+	}
+	@media screen and (min-width: $deskwidth) {
+		font-size: 30px;
+		margin: 30px 0 40px 0;
+	}
+}
+.event-date-mobile {
+	display: block;
+}
+.page {
+	width: 100%;
+	clear: both;
+}
+article {
+	width: 100%;
+	padding: 20px 0;
+	// border-bottom: 2px dashed $color-blue;
+	position: relative;
+	float: left;
+	margin: 0 0 0px 0;
+	clear: both;
+	@media screen and (min-width: $tabwidth) {
+		padding: 40px 0;
+		margin: 0 0 60px 0;
+	}
+	@media screen and (min-width: $deskwidth) {
+
+	}
+	// a.padded {
+	// 	padding-top: 200px;
+	// 	margin-top: -200px;
+	// }
+	// span {
+	// 	margin-top: -300px;        
+ //  padding-bottom: 300px; 
+ //  display: block; 
+	// }
+	&::before {
+		display: block; 
+		content: " "; 
+		margin-top: -225px; 
+		height: 225px; 
+		visibility: hidden; 
+		pointer-events: none;
+		float: left;
+	}
+	// span#push {
+	// 	margin-top: -90px;        /* Size of fixed header */
+	// 	padding-bottom: 90px; 
+	// 	display: block; 
+	// 	@media screen and (min-width: $tabwidth) {
+	// 		margin-top: -280px;        /* Size of fixed header */
+	// 		padding-bottom: 280px; 
+	// 	}
+	// 	@media screen and (min-width: $deskwidth) {
+
+	// 	}
+	// }
+	&.leftz {
+		float: left;
+		.featured-image {
+			top: -20px;
+			right: -20px;
+			@media screen and (min-width: $deskwidth) {
+				top: -30px;
+				right: -100px;
+			}
+		}
+		.copy {
+			@media screen and (min-width: $tabwidth) {
+				float: left;
+				padding: 40px 20% 40px 10.5%;
+			}
+			&.active {
+				max-height: 1000px;
+				padding:  60px 10% 10% 10%;
+				@include transition(max-height ease .3s);
+				@media screen and (min-width: $tabwidth) {
+					    padding: 40px 20% 40px 10.5%;
+				}
+			}
+		}
+	}
+	&.rightz {
+		float: right;
+		.featured-image {
+			top: -20px;
+			left: -20px;
+			@media screen and (min-width: $deskwidth) {
+				top: -30px;
+				left: -100px;
+			}
+		}
+		.copy {
+			@media screen and (min-width: $tabwidth) {
+				float: right;
+				padding: 40px 10.5% 40px 20%;
+			}
+			&.active {
+				max-height: 1000px;
+				padding:  60px 10% 10% 10%;
+				@include transition(max-height ease .3s);
+				@media screen and (min-width: $tabwidth) {
+					    padding: 40px 10.5% 40px 20%;
+				}
+			}
+		}
+	}
+	.featured-image-mobile {
+		width: 80%;
+		margin: 0px auto;
+		position: relative;
+		z-index: 2;
+		@media screen and (min-width: $tabwidth) {
+			display: none;
+		}
+		img {
+			width: 100%;
+		}
+		header {
+			width: 90%;
+			position: absolute;
+			bottom: 25px;
+			left: 20px;
+			text-align: center;
+			background-color: rgba($color-blue, .4);
+			border: 1px solid $color-tan;
+			z-index: 10;
+
+			h2, h2.title {
+				color: $color-tan;
+				padding: 20px 5px;
+				font-size: 12px; 
+				text-transform: uppercase;
+				&.active {
+					background-color: $color-tan;
+					color: #000;
+				}
+			}
+		}
+	}
+	.featured-image {
+		display: none;
+		img {
+			width: 100%;
+		}
+		@media screen and (min-width: $tabwidth) {
+			width: 220px;
+			height: 220px;
+			position: absolute;
+			z-index: 100;
+			display: block;
+		}
+		@media screen and (min-width: $deskwidth) {
+			width: 300px;
+			height: 300px;
+		}
+	}
+	.entry-header {
+		width: 100%;
+		// position: absolute;
+		// top: 8%;
+		// right: -110%;
+		color: $color-blue;
+		
+		@media screen and (min-width: $tabwidth) {
+			// width: 250%;
+			// top: 30%;
+			// right: -260%;
+			
+		}
+		@media screen and (min-width: $deskwidth) {
+
+		}
+		h1 {
+			font-size: 1em;
+			@media screen and (min-width: $tabwidth) {
+				font-size: 1.5em;
+			}
+			@media screen and (min-width: $deskwidth) {
+
+			}
+		}
+	}
+	.copy {
+		width: 100%;
+		position: relative;
+		background-color: #fff;
+		
+		margin: -50px auto 30px 0;
+		color: $color-blue;
+		font-family: $font-copy;
+		font-weight: 200;
+		max-height: 0;
+		@include transition(max-height ease .3s);
+		overflow: hidden;
+		z-index: 1;
+		
+		@media screen and (min-width: $tabwidth) {
+			width: 82%;
+			margin: 0;
+			max-height: 1000px;
+			overflow: visible;
+		}
+		@media screen and (min-width: $deskwidth) {
+			// margin: -10% auto 30px 0;
+		}
+		header.entry-header {
+			display: none;
+			@media screen and (min-width: $tabwidth) {
+				display: block;
+			}
+		}
+		h1 {
+			display: block;
+			text-align: left;
+			font-size: 14pt;
+	    	letter-spacing: 0.20em;
+	    	text-transform: uppercase;
+	    	color: $color-orange;
+	    	@media screen and (min-width: $tabwidth) {
+	    		display: block;
+	    	}
+		}
+		.art-close {
+			@media screen and (min-width: $tabwidth) {
+				display: none;
+			}
+		}
+		p {
+			max-width: 100%;
+			display: block;
+			float: left;
+		}
+		
+	}
+
+}
+.eyeglass {
+	width: 33px;
+	height: 30px;
+	position: absolute;
+	top: 12px;
+	right: 5%;;
+	@media screen and (min-width: $tabwidth) {
+		display: none;
+	}
+}
+.search-submit {
+	display: none;
+}
+input.search-field {
+	width: 100%;
+	padding: 20px 0;
+	@media screen and (min-width: $tabwidth) {
+		
+	}
+	@media screen and (min-width: $deskwidth) {
+		
+	}
+}
+.social {
+	width: auto;
+	display: inline-block;
+	margin: 20px auto;
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+	li {
+		display: inline-block;
+		font-size: 2.5em;
+		margin: 0 5px 0 0;
+	}
+	a {
+		color: $color-blue;
+		svg{
+			transform: scale(1);
+			@include transition( all ease .2s );
+		}
+	}
+}
+footer.site-footer {
+	width: 100%;
+	clear: both;
+	text-align: center;
+	padding: 40px 0 0 0;
+	font-size: 8pt;
+	background-color: $color-orange;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	li {
+		display: inline-block;
+		img {
+			width: 100%;
+		}
+	}
+
+	.sponsors {
+		padding: 30px 0;
+		li {
+			width: 75px;
+			margin: 0 10px;
+		}
+	}
+	.presented {
+		width: 100%;
+		text-align: center;
+		clear:both;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.thing {
+			width: auto;
+			display: inline-block;
+			margin: 0 10px; 
+			text-transform: uppercase;
+			color: $color-green;
+			font-size: 18px;
+			height: 45px;
+			line-height: 45px;
+		}
+		.image {
+			width: 200px;
+			display: inline-block;
+			margin: 0 10px; 
+			// height: 85px;
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
+.error {
+	width: 100%;
+	img {
+		width: 100%;
+	}
+}

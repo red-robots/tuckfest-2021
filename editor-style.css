@@ -1,0 +1,26 @@
+.reg-btn {
+	background-color:  #0e7379;
+	color: #fff;
+	width: auto;
+	display: inline-block;
+	
+
+}
+.reg-btn a {
+	background-color:  #0e7379;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	padding: 10px 25px;
+}
+.intro-text {
+	color: #092745;
+	font-size: 26px;
+}
+h2 {
+	color: #F4A74E;
+	text-transform: uppercase;
+}
+body {
+	color: #092745;
+}
