@@ -176,9 +176,7 @@ body.home {
 }
 
 .home-tiles-new {
-  * {
-    transition: all ease .3s;
-  }
+  margin-bottom: 30px;
   .flexwrap {
     @include flexgroup();
   }
@@ -336,6 +334,10 @@ body.home {
   //   }
   // }
 
+}
+
+body.theme2021 .site-content {
+  padding-bottom: 0;
 }
 
 footer.site-footer {

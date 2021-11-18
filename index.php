@@ -113,6 +113,9 @@ get_header();
     <?php } ?>
 
 <?php endif; ?>
+
+<?php if( have_rows('social_links', 'option') ) { ?>
+
 <div class="wrapper">
 	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main" role="main">
@@ -123,16 +126,14 @@ get_header();
 					<div class="search">
 						<gcse:search></gcse:search>
 					</div>
-					<?php if( have_rows('social_links', 'option') ) : ?>
+					
 					<div class="social">
 						<h3>Social Media</h3>
 						<ul>
 						<?php while( have_rows('social_links', 'option') ) : the_row();
-
 							$icon = get_sub_field('icon', 'option');
 							$link = get_sub_field('link', 'option');
-
-						?>
+						  ?>
 							<li>
 								<a href="<?php echo $link; ?>" target="_blank">
 									<?php echo $icon; ?>
@@ -141,15 +142,6 @@ get_header();
 						<?php endwhile; ?>
 						</ul>
 					</div>
-					<?php endif; 
-
-					// $social_links = get_field('social_links', 'option');
-					// echo '<pre>';
-					// print_r($icon);
-					// echo '</pre>';
-
-					?>
-
 					<?php  ?>
 				</div>
 				
@@ -158,5 +150,6 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 </div>
+<?php } ?>
 <?php
 get_footer();
