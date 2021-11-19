@@ -217,14 +217,14 @@ body.home {
       &:before {
         content:"";
         display: block;
-        width: 100%;
+        width: 103%;
         height: 100%;
         position: absolute;
         left: 0;
         top: 0;
         background: transparent;
         z-index: 20;
-        transition: transform ease 0.3s;
+        transition: transform ease 0.4s;
         transform: scaleY(0);
       }
     }
@@ -328,18 +328,17 @@ body.home {
     }
 
     &.odd {
-      background-color: $orange;
       .tile-link {
         color: $text_color;
       }
     }
     &.even {
-      background-color: $text_color;
       .tile-link {
         color: $darkgreen;
       }
       .title.mirror,
-      .title.mirror:after {
+      .title.mirror:after,
+      span.icon {
         background: $text_color;
       }
       span.image {
@@ -365,7 +364,7 @@ body.home {
     .title.mirror:after {
       background: $orange;
     }
-    .tile-link {
+    span.icon {
       background: $red_orange;
     }
     .tile-link:hover {
@@ -385,7 +384,7 @@ body.home {
     .title.mirror:after {
       background: $red_orange;
     }
-    .tile-link {
+    span.icon {
       background: $orange;
     }
     .tile-link:hover {
