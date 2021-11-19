@@ -53,16 +53,22 @@ get_header();
             <div class="inside">
             	<a href="<?php echo $link; ?>" class="tile-link">
                 <?php if ($title) { ?>
-                  <span class="title"><?php echo $title ?></span>
+                  <span class="title" style="visibility:hidden;"><?php echo $title ?></span>
+                  <span class="title mirror"><?php echo $title ?></span>
                 <?php } ?>
 
                 <?php if ($tile_class=='odd') { ?>
 
                   <?php if ($icon) { ?>
-                    <span class="icon" style="background-image:url('<?php echo $icon['url'] ?>');">
+                    <span class="icon">
+                      <img src="<?php echo $helper ?>" alt="" class="helper">
+                      <img src="<?php echo $icon['url'] ?>" alt="" class="iconImg">
+                    </span>
+                    <span class="image-mirror">
                       <img src="<?php echo $helper ?>" alt="" class="helper">
                     </span>
                   <?php } ?>
+
                   <span class="image" style="background-image:url('<?php echo $img['url'] ?>')">
                     <img src="<?php echo $helper ?>" alt="" class="helper">
                   </span>
@@ -74,34 +80,18 @@ get_header();
                   </span>
 
                   <?php if ($icon) { ?>
-                    <span class="not-visible icon" style="background-image:url('<?php echo $icon['url'] ?>');">
+                    <span class="icon">
+                      <img src="<?php echo $helper ?>" alt="" class="helper">
+                      <img src="<?php echo $icon['url'] ?>" alt="" class="iconImg">
+                    </span>
+                    <span class="image-mirror">
                       <img src="<?php echo $helper ?>" alt="" class="helper">
                     </span>
                   <?php } ?>
 
                 <?php } ?>
-               
 
-                <?php if ($icon || $title) { ?>
-                <span class="icon-and-title">
-                  <span class="title-inner">
-
-                    <?php if ($icon) { ?>
-                    <span class="middle icon" style="background-image:url('<?php echo $icon['url'] ?>');">
-                      <img src="<?php echo $helper ?>" alt="" class="helper">
-                    </span>
-                    <?php } ?>
-
-                    <?php if ($title) { ?>
-                    <span class="middle title">
-                      <?php echo $title ?>
-                    </span>
-                    <?php } ?>
-
-                  </span>
-                </span>
-                <?php } ?>
-
+                
             	</a>
             </div>
           </div>

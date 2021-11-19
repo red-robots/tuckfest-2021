@@ -149,6 +149,14 @@ body.home {
   margin-top: 80px;
   margin-bottom: 50px;
   text-align: center;
+  padding: 0 20px;
+  .wrapper {
+    max-width: 82%;
+    width: 100%;
+    @media screen and (max-width: $deskwidth) {
+      max-width: 100%;
+    }
+  }
   .inside {
     border: 1px solid $text_color;
     padding: 40px 10vw;
@@ -202,23 +210,72 @@ body.home {
     .tile-link {
       position: relative;
       text-decoration: none;
-    }
-    .tile-link * {
-      transition: all ease .3s;
-    }
-    &.odd {
-      background-color: $orange;
-      .tile-link {
-        color: $text_color;
+      transition: all ease 0.3s;
+      * {
+        cursor: pointer;
+      }
+      &:before {
+        content:"";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: transparent;
+        z-index: 20;
+        transition: transform ease 0.3s;
+        transform: scaleY(0);
       }
     }
-    &.even {
-      background-color: $text_color;
-      .tile-link {
-        color: $darkgreen;
+    .tile-link:hover {
+      &:before {
+        top: 0;
+        transform: scaleY(1);
+      }
+      .title.mirror {
+        top: 55%;
+        transform: translateY(-55%);
+        background: transparent;
+        &:after {
+          display: none;
+        }
+      }
+      .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 20;
+        background: transparent;
+        img.iconImg {
+          top: 50%;
+          transition-delay: 0.2s;
+          transform: translateX(-50%) translateY(-95%);
+        }
       }
     }
-
+    span.image {
+      display: block;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      @media screen and (max-width:$tabwidth) {
+        position: relative;
+      }
+    }
+    span.image-mirror {
+      display: block;
+      width: 100%;
+      visibility: hidden;
+      opacity: 0;
+      @media screen and (max-width:$tabwidth) {
+        display: none;
+      }
+    }
+    
     .title {
       display: block;
       width: 100%;
@@ -230,25 +287,116 @@ body.home {
       line-height: 1.2;
       text-transform: uppercase;
       padding: 35px 15px;
+      position: relative;
+      z-index: 55;
+      transition: all ease .3s;
+      &.mirror {
+        position: absolute;
+        top: 0;
+        left: 0;
+        &:after {
+          content:"";
+          display: block;
+          width: 50px;
+          height: 50px;
+          border-radius: 100px;
+          position: absolute;
+          left: 50%;
+          bottom: -12px;
+          transform: translateX(-50%);
+        }
+      }
     }
     .icon {
       display: block;
       width: 100%;
       float: left;
+      position: relative;
       background-size: 50%;
       background-position: center;
       background-repeat: no-repeat;
-      transition: all ease .3s;
+      z-index: 50;
+      img.iconImg {
+        width: 50%;
+        height: auto;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transition: transform ease 0.5s;
+        transform: translateX(-50%) translateY(-45%);
+      }
+    }
+
+    &.odd {
+      background-color: $orange;
+      .tile-link {
+        color: $text_color;
+      }
+    }
+    &.even {
+      background-color: $text_color;
+      .tile-link {
+        color: $darkgreen;
+      }
+      .title.mirror,
+      .title.mirror:after {
+        background: $text_color;
+      }
+      span.image {
+        position: relative;
+      }
+      span.image-mirror {
+        display: none;
+      }
+      .tile-link:hover {
+        &:before {
+          background: $text_color;
+        }
+        span.image-mirror {
+          @media screen and (max-width:$tabwidth) {
+            display: block;
+          }
+        }
+      }
     }
   }
-  .home-tile:nth-child(3) {
-    .title {
-      background-color: $red_orange;
+  .home-tile:first-child {
+    .title.mirror,
+    .title.mirror:after {
+      background: $orange;
+    }
+    .tile-link {
+      background: $red_orange;
+    }
+    .tile-link:hover {
+      &:before {
+        background: $red_orange;
+      }
+      span.image-mirror {
+        @media screen and (max-width:$tabwidth) {
+          display: block;
+        }
+      }
     }
   }
-  .home-tile:nth-child(1) {
-    .icon {
-      background-color: $red_orange;
+
+  .home-tile:last-child {
+    .title.mirror,
+    .title.mirror:after {
+      background: $red_orange;
+    }
+    .tile-link {
+      background: $orange;
+    }
+    .tile-link:hover {
+      &:before {
+        background: $orange;
+      }
+      span.image-mirror {
+        @media screen and (max-width:$tabwidth) {
+          display: block;
+        }
+      }
     }
   }
 
@@ -266,75 +414,6 @@ body.home {
     background-position: center;
     background-repeat: no-repeat;
   }
-  // .not-visible {
-  //   visibility: hidden;
-  //   opacity: 0;
-  // }
-  
-  .icon-and-title {
-    display: none;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 50;
-    // visibility: hidden;
-    // opacity: 0;
-    .title {
-      position: absolute;
-      // bottom: 15px;
-      left: 0;
-      z-index: 15;
-      // background-color: transparent!important;
-      top: 0;
-    }
-    .icon {
-      visibility: hidden;
-      opacity: 0;
-    }
-    .title-inner {
-      display: block;
-      width: 100%;
-      float: left;
-      position: relative;
-      
-    }
-  }
-
-  .home-tile:first-child {
-    .title {
-      background: $orange;
-    }
-  }
-
-
-  // .home-tile {
-  //   .tile-link:hover {
-  //     .icon {
-  //       position: absolute;
-  //       top: 0;
-  //       left: 0;
-  //       height: 100%;
-  //       z-index: 55;
-  //     }
-  //   }
-  //   &:nth-child(2) {
-  //     .tile-link:hover {
-  //       .icon {
-  //         background-color: $text_color;
-  //       }
-  //     }
-  //   }
-  //   &:last-child {
-  //     .tile-link:hover {
-  //       .icon {
-  //         background-color: $orange;
-  //       }
-  //     }
-  //   }
-  // }
-
 }
 
 body.theme2021 .site-content {
