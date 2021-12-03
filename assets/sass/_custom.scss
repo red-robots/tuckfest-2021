@@ -554,6 +554,11 @@ body.subpage {
       letter-spacing: 1px;
       color: $darkgreen;
     }
+    .select-options li {
+      font-family: $font1;
+      font-weight: 600;
+      font-size: 15px;
+    }
     .types {
       .select {
         height: 32px;

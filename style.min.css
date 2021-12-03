@@ -1749,6 +1749,7 @@ body.subpage .special-title h1{font-size:45px;line-height:1.1;letter-spacing:1px
 body.subpage .special-title span{font-family:"Crimson Pro",serif;font-weight:900}
 body.subpage .special-title .waves{display:none !important}
 body.subpage #filters h2{font-family:"Recoleta",serif;font-weight:600;font-size:15px;letter-spacing:1px;color:#235b4e}
+body.subpage #filters .select-options li{font-family:"Recoleta",serif;font-weight:600;font-size:15px}
 body.subpage #filters .types .select{height:32px}
 body.subpage #filters .select-styled{font-family:"Recoleta",serif;font-weight:600;font-size:15px;letter-spacing:1px;color:#235b4e;background-image:none;background-color:transparent;border:1px solid #235b4e;padding:6px 15px 4px;position:relative}
 body.subpage #filters .select-styled:before,body.subpage #filters .select-styled:after{content:"";display:block;width:12px;height:2px;background:#235b4e;position:absolute;top:15px;right:15px;border:0}
