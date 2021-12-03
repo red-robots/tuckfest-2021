@@ -27,8 +27,8 @@ jQuery(document).ready(function ($) {
   
   */
   // get height of header 
-  var $height = $('.site-header').height();
-  $('#content').css('margin-top', $height); // Adjust slightly if no subnav
+  var $height = $('.site-header').height(); //$('#content').css('margin-top', $height);
+  // Adjust slightly if no subnav
 
   var myElem = document.getElementById('js-tsn');
 

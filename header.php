@@ -18,7 +18,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <script defer src="<?php bloginfo( 'template_url' ); ?>/assets/svg-with-js/js/fontawesome-all.js"></script>
 
 <!-- Google Tag Manager USNWC -->
@@ -65,7 +65,6 @@ $alert_message = get_field('alert_message', 'option');
 $text_color = get_field('text_color', 'option');
 $background_color = get_field('background_color', 'option');
 $link_color = get_field('link_color', 'option');
-
 ?>
 <style type="text/css">
 	.alert {
@@ -116,14 +115,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			        </div>
 	            </div>
 			</div> -->
-			<div class="mobile-wrapper">
-				
-		            <div class="logo desktop">
-		            	<a href="<?php bloginfo('url'); ?>">
-			            	<img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
-			            </a>
-		            </div>
-	        </div>
+      <div class="mobile-wrapper">
+        <div class="logo desktop">
+          <a href="<?php bloginfo('url'); ?>">
+            <?php if ( is_home() || is_front_page() ) { ?>
+              <img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
+            <?php } else { ?>
+              <?php if ( $sp_logo = get_field("subpageLogo","option") ) { ?>
+                <img src="<?php echo $sp_logo['url'] ?>" alt="<?php bloginfo('name'); ?>">
+              <?php } else { ?>
+                <img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
+              <?php } ?>
+            <?php } ?>
+          </a>
+        </div>
+      </div>
 			
 		
 

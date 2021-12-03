@@ -1,24 +1,4 @@
-$font1: 'Recoleta', serif;
-$font2: 'DM Sans', sans-serif;
-$font3: 'Rubik', sans-serif;
-$font4: 'Open Sans', sans-serif;
-$darkgreen: #235B4E;
-$orange: #FF7F30;
-$red_orange: #E43D30;
-$text_color: #F3E3CC;
-
-@mixin flexgroup() {
-  @include flexbox();
-  @include flexbox-wrap(wrap);
-  @include flexbox-direction(row);
-}
-
-@mixin flexgroup-center() {
-  @include flexbox();
-  @include flexbox-wrap(wrap);
-  @include flexbox-direction(row);
-  @include flexbox-align-items(center);
-}
+@import "custom_mixin"; 
 
 @font-face {
   font-display: swap;
@@ -439,7 +419,7 @@ footer.site-footer {
       @include flexbox-align-items(center);
     }
     .brand-image {
-      width: 30%;
+      width: 35%;
       text-align: left;
       a {
         display: block;
@@ -453,7 +433,7 @@ footer.site-footer {
       }
     }
     .footLinks {
-      width: 70%;
+      width: 65%;
     }
 
     @media screen and (max-width: $tabwidth) {
@@ -488,5 +468,243 @@ footer.site-footer {
         }
       }
     }
+  }
+}
+
+/* Subpage */
+body.subpage {
+  background-color: $body_color;
+  background-image:url('images/beehive_pattern.png');
+  background-position: bottom left;
+  background-repeat: repeat-x;
+  background-size:20%;
+  #masthead.site-header {
+    background: $darkgreen;
+    .wrapper {
+      position: relative;
+      @include flexgroup();
+    }
+    .main-navigation {
+      width: 100%;
+      padding: 20px 0;
+      position: relative;
+    }
+    .mobile-wrapper {
+      display: inline-block;
+      width: auto;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1010;
+      background-color: transparent;
+      .logo {
+        margin: 0 0;
+        padding: 0 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  #primary-menu > li {
+    margin-left: 2vw;
+  }
+  #content.no-subnav {
+    margin-top: 58px;
+  }
+  .special-title {
+    background: $orange;
+    padding: 10px 0;
+    position: relative;
+    &:after {
+      content:"";
+      display: block;
+      width: 200px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-image: url('images/half-circle-pattern.png');
+      background-repeat: repeat;
+      background-position: 7px 0;
+      background-size: 35px;
+    }
+    h1 {
+      font-size: 45px;
+      line-height: 1.1;
+      letter-spacing: 1px;
+      margin: 0 0;
+      position: relative;
+      z-index: 10;
+    }
+    span {
+      font-family: $font5;
+      font-weight: 900;
+    }
+    .waves {
+      display: none!important;
+    }
+  }
+  #filters {
+    h2 {
+      font-family: $font1;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 1px;
+      color: $darkgreen;
+    }
+    .types {
+      .select {
+        height: 32px;
+      }
+    }
+    .select-styled {
+      font-family: $font1;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 1px;
+      color: $darkgreen;
+      background-image:none;
+      background-color: transparent;
+      border: 1px solid $darkgreen;
+      padding: 6px 15px 4px;
+      position: relative;
+      &:before, &:after {
+        content:"";
+        display: block;
+        width: 12px;
+        height: 2px;
+        background: $darkgreen;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        border: none;
+      }
+      &:before {
+        transform: translateX(-4px) rotate(42deg);
+      }
+      &:after {
+        transform: translateX(4px) rotate(-42deg);
+      }
+    }
+  }
+
+  .schedule {
+    .col h2 {
+      font-family: $font1;
+      font-weight: bold;
+      font-size: 18px;
+      letter-spacing: 1px;
+      color: $darkgreen;
+      margin: 0 0 10px 0;
+    }
+    .col-wrap {
+      background-color: $darkgreen;
+      padding: 0 0;
+      .title {
+        font-size: 15px;
+      }
+      .time {
+        font-size: 13px;
+        color: $orange;
+      }
+      .contents {
+        ul.list {
+          margin: 0 0;
+          padding: 0 0;
+          list-style: none;
+          width: 100%;
+          float: left;
+        }
+        ul.list > li {
+          padding: 15px 20px;
+          margin: 0 0;
+          width: 100%;
+          float: left;
+        }
+        ul.list > li:nth-child(1) {
+          background-color: $darkgreen;
+        }
+        ul.list > li:nth-child(even) {
+          background: rgba(255,255,255,.1);
+          border-bottom: 1px solid rgba(255,255,255,.15);
+        }
+      }
+    }
+  }
+  
+  footer.site-footer {
+    padding-top: 0;
+    .footer-content:before {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: $tabwidth - 1px) {
+  body.subpage {
+    #masthead.site-header {
+      height: 58px;
+      .burger {
+        height: 100%;
+      }
+      .wrapper {
+        height: 100%;
+      }
+      .main-navigation {
+        display: none;
+      }
+      .mobile-wrapper {
+        left: 105px!important;
+      }
+      .eyeglass {
+        top: 6px;
+      }
+    }
+    #main .special-title:after {
+      width: 30vw;
+    }
+    #main .special-title h1 {
+      font-size: 38px;
+    }
+    &.logged-in.admin-bar {
+      #content.no-subnav {
+        margin-top: 12px;
+      }
+      #masthead.site-header {
+        top: 46px;
+      }
+      .site {
+        padding-top: 46px;
+      }
+    }
+  }
+  footer.site-footer {
+    text-align: center;
+    .brand-image {
+      a {
+        text-align: center;
+      }
+      img {
+        margin: 0 auto;
+      }
+    }
+    .footLinks  {
+      #footer-menu {
+        text-align: center;
+      }
+      li {
+        float: none!important;
+        display: inline-block;
+      }
+    }
+    .footLinks #footer-menu a {
+      margin: 10px 10px;
+    }
+  }
+  html #wpadminbar {
+    position: fixed;
+    top: 0;
   }
 }
