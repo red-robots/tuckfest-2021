@@ -42,13 +42,25 @@ add_action( 'pre_get_posts', 'wpsites_query' );
 /*-------------------------------------
 	Custom client login, link and title.
 ---------------------------------------*/
-function my_login_logo() { ?>
+function my_login_logo() { 
+$custom_logo_id = get_theme_mod( 'custom_logo' );
+$logoImg = wp_get_attachment_image_src($custom_logo_id,'large');
+$logo_url = ($logoImg) ? $logoImg[0] : get_stylesheet_directory_uri() . '/images/logo.png';
+?>
 <style type="text/css">
-  body.login div#login h1 a {
+  /*body.login div#login h1 a {
   	background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png);
   	background-size: 327px 67px;
   	width: 327px;
   	height: 67px;
+  }*/
+  body.login div#login h1 a {
+    background-image: url(<?php echo $logo_url; ?>);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 67px;
   }
 </style>
 <?php }
