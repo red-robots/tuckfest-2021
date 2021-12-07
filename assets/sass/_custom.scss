@@ -478,8 +478,9 @@ footer.site-footer {
 body.subpage {
   background-color: $body_color;
   background-image:url('images/beehive_pattern.png');
-  background-position: bottom left;
+  background-position: 0 0;
   background-repeat: repeat-x;
+  background-attachment:fixed;
   background-size:20%;
   #masthead.site-header {
     background: $darkgreen;

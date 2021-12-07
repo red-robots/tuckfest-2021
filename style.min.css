@@ -1736,7 +1736,7 @@ footer.site-footer .footLinks #footer-menu li{float:left}
 footer.site-footer .footLinks #footer-menu ul{display:none}
 footer.site-footer .footLinks #footer-menu a{display:inline-block;text-decoration:none;color:#f3e3cc;font-size:13px;line-height:1.2;margin-right:30px;opacity:.5}
 footer.site-footer .footLinks #footer-menu a:hover{opacity:1}
-body.subpage{background-color:#f3e2cb;background-image:url("images/beehive_pattern.png");background-position:bottom left;background-repeat:repeat-x;background-size:20%}
+body.subpage{background-color:#f3e2cb;background-image:url("images/beehive_pattern.png");background-position:0 0;background-repeat:repeat-x;background-attachment:fixed;background-size:20%}
 body.subpage #masthead.site-header{background:#235b4e}
 body.subpage #masthead.site-header .wrapper{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 body.subpage #masthead.site-header .main-navigation{width:100%;padding:20px 0;position:relative}
