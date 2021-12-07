@@ -23,8 +23,11 @@
 }
 body {
   font-family: $font2;
-  font-size: 16px;
-  line-height: 1.4;
+  font-size: 15px;
+  line-height: 1.5;
+  article .copy p {
+    font-family: $font2;
+  }
 }
 body.home {
   position: relative;
@@ -643,6 +646,44 @@ body.subpage {
     padding-top: 0;
     .footer-content:before {
       display: none;
+    }
+  }
+}
+
+.faqs-page {
+  .faqrow {
+    .question {
+      font-family: $font1;
+      font-weight: 600;
+      color: $darkgreen;
+    }
+    .plus-minus-toggle {
+      transform: translateY(-4px) scale(0.6);
+    }
+    .plus-minus-toggle:before, .plus-minus-toggle:after {
+      background: $darkgreen;
+    }
+    &.active {
+      .plus-minus-toggle:before, .plus-minus-toggle:after {
+        background: $orange;
+      }
+    }
+    .answer {
+      padding: 20px;
+      margin:0 0 0 35px;
+      background: #FFF;
+      color: $darkgreen;
+      font-family: $font2;
+      line-height: 1.4;
+      a {
+        color: $orange;
+        &:after {
+          background-color: $orange;
+        }
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

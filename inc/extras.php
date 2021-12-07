@@ -38,3 +38,25 @@ function acstarter_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'acstarter_body_classes' );
+
+function get_page_id_by_template($fileName) {
+  $page_id = 0;
+  if($fileName) {
+      $pages = get_pages(array(
+          'post_type' => 'page',
+          'meta_key' => '_wp_page_template',
+          'meta_value' => $fileName.'.php'
+      ));
+
+      if($pages) {
+          $row = $pages[0];
+          $page_id = $row->ID;
+      }
+  }
+  return $page_id;
+}
+
+function page_no_subnav($slug) {
+  $no_subnav = array('faqs');
+  return ( in_array($slug,$no_subnav) ) ? true : false;
+}
