@@ -1912,6 +1912,9 @@ body.theme2021.home ul.submenu.active{border-top:1px solid rgba(255,255,255,0.1)
 .home-tiles-new .home-tile:first-child .tile-link:hover span.image-mirror{display:block}
 .home-tiles-new .home-tile:last-child .tile-link:hover span.image-mirror{display:block}
 footer.site-footer .footer-info .brand-image,footer.site-footer .footer-info .footLinks{width:100%}
+}@media only screen and (max-width:749px){body.theme2021.subpage #masthead.site-header .mobile-wrapper .logo{top:0;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-line-pack:center;align-content:center}
+body.theme2021.subpage #masthead.site-header .mobile-wrapper .logo a{display:block;width:100%;text-align:center}
+body.theme2021.logged-in.admin-bar .site{padding-top:0 !important}
 }@media screen and (max-width:749px){body.subpage #masthead.site-header{height:58px}
 body.subpage #masthead.site-header .burger{height:100%}
 body.subpage #masthead.site-header .wrapper{height:100%}

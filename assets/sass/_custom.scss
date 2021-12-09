@@ -458,6 +458,19 @@ body.theme2021 {
       animation-name: fadeInDown;
       position: fixed;
     }
+    .mobile-wrapper .logo {
+      @media only screen and (max-width: $tabwidth - 1px) {
+        top: 0;
+        height: 100%;
+        @include flexgroup();
+        @include flexbox-align-content(center);
+        a {
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
   }
   &.no-sub-nav {
     #content {
@@ -480,6 +493,11 @@ body.theme2021 {
   &.logged-in.admin-bar {
     &.subpage #masthead.site-header {
       top: 0;
+    }
+    .site {
+      @media only screen and (max-width: $tabwidth - 1px) {
+        padding-top: 0!important;
+      }
     }
   }
 }
