@@ -152,8 +152,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div><!-- wrapper -->
 	</header><!-- #masthead -->
 
-
-  <?php get_template_part('inc/special-title'); ?>
+  <?php if(!is_home()) { get_template_part('inc/special-title'); } ?>
 
   <?php 
   $id = array();
