@@ -1,11 +1,19 @@
 <?php 
 global $post; 
 $ID = get_the_ID();
-$url = get_permalink();
+$currentURL = getFullURL();
+$exclude_url_parts[] = 'tuckfest-music/past-line-ups';
 $showNav = true;
-if(strpos($url,'/tuckfest-music/') !== false){
-  $showNav = false;
+//$parts = explode("/",$currentURL);
+// if( isset($parts[3]) && $parts[3]=='about' ) {
+//   $exclude_url_parts[] = 'about';
+// }
+foreach($exclude_url_parts as $str) {
+  if(strpos($currentURL,$str) !== false){
+    $showNav = false;
+  }
 }
+
 if( page_has_subnav() ) {
   if( is_page() ) { 
 

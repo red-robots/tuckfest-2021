@@ -77,34 +77,63 @@ jQuery(document).ready(function ($) {
   
   
   */
+  // $('.main-navigation li.dimmer').on('click', function() {
+  //     $('#dimmer').addClass('activate');
+  // });
+  // $('.main-navigation li.buy').on('click', function() {
+  //     $('ul.submenu').removeClass('active');
+  //     $('.main-navigation li').removeClass('active');
+  //     $('ul.buy').addClass('active');
+  //     $(this).addClass('active');
+  // });
+  // $('.main-navigation li.competitions').on('click', function() {
+  //     $('ul.submenu').removeClass('active');
+  //     $('.main-navigation li').removeClass('active');
+  //     $('ul.competitions').addClass('active');
+  //     $(this).addClass('active');
+  // });
+  // $('.main-navigation li.about').on('click', function() {
+  //     $('ul.submenu').removeClass('active');
+  //     $('.main-navigation li').removeClass('active');
+  //     $('ul.about').addClass('active');
+  //     $(this).addClass('active');
+  // });
+  // $('.main-navigation li.music').on('click', function() {
+  //     $('ul.submenu').removeClass('active');
+  //     $('.main-navigation li').removeClass('active');
+  //     $('ul.music').addClass('active');
+  //     $(this).addClass('active');
+  // });
 
 
-  $('.main-navigation li.dimmer').on('click', function () {
-    $('#dimmer').addClass('activate');
-  });
-  $('.main-navigation li.buy').on('click', function () {
-    $('ul.submenu').removeClass('active');
-    $('.main-navigation li').removeClass('active');
-    $('ul.buy').addClass('active');
-    $(this).addClass('active');
-  });
-  $('.main-navigation li.competitions').on('click', function () {
-    $('ul.submenu').removeClass('active');
-    $('.main-navigation li').removeClass('active');
-    $('ul.competitions').addClass('active');
-    $(this).addClass('active');
-  });
-  $('.main-navigation li.about').on('click', function () {
-    $('ul.submenu').removeClass('active');
-    $('.main-navigation li').removeClass('active');
-    $('ul.about').addClass('active');
-    $(this).addClass('active');
-  });
-  $('.main-navigation li.music').on('click', function () {
-    $('ul.submenu').removeClass('active');
-    $('.main-navigation li').removeClass('active');
-    $('ul.music').addClass('active');
-    $(this).addClass('active');
+  $(document).on('click', '.main-navigation li', function (e) {
+    var linkClasses = $(this).attr("class").split(' ');
+    $("#masthead ul.submenu").removeClass('active');
+
+    if ($(this).hasClass("dimmer")) {
+      $('#dimmer').addClass('activate');
+    }
+
+    $("#masthead ul.submenu").each(function () {
+      var target = $(this);
+      var menu_classes = $(this).attr("class").split(' ');
+      $(linkClasses).each(function (a, b) {
+        if ($.inArray(b, menu_classes) != -1) {
+          target.addClass('active');
+
+          if ($(".subnav#js-tsn li").length) {
+            $(".subnav#js-tsn").hide();
+          }
+        }
+      });
+    }); // $(classes).each(function(k,v){
+    //   // $("#masthead ul.submenu").each(function(){
+    //   //   if( $(this).hasClass(v) ) {
+    //   //     $(this).addClass('active');
+    //   //   } else {
+    //   //   }
+    //   // });
+    // });
   });
   /*
   

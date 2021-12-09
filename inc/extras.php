@@ -103,5 +103,12 @@ function page_has_subnav() {
   return ($list) ? true : false;
 }
 
+function getFullURL() {
+  return (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] 
+                === 'on' ? "https" : "http") . 
+                "://" . $_SERVER['HTTP_HOST'] . 
+                $_SERVER['REQUEST_URI'];
+}
+
 
 

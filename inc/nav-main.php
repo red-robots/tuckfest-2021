@@ -7,6 +7,18 @@
 
 
  -->
+<?php  
+$currentURL = getFullURL();
+$exclude_url_parts[] = '/competition-type/';
+$exclude_url_parts[] = '/tuckfest-music/past-line-ups/';
+//$exclude_url_parts[] = '/buy/';
+$activeNav = '';
+foreach($exclude_url_parts as $str) {
+  if(strpos($currentURL,$str) !== false){
+    $activeNav = ' active';
+  }
+}
+?>
 <nav id="site-navigation" class="main-navigation" role="navigation">
 	<div class="desktop">
 		<div class="menu-main-menu-container">
@@ -36,7 +48,7 @@
 
 
  -->
-<ul class="submenu competitions">
+<ul class="submenu competitions<?php echo $activeNav ?>">
 	<li>
 		<a href="<?php bloginfo('url'); ?>/competition-type/adventure-obstacle/">Adventure & Obstacle</a>
 	</li>
@@ -77,7 +89,7 @@
 	</li>
 </ul>
 <ul class="submenu about">
-    <li>
+  <li>
 		<a href="<?php bloginfo('url'); ?>/about/about-tuck-fest/">About Tuck Fest</a>
 	</li>
 	<li>
