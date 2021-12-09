@@ -113,7 +113,7 @@ $(document).on('click','.main-navigation li',function(e) {
     $(linkClasses).each(function(a,b){
       if($.inArray(b, menu_classes) != -1) {
         target.addClass('active');
-        if( $(".subnav#js-tsn li").length ) {
+        if( $(".subnav#js-tsn").length ) {
           $(".subnav#js-tsn").hide();
         }
       }

@@ -3,14 +3,22 @@ global $post;
 $ID = get_the_ID();
 $currentURL = getFullURL();
 $exclude_url_parts[] = 'tuckfest-music/past-line-ups';
-$showNav = true;
-//$parts = explode("/",$currentURL);
-// if( isset($parts[3]) && $parts[3]=='about' ) {
-//   $exclude_url_parts[] = 'about';
-// }
+$showNav = array();
+$parts = explode("/",$currentURL);
+if( isset($parts[3]) && $parts[3]=='about' ) {
+  $exclude_url_parts[] = 'about';
+}
 foreach($exclude_url_parts as $str) {
   if(strpos($currentURL,$str) !== false){
-    $showNav = false;
+    $showNav[] = $str;
+  }
+}
+
+$dont_show[] = 'competition-type';
+$dont_show[] = 'tuckfest-music/past-line-ups';
+foreach($dont_show as $str) {
+  if(strpos($currentURL,$str) !== false){
+    $showNav = '';
   }
 }
 
@@ -42,10 +50,12 @@ if( page_has_subnav() ) {
     		'taxonomy' => $tax,
     		'title_li' => '',
     	);
-      if( $tax != 'demo_clinic_type') { ?>
+      if( $tax != 'demo_clinic_type') { 
+        if( $showNav ) { ?>
       	<nav class="subnav" id="js-tsn">
-      		<?php //wp_list_categories($catArgs); ?>
+      		<?php wp_list_categories($catArgs); ?>
       	</nav>
+        <?php } ?>
     	<?php } ?>
     <?php } ?>
 
