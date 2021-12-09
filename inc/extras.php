@@ -63,7 +63,8 @@ function page_no_subnav($slug) {
 
 function page_has_subnav() {
   $list = '';
-  $no_subnav = array('faqs');
+  //$no_subnav = array('faqs');
+  $no_subnav = array();
   if( is_page() ) {
     global $post;
     $post_id = $post->ID;
