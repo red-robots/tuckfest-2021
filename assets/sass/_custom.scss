@@ -398,8 +398,90 @@ body.home {
   }
 }
 
-body.theme2021 .site-content {
-  padding-bottom: 0;
+body.theme2021 {
+  .site-content  {
+    padding-bottom: 0;
+  }
+  #masthead.site-header {
+    .subnav {
+      @media only screen and (min-width: $deskwidth) {
+        border-top: 1px solid rgba(255,255,255,.1);
+        padding: 15px 0 15px
+      }
+      a {
+        font-family: $font1;
+        font-weight: 500;
+        color: $teal;
+        &:after {
+          bottom: -1px;
+        }
+      }
+    }
+    ul.submenu {
+      background-color: $darkgreen;
+      opacity: 0;
+      position: absolute;
+      z-index: -9999;
+      // transition: all ease .3s;
+      li:after {display:none;}
+      a {
+        font-family: $font1;
+        font-weight: 500;
+        color: $teal;
+        &:after {
+          bottom: -1px;
+        }
+      }
+      &.active {
+        opacity: 1;
+        position: relative;
+        z-index: 99;
+        @media only screen and (min-width: $deskwidth) {
+          border-top: 1px solid rgba(255,255,255,.1);
+          padding: 15px 20px 15px
+        }
+      }
+    }
+  }
+  &.subpage #masthead.site-header {
+    position: relative;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    .mobile-wrapper .logo {
+      top: 18px;
+      transform: none;
+    }
+    &.fixed {
+      -webkit-animation-name: fadeInDown;
+      animation-name: fadeInDown;
+      position: fixed;
+    }
+  }
+  &.no-sub-nav {
+    #content {
+      margin-top: 0!important;
+    }
+  }
+  &.home {
+    ul.submenu {
+      &.active {
+        opacity: 1;
+        position: relative;
+        z-index: 99;
+        @media only screen and (min-width: $deskwidth) {
+          border-top: 1px solid rgba(255,255,255,.1);
+          padding: 15px 20px 15px
+        }
+      }
+    }
+  }
+  &.logged-in.admin-bar {
+    &.subpage #masthead.site-header {
+      top: 0;
+    }
+  }
 }
 
 footer.site-footer {
@@ -514,9 +596,9 @@ body.subpage {
   #primary-menu > li {
     margin-left: 2vw;
   }
-  #content.no-subnav {
-    margin-top: 58px;
-  }
+  // #content.no-subnav {
+  //   margin-top: 58px;
+  // }
   .special-title {
     background: $orange;
     padding: 10px 0;
@@ -649,6 +731,16 @@ body.subpage {
       display: none;
     }
   }
+}
+
+header.special-title h1 span.dark-orange,
+header.special-title h2 span.dark-orange,
+.left h1 span.dark-orange,
+.left h2 span.dark-orange,
+.lefty h1 span.dark-orange,
+.lefty h2 span.dark-orange {
+  font-family: $font5;
+  color: $yellowish;
 }
 
 .faqs-page {

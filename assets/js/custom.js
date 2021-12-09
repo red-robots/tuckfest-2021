@@ -779,4 +779,15 @@ jQuery(document).ready(function ($) {
     };
     $(document).ready($.proxy(anchorScrolls, 'init'));
   })(window.document, window.history, window.location);
+
+  $(window).scroll(function () {
+    var nav = $('#masthead');
+    var top = 200;
+
+    if ($(window).scrollTop() >= top) {
+      nav.addClass('fixed');
+    } else {
+      nav.removeClass('fixed');
+    }
+  });
 }); // END #####################################    END

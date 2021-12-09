@@ -60,3 +60,48 @@ function page_no_subnav($slug) {
   $no_subnav = array('faqs');
   return ( in_array($slug,$no_subnav) ) ? true : false;
 }
+
+function page_has_subnav() {
+  $list = '';
+  $no_subnav = array('faqs');
+  if( is_page() ) {
+    global $post;
+    $post_id = $post->ID;
+    $post_slug = $post->post_name;
+    if ( is_page() && $post->post_parent ) {
+      $ID = wp_get_post_parent_id($post_id);
+      $pageArgs = array(
+        'child_of' => $ID,
+        'title_li' => '',
+        'exclude'  => ''
+      );
+      ob_start();
+      wp_list_pages($pageArgs);
+      $list =  ob_get_contents();
+      ob_end_clean();
+    }
+
+    if( in_array( $post_slug, $no_subnav) ) {
+      $list = '';
+    }
+
+  } elseif( is_archive() ) {
+    $obj = get_queried_object();
+    $tax = ( isset($obj->taxonomy) && $obj->taxonomy ) ? $obj->taxonomy : '';
+    if($tax) {
+      $catArgs = array(
+        'taxonomy' => $tax,
+        'title_li' => '',
+      );
+      ob_start();
+      wp_list_categories($catArgs);
+      $list =  ob_get_contents();
+      ob_end_clean();
+    }
+  }
+
+  return ($list) ? true : false;
+}
+
+
+

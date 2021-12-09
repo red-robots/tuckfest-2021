@@ -10,7 +10,8 @@
 get_header(); 
 get_template_part('inc/coming-soon');
 $comingSoon = get_field('coming_soon');
-if($comingSoon[0] !== 'soon') :
+$soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
+if($soon !== 'soon') :
 $i=0;
 ?>
 

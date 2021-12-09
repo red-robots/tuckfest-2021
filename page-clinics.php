@@ -10,27 +10,21 @@
 get_header(); 
 get_template_part('inc/coming-soon');
 $comingSoon = get_field('coming_soon');
-if($comingSoon[0] !== 'soon') :
-
+$soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
+if($soon !== 'soon') :
 ?>
-
 	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main" role="main">
 
 			<?php
 			while ( have_posts() ) : the_post(); 
 
-			get_template_part('inc/banner');
+			get_template_part('inc/special-title');
+      get_template_part('inc/banner'); 
 
 			?>
 
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<header class="blue">
-						<div class="wrapper">
-							<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-						</div>
-					</header><!-- .entry-header -->
-
 					<div class="entry-content pagecontent">
 						<?php the_content(); ?>
 					</div><!-- .entry-content -->

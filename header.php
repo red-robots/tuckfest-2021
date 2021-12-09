@@ -91,8 +91,13 @@ $link_color = get_field('link_color', 'option');
 	}
 </style>
 </head>
-
-<body <?php body_class('theme2021'); ?>>
+<?php
+global $post; 
+$page_slug = ( isset($post->post_name) && $post->post_name ) ? $post->post_name : ''; 
+$has_sub_nav = ( page_has_subnav() ) ? 'has-sub-nav' : 'no-sub-nav';
+$extra_class = array('theme2021',$has_sub_nav);
+?>
+<body <?php body_class($extra_class); ?>>
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLX2GN6"
@@ -105,16 +110,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="wrapper">
-			<!-- <div class="mobile-header-scroll">
-				<div class="">
-	            	<a href="<?php bloginfo('url'); ?>">
-		            	<img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
-		            </a>
-		            <div class="event-date-mobile">
-			        	<?php the_field('event_date', 'option'); ?>
-			        </div>
-	            </div>
-			</div> -->
       <div class="mobile-wrapper">
         <div class="logo desktop">
           <a href="<?php bloginfo('url'); ?>">
