@@ -70,8 +70,7 @@ $soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
 				// print_r($eventComingSoon);
 				// echo '</pre>';
 
-				if( $eventComingSoon != 'soon' ) :
-			?>
+				if( $soon != 'soon' ) : ?>
 
 				<?php include( locate_template('inc/article.php', false, false)); ?>
 
