@@ -17,7 +17,7 @@ $soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
 
 			<?php
 			while ( have_posts() ) : the_post(); 
-        get_template_part('inc/special-title');
+        //get_template_part('inc/special-title');
         get_template_part('inc/banner');
 			endwhile; // End of the loop.?>
 

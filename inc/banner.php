@@ -12,7 +12,7 @@ if ( $flexslider ) { ?>
   <div class="flexslider">
     <?php if( is_page('home') && $showImg == 'yes' ) { ?>
     <div class="logo-w-date">
-      <img src="<?php echo $imgOverlay['url']; ?>">
+      <a href="<?php bloginfo('url'); ?>"><img src="<?php echo $imgOverlay['url']; ?>"></a>
       <?php if ($event_date) { ?>
       <div class="eventDate"><span><?php echo $event_date ?></span></div>
       <?php } ?>

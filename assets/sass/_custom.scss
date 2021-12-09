@@ -398,6 +398,15 @@ body.home {
   }
 }
 
+.drops-wrap {
+  width: 100%;
+  float: left;
+  position: relative;
+  .drops {
+    padding: 0 0;
+  }
+}
+
 body.theme2021 {
   .site-content  {
     padding-bottom: 0;
@@ -436,6 +445,7 @@ body.theme2021 {
         opacity: 1;
         position: relative;
         z-index: 99;
+        display: block;
         @media only screen and (min-width: $deskwidth) {
           border-top: 1px solid rgba(255,255,255,.1);
           padding: 15px 20px 15px
@@ -863,5 +873,16 @@ header.special-title h2 span.dark-orange,
   html #wpadminbar {
     position: fixed;
     top: 0;
+  }
+}
+
+nav.mobilemenu {
+  background-color: $darkgreen;
+  ul.main li,
+  ul.main li a {
+    font-family: $font1;
+    font-size: 18px;
+    font-weight: 600;
+    color: $yellowish;
   }
 }

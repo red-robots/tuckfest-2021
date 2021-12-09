@@ -1,6 +1,11 @@
 <?php 
 global $post; 
 $ID = get_the_ID();
+$url = get_permalink();
+$showNav = true;
+if(strpos($url,'/tuckfest-music/') !== false){
+  $showNav = false;
+}
 if( page_has_subnav() ) {
   if( is_page() ) { 
 
@@ -12,10 +17,11 @@ if( page_has_subnav() ) {
         'title_li' => '',
         'exclude'  => ''
       );
-      ?>
+      if(  $showNav ) { ?>
       <nav class="subnav"id="js-tsn">
         <?php wp_list_pages($pageArgs); ?>
       </nav>
+      <?php } ?>
     <?php
   	}
 
@@ -30,7 +36,7 @@ if( page_has_subnav() ) {
     	);
       if( $tax != 'demo_clinic_type') { ?>
       	<nav class="subnav" id="js-tsn">
-      		<?php wp_list_categories($catArgs); ?>
+      		<?php //wp_list_categories($catArgs); ?>
       	</nav>
     	<?php } ?>
     <?php } ?>
@@ -38,3 +44,4 @@ if( page_has_subnav() ) {
   <?php } ?>
 
 <?php } ?>
+

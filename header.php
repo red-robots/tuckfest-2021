@@ -152,6 +152,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div><!-- wrapper -->
 	</header><!-- #masthead -->
 
+
+  <?php get_template_part('inc/special-title'); ?>
+
+  <?php 
+  $id = array();
+  $ID = 0;
+  if(27 == $post->post_parent ) { // About
+    $id[] = 'has parent';
+  } elseif(978 == $post->post_parent ) { // Music
+    $id[] = 'has parent';
+  } elseif(21 == $post->post_parent ) { // buy
+    $id[] = 'has parent';
+  }
+  if( $id != '') {
+    if ( is_page() && $post->post_parent ) {
+      $ID = wp_get_post_parent_id($ID);
+      // Get Child pages
+      $pageArgs = array(
+        'child_of' => $ID,
+        'title_li' => ''
+      );
+
+      if( $post->post_parent )  { ?>
+      <div class="drops-wrap">
+        <div class="drops">
+          <div class="select">
+            <div class="select-styled blue"><?php the_title(); ?></div>
+            <ul class="select-options blue">
+              <?php wp_list_pages($pageArgs); ?>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <?php } ?>
+    <?php } ?>
+
+  <?php } ?>
+
 	<div id="content" class="site-content ">
 
 		<?php 
@@ -163,37 +201,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div class="alert">
 			<?php echo $alert_message; ?>
 		</div>
-	<?php } ?>
-
-	<?php 
-	$id = array();
-  $ID = 0;
-	if(27 == $post->post_parent ) { // About
-		$id[] = 'has parent';
-	} elseif(978 == $post->post_parent ) { // Music
-		$id[] = 'has parent';
-	} elseif(21 == $post->post_parent ) { // buy
-		$id[] = 'has parent';
-	}
-	if( $id != '') {
-		if ( is_page() && $post->post_parent ) {
-			$ID = wp_get_post_parent_id($ID);
-		}
-
-		// Get Child pages
-		$pageArgs = array(
-			'child_of' => $ID,
-			'title_li' => ''
-		);
-
-		 if( $post->post_parent )  { ?>
-			<div class="drops">
-				<div class="select">
-					<div class="select-styled blue"><?php the_title(); ?></div>
-					<ul class="select-options blue">
-						<?php wp_list_pages($pageArgs); ?>
-					</ul>
-				</div>
-			</div>
-		<?php } ?>
 	<?php } ?>

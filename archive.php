@@ -10,7 +10,7 @@
 get_header(); 
 
 $comingSoonImage = get_field('coming_soon', 'option');
-
+$soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
 ?>
 <div class="content-wrapper pagecontent">
 	<div id="primary" class="content-area-full">

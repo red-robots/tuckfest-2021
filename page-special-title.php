@@ -20,7 +20,7 @@ if($soon !== 'soon') :
 				<?php
 				while ( have_posts() ) : the_post(); 
 
-					get_template_part('inc/special-title');
+					//get_template_part('inc/special-title');
 					get_template_part('inc/banner');
 
 					$regLink = get_field('registration_link', 'option');
