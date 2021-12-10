@@ -41,36 +41,29 @@ jQuery(document).ready(function ($) {
   
   
   */
+  // if (window.location.href.indexOf("tuckfest-music") > -1) {
+  //     // alert('yes');
+  //     $('.main-navigation li.music').addClass('active');
+  // }
+  // if (window.location.href.indexOf("competition-type") > -1) {
+  //     $('.main-navigation li.competitions').addClass('active');
+  // }
+  // if (window.location.href.indexOf("schedule") > -1) {
+  //     $('.main-navigation li.schedule').addClass('active');
+  // }
+  // if (window.location.href.indexOf("clinics") > -1) {
+  //     $('.main-navigation li.clinics').addClass('active');
+  // }
+  // if (window.location.href.indexOf("tuckfest-yoga") > -1) {
+  //     $('.main-navigation li.yoga').addClass('active');
+  // }
+  // if (window.location.href.indexOf("buy") > -1) {
+  //     $('.main-navigation li.buy').addClass('active');
+  // }
+  // if (window.location.href.indexOf("about") > -1) {
+  //     $('.main-navigation li.about').addClass('active');
+  // }
 
-
-  if (window.location.href.indexOf("tuckfest-music") > -1) {
-    // alert('yes');
-    $('.main-navigation li.music').addClass('active');
-  }
-
-  if (window.location.href.indexOf("competition-type") > -1) {
-    $('.main-navigation li.competitions').addClass('active');
-  }
-
-  if (window.location.href.indexOf("schedule") > -1) {
-    $('.main-navigation li.schedule').addClass('active');
-  }
-
-  if (window.location.href.indexOf("clinics") > -1) {
-    $('.main-navigation li.clinics').addClass('active');
-  }
-
-  if (window.location.href.indexOf("tuckfest-yoga") > -1) {
-    $('.main-navigation li.yoga').addClass('active');
-  }
-
-  if (window.location.href.indexOf("buy") > -1) {
-    $('.main-navigation li.buy').addClass('active');
-  }
-
-  if (window.location.href.indexOf("about") > -1) {
-    $('.main-navigation li.about').addClass('active');
-  }
   /*
   
       Nav Dropdowns
@@ -598,12 +591,45 @@ jQuery(document).ready(function ($) {
   *	Smooth Scroll to Anchor
   *
   ------------------------------------*/
+  //  $('a').click(function(){
+  //     $('html, body').animate({
+  //         scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+  //     }, 500);
+  //     return false;
+  // });
 
-  $('a').click(function () {
-    $('html, body').animate({
-      scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
-    }, 500);
-    return false;
+  $('a[href*="#"]') // Remove links that don't actually link to anything
+  .not('[href="#"]').not('[href="#0"]').click(function (event) {
+    // On-page links
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']'); // Does a scroll target exist?
+
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function () {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+
+          if ($target.is(":focus")) {
+            // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+
+            $target.focus(); // Set focus again
+          }
+
+          ;
+        });
+      }
+    }
   });
   /*
   *
@@ -809,6 +835,34 @@ jQuery(document).ready(function ($) {
     $(document).ready($.proxy(anchorScrolls, 'init'));
   })(window.document, window.history, window.location);
 
+  $(".menu-item-type-custom.menu-item-has-children").on("click", function (e) {
+    e.preventDefault();
+    var parent_id = $(this).attr("id");
+    $(this).next(".sub-menu").addClass('active');
+
+    if ($("#subnavdata ul.sub-menu").length) {
+      $("#subnavdata ul.sub-menu").each(function () {
+        var submenu = $(this);
+
+        if (submenu.hasClass("link-" + parent_id)) {
+          submenu.toggleClass('active');
+        } else {
+          submenu.removeClass('active');
+        }
+      });
+    }
+  });
+  $("#primary-menu.menu li.menu-item-has-children").each(function () {
+    if ($(this).find("ul.sub-menu").length) {
+      var id = $(this).attr("id");
+      $(this).find("ul.sub-menu").addClass("link-" + id).appendTo("#subnavdata");
+    }
+  });
+  $("#primary-menu-mobile > li").each(function (k, v) {
+    var ctr = k + 2;
+    var duration = '0.' + ctr + 's';
+    $(this).css("transition-delay", duration);
+  });
   $(window).scroll(function () {
     var nav = $('#masthead');
     var top = 200;
@@ -818,5 +872,9 @@ jQuery(document).ready(function ($) {
     } else {
       nav.removeClass('fixed');
     }
+  });
+  $(".mobilemenu ul.sub-menu a").on("click", function (e) {
+    e.preventDefault();
+    window.location.href = $(this).attr("href");
   });
 }); // END #####################################    END

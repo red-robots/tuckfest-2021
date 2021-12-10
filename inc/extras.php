@@ -112,4 +112,13 @@ function getFullURL() {
 }
 
 
+add_action('admin_head', 'my_admin_head_scripts');
+function my_admin_head_scripts() { ?>
+  <style type="text/css">
+    .bws_shortcode_button_tooltip.wp-pointer-right {
+      display: none;
+    }
+  </style>
+<?php 
+}
 

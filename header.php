@@ -134,22 +134,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</a>
 		</div>
 
+    <div class="burger"><span></span></div>
+
 		<div style="display: none;">
 			<div id="search">
 				<?php get_search_form(); ?>
 			</div>
 		</div>
 
-		<?php get_template_part('inc/navmobile'); ?>		
-				 
-		<?php
-      get_template_part('inc/nav-main');
-      get_template_part('inc/subnav');
-			//wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) );
-    ?>
-		
-		
+		<?php //get_template_part('inc/navmobile'); ?>		
 		</div><!-- wrapper -->
+    <?php
+      get_template_part('inc/nav-main');
+      //get_template_part('inc/subnav');
+    ?>
 	</header><!-- #masthead -->
 
   <?php if(!is_home()) { get_template_part('inc/special-title'); } ?>
