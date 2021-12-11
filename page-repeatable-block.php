@@ -59,7 +59,9 @@ get_header();
 
               <?php if ( $image ) { ?>
               <div class="imagecol block">
-                <img src="<?php echo $image['url'] ?>" alt=" <?php echo $image['title'] ?>">
+                <div class="imagediv" style="background-image:url('<?php echo $image['url'] ?>')">
+                  <img src="<?php echo $image['url'] ?>" alt=" <?php echo $image['title'] ?>">
+                </div>
               </div> 
               <?php } ?>
             </div>

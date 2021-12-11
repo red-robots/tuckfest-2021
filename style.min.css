@@ -1846,7 +1846,8 @@ body.page-template-page-contact #content.no-subnav{margin-top:0 !important}
 .repeatable-content-blocks .content-block .textcol{background:#e43d30;color:#faf0d0;padding:30px}
 .repeatable-content-blocks .content-block .textcol a{color:#fffda5}
 .repeatable-content-blocks .content-block .textcol a:hover{color:#FFF}
-.repeatable-content-blocks .content-block .imagecol img{width:100%;height:auto;float:left}
+.repeatable-content-blocks .content-block .imagecol .imagediv{width:100%;height:100%;float:left;background-size:cover;background-position:center;background-repeat:no-repeat}
+.repeatable-content-blocks .content-block .imagecol img{width:100%;height:auto;float:left;visibility:hidden}
 .repeatable-content-blocks .content-block .rb_buttons{margin-top:25px;margin-left:-10px}
 .repeatable-content-blocks .content-block .btn2{padding:6px 12px;background:#ff7f30;color:#FFF !important;margin:10px 10px}
 .repeatable-content-blocks .content-block .btn2:hover{background:#ffac30}
