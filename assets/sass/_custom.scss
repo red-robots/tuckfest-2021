@@ -986,7 +986,7 @@ header.special-title h2 span.dark-orange,
 }
 
 body.page-template-page-contact #content.no-subnav {
-  margin-top: 0;
+  margin-top: 0!important;
 }
 
 .flexcol-content {
@@ -1018,7 +1018,7 @@ body.page-template-page-contact #content.no-subnav {
       }
     }
     a {
-      color: #fffda5;
+      color: $link2;
       text-decoration: underline;
       &:after {
         display: none;
@@ -1053,6 +1053,116 @@ body.page-template-page-contact #content.no-subnav {
     .flexcol {
       @media only screen and (min-width: $tabwidth) {
         width: 50%;
+      }
+    }
+  }
+}
+
+.repeatable-blocks {
+  a {
+    color: $darkgreen;
+    &:after {
+      background-color: $darkgreen;
+    }
+  }
+  .entry-content {
+    margin-bottom: 50px;
+    h1,h2,h3,h4,h5,h6 {
+      font-family: $font5;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+  } 
+}
+
+.btn2 {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all ease .3s;
+}
+
+.repeatable-content-blocks {
+  margin-bottom: 80px;
+  .content-block {
+    margin: 20px 0;
+    @include flexgroup();
+    .textcol, .imagecol {
+      width: 100%;
+      position: relative;
+    }
+    .textcol {
+      background: $red_orange;
+      color: $yellowish;
+      padding: 30px;
+      a {
+        color: $link2;
+        &:hover {
+          color: #FFF;
+        }
+      }
+    }
+    .imagecol {
+      img {
+        width: 100%;
+        height: auto;
+        float: left;
+      }
+    }
+    .rb_buttons {
+      margin-top: 25px;
+      margin-left: -10px;
+      @include tab {
+        margin-left: 0;
+      }
+    }
+    .btn2 {
+      padding: 6px 12px;
+      background: $orange;
+      color: #FFF!important;
+      margin: 10px 10px;
+      @include tab {
+        
+      }
+      &:hover {
+        background: #ffac30;
+      }
+    }
+    .rb_title {
+      font-family: $font1;
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0 0 20px;
+      color: $yellowish;
+      letter-spacing: none;
+    }
+    &.half {
+      .textcol {
+        @include tab {
+          width: 40%;
+          @include flexgroup();
+          @include flexbox-align-content(center);
+        }
+      }
+      .imagecol {
+        @include tab {
+          width: 60%;
+        }
+      }
+    }
+    &:nth-child(even) {
+      @include tab {
+        @include flexbox-direction(row-reverse);
+      }
+      .textcol {
+        background: $orange;
+      }
+      .btn2 {
+        background: $red_orange;
+        &:hover {
+          background: #ffac30;
+        }
       }
     }
   }

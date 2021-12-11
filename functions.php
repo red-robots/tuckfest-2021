@@ -69,6 +69,8 @@ require get_template_directory() . '/inc/block-all-registration-and-comments.php
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+require get_template_directory() . '/inc/anti-email-spam.php';
+
 /* convert hh:mm:ss to minutes */
 function convert_time_to_minutes($time){
 $time = explode(':', $time);

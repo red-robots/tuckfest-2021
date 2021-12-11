@@ -11,6 +11,33 @@ $text_color: #F3E3CC;
 $body_color: #F3E2CB;
 $yellowish: #FAF0D0;
 $teal: #6ABEA3;
+$link2: #fffda5;
+
+$portrait:480px;
+$xswidth: 600px;
+$tabwidth: 750px;
+$midwidth: 900px;
+$deskwidth: 1200px;
+$xxl: 1300px;
+
+// $size__site-main: 100%;
+// $size__site-sidebar: 25%;
+// $tabwidth: 750px;
+// $midwidth: 900px;
+// $deskwidth: 1200px;
+
+@mixin xxs { @media (min-width: $portrait) { @content; } }
+@mixin xs { @media (min-width: $xswidth) { @content; } }
+@mixin tab { @media (min-width: $tabwidth) { @content; } }
+@mixin mid { @media (min-width: $midwidth) { @content; } }
+@mixin desk {  @media (min-width: $deskwidth) { @content; } }
+@mixin xxl {  @media (min-width: $xxl) { @content; } }
+@mixin min($width) {
+  @media screen and (min-width: $width) { @content; }
+}
+@mixin max($width) {
+  @media screen and (max-width: $width) { @content; }
+}
 
 @mixin flexgroup() {
   @include flexbox();
@@ -24,3 +51,13 @@ $teal: #6ABEA3;
   @include flexbox-direction(row);
   @include flexbox-align-items(center);
 }
+
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+
