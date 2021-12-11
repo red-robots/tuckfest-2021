@@ -1942,7 +1942,7 @@ section.artists .desc,section.artists .showlater,section.home-tiles .desc,sectio
 }@media only screen and (min-width:750px){.flexcol-content{margin:0 -20px}
 .flexcol-content .flexcol .inside{padding:5vw}
 .flexcol-content.half .flexcol{width:50%}
-}@media(min-width:750px){.repeatable-content-blocks .content-block .rb_buttons{margin-left:0}
+}@media(min-width:750px){.flexcol-content .flexcol{padding:0}
 .repeatable-content-blocks .content-block.half .textcol{width:40%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-line-pack:center;align-content:center}
 .repeatable-content-blocks .content-block.half .imagecol{width:60%}
 .repeatable-content-blocks .content-block:nth-child(even){-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}

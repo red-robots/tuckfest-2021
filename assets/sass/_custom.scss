@@ -1007,6 +1007,9 @@ body.page-template-page-contact #content.no-subnav {
   .flexcol {
     width: 100%;
     padding: 20px 0;
+    @include tab {
+      padding: 0 0;
+    }
     .inside {
       padding: 20px;
       height: 100%;
@@ -1119,9 +1122,6 @@ body.page-template-page-contact #content.no-subnav {
     .rb_buttons {
       margin-top: 25px;
       margin-left: -10px;
-      @include tab {
-        margin-left: 0;
-      }
     }
     .btn2 {
       padding: 6px 12px;
