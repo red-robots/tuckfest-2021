@@ -1851,10 +1851,10 @@ body.page-template-page-contact #content.no-subnav{margin-top:0 !important}
 .repeatable-content-blocks .content-block .rb_buttons{margin-top:25px;margin-left:-10px}
 .repeatable-content-blocks .content-block .btn2{padding:6px 12px;background:#ff7f30;color:#FFF !important;margin:10px 10px}
 .repeatable-content-blocks .content-block .btn2:hover{background:#ffac30}
+.repeatable-content-blocks .content-block .btn2.btn-green{background:#235b4e}
+.repeatable-content-blocks .content-block .btn2.btn-green:hover{background:#058d6d}
 .repeatable-content-blocks .content-block .rb_title{font-family:"Recoleta",serif;font-size:30px;font-weight:600;line-height:1.2;margin:0 0 20px;color:#faf0d0;letter-spacing:none}
 .repeatable-content-blocks .content-block:nth-child(even) .textcol{background:#ff7f30}
-.repeatable-content-blocks .content-block:nth-child(even) .btn2{background:#e43d30}
-.repeatable-content-blocks .content-block:nth-child(even) .btn2:hover{background:#ffac30}
 nav.mobilemenu{background-color:#235b4e}
 nav.mobilemenu ul.main li,nav.mobilemenu ul.main li a{font-family:"Recoleta",serif;font-size:18px;font-weight:600;color:#faf0d0}
 @media screen and (min-width:600px){#cboxTitle{position:absolute;top:0;left:0;text-align:left;width:20%;font-weight:bold;color:#fff;padding:8% 2% 8% 2%;line-height:1.3;font-size:20px}

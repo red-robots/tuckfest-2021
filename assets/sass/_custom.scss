@@ -1128,11 +1128,14 @@ body.page-template-page-contact #content.no-subnav {
       background: $orange;
       color: #FFF!important;
       margin: 10px 10px;
-      @include tab {
-        
-      }
       &:hover {
         background: #ffac30;
+      }
+      &.btn-green {
+        background: $darkgreen;
+        &:hover {
+          background: #058d6d;
+        }
       }
     }
     .rb_title {
@@ -1165,12 +1168,12 @@ body.page-template-page-contact #content.no-subnav {
       .textcol {
         background: $orange;
       }
-      .btn2 {
-        background: $red_orange;
-        &:hover {
-          background: #ffac30;
-        }
-      }
+      // .btn2 {
+      //   background: $red_orange;
+      //   &:hover {
+      //     background: #ffac30;
+      //   }
+      // }
     }
   }
 }

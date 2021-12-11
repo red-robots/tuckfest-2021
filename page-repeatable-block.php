@@ -48,7 +48,7 @@ get_header();
                       $btn_text = ( isset($b['title']) && $b['title'] ) ? $b['title'] : '';
                       $btn_link = ( isset($b['url']) && $b['url'] ) ? $b['url'] : '';
                       if( $btn_text && $btn_link ) { ?>
-                        <a href="<?php echo $btn_link ?>" targe="<?php echo $btn_target ?>" class="btn2"><?php echo $btn_text ?></a>
+                        <a href="<?php echo $btn_link ?>" targe="<?php echo $btn_target ?>" class="btn2 btn-green"><?php echo $btn_text ?></a>
                       <?php } ?>
                      <?php } ?>
                    </div> 
