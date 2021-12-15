@@ -939,5 +939,6 @@ var $container = $('#grid'),
     window.location.href = $(this).attr("href");
   });
 
+
 });// END #####################################    END
 

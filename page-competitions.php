@@ -1,0 +1,167 @@
+<?php
+/**
+ * Template Name: Competitions
+ */
+
+get_header(); 
+?>
+<div id="primary" class="content-area-full competitions-page">
+  <main id="main" class="site-main" role="main">
+      <?php while ( have_posts() ) : the_post(); 
+        get_template_part('inc/banner');
+      ?>
+      <div class="wrapper pagecontent">
+        <?php if ( get_the_content() ) { ?>
+        <div class="entry-content">
+          <?php the_content(); ?>
+        </div>
+        <?php } ?>
+      </div>
+      <?php endwhile; ?>
+
+
+      <?php 
+      $filter_day = ( isset($_GET['day']) && $_GET['day'] ) ? $_GET['day'] : '';
+      // $today = date('Y-m-d');
+      // $time = date('H:i:s'); 
+      $today = date('Y-m-d H:i:s');
+
+      $args = array(
+        'posts_per_page'  => -1,
+        'post_type'       => 'competition',
+        'post_status'     => 'publish',
+      );
+
+      if( $filter_day ) {
+
+        $args['tax_query'] = array(
+          'relation' => 'AND',
+          array(
+            'taxonomy' => 'event_day',
+            'field'    => 'name',
+            'terms'    => $filter_day,
+          )
+        );
+
+        $args['meta_query'] = array(
+         'relation' => 'AND',
+          array(
+           'key' => 'eventStartDate',
+           'compare' => 'EXISTS',
+          )
+        );
+
+        $args['orderby'] = 'meta_value';
+        $args['order'] = 'DESC';
+
+      } else {
+
+        $args['meta_query'] = array(
+         'relation' => 'OR',
+          array(
+           'key' => 'eventStartDate',
+           'compare' => '>=',
+           'value' => $today,
+          ),
+          array(
+           'key' => 'eventStartDate',
+           'compare' => '=',
+           'value' => ''
+          ),
+          array(
+           'key' => 'eventStartDate',
+           'compare' => '=',
+           'value' => NULL
+          ),
+          array(
+           'key' => 'eventStartDate',
+           'compare' => 'NOT EXISTS', // works!
+           'value' => '' // This is ignored, but is necessary...
+          ),
+        );
+        $args['orderby'] = 'meta_value';
+        $args['order'] = 'DESC';
+      }
+
+
+      // echo "<pre>";
+      // print_r($args);
+      // echo "</pre>";
+      
+
+      $entries =  new WP_Query($args);
+      $comingSoon = get_field('coming_soon', 'option');
+      $comingSoonURL = ($comingSoon) ? $comingSoon['url'] : get_images_dir('competition-coming-soon.gif');
+      ?>
+
+      <div class="entries-wrapper">
+        <div class="entries-inner">
+        <?php if ( $entries->have_posts() ) {  $totalFound = $entries->found_posts; ?>
+          
+          <?php include( locate_template('template-parts/competitions-filter-form.php') ); ?>
+          
+          <div class="entries">
+            <?php while ( $entries->have_posts() ) : $entries->the_post(); 
+              $eventStartDate = get_field("eventStartDate");
+              $start_date = ($eventStartDate) ? date('l, M d, Y',strtotime($eventStartDate)) . '<span>&#8226;</span>' . date('h:i a',strtotime($eventStartDate)) : '';
+            ?>
+            <div class="entry animated fadeIn">
+              <div class="pad">
+                <div class="image">
+                    <?php 
+                    if(has_post_thumbnail()) {
+                      the_post_thumbnail('tile');
+                    } else { ?>
+                      <img src="<?php echo $comingSoonURL; ?>" alt="" aria-hidden='true'>
+                    <?php } ?>
+                </div>
+                <div class="info">
+                  <?php the_title( '<h2 class="title">', '</h2>' ); ?>
+                  <?php if ($start_date) { ?>
+                  <span class="date"><?php echo $start_date ?></span>
+                  <?php } ?>
+                </div>
+              </div>
+            </div>
+            <?php endwhile; wp_reset_postdata(); ?>
+          </div>
+
+      <?php } else { ?>
+        <div class="no-result">
+          <?php include( locate_template('template-parts/competitions-filter-form.php') ); ?>
+          <h2>No item found.</h2>
+        </div>
+      <?php } ?>
+        </div>
+      </div>
+
+    </div>
+  </main><!-- #main -->
+</div><!-- #primary -->
+
+<script type="text/javascript">
+jQuery(document).ready(function ($) {
+  /* Select2 */
+  do_select2();
+  function do_select2() {
+    $('.jselect').select2({
+      placeholder: "Day",
+      allowClear: true,
+      minimumResultsForSearch: -1
+    });
+  }
+  $(document).on("change","select.filter-select",function(){
+    var opt = this.value;
+    var baseURL = $("#filter").attr("action");
+    var filtered = baseURL + '?day=' + opt;
+    $(".entries-wrapper").load(filtered+" .entries-inner",function(){
+      var changeURL = (opt) ? filtered : baseURL;
+      history.replaceState('',document.title,changeURL);
+      do_select2();
+    });
+    //$("#filter").trigger("submit");
+  });
+});
+</script>
+<?php
+get_footer();

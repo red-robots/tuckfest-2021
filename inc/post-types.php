@@ -309,3 +309,46 @@ function build_taxonomies() {
   ) );
   
 } // End build taxonomies
+
+
+
+/* ============= CUSTOM COLUMNS ============= */
+
+// Add the custom columns to the position post type:
+add_filter( 'manage_posts_columns', 'set_custom_cpt_columns' );
+function set_custom_cpt_columns($columns) {
+    global $wp_query;
+    $query = isset($wp_query->query) ? $wp_query->query : '';
+    $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
+    
+    if($post_type=='competition') {
+        unset($columns['date']);
+        $columns['title'] = __( 'Title', 'bellaworks' );
+        $columns['event_start_date'] = __( 'Event Start Date', 'bellaworks' );
+        $columns['date'] = __( 'Date', 'bellaworks' );
+    }
+    
+    return $columns;
+}
+
+//Add the data to the custom columns for the book post type:
+add_action( 'manage_posts_custom_column' , 'custom_post_column', 10, 2 );
+function custom_post_column( $column, $post_id ) {
+    global $wp_query;
+    $query = isset($wp_query->query) ? $wp_query->query : '';
+    $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
+    
+    if($post_type=='competition') {
+        switch ( $column ) {
+
+            case 'event_start_date' :
+                $date = get_field("eventStartDate",$post_id);
+                $start_date = ($date) ? date('M d, Y @ h:i a',strtotime($date)) : '';
+                echo $start_date;
+                break;
+        }
+    }
+    
+}
+
+/* ============= end of CUSTOM COLUMNS ============= */

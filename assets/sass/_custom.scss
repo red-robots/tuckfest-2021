@@ -1257,3 +1257,188 @@ nav.mobilemenu {
     color: $yellowish;
   }
 }
+
+.competitions-page {
+  .entries-wrapper {
+    @include div_wrapper();
+  }
+  .entries {
+    @include flexgroup();
+    margin-top: 50px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: 80px;
+  }
+  .entry {
+    width: 100%;
+    padding: 10px;
+    @include mid {
+      width: 33.33%;
+    }
+    div.pad,
+    div.image,
+    div.info {
+      width: 100%;
+    }
+    div.pad {
+      height: 100%;
+      background: $darkgreen;
+    }
+    div.image {
+      float: left;
+      img {
+        width: 100%;
+        height: auto;
+        float: left;
+      }
+    }
+    div.info {
+      float: left;
+      background: $darkgreen;
+      padding: 15px;
+      .title {
+        font-family: $font2;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.2;
+        text-transform: none;
+        letter-spacing: 0;
+        color: $yellowish;
+      }
+      .date {
+        display: block;
+        color: $orange;
+        font-size: 12px;
+        span {
+          display: inline-block;
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+  .no-result {
+    min-height: 20em;
+    h2 {
+      font-family: $font1;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: 0;
+      color: $darkgreen;
+      margin: 40px 0 0;
+    }
+  }
+}
+
+.filter-action {
+  .filter-label {
+    font-family: $font1;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: $darkgreen;
+    text-transform: uppercase;
+    position: relative;
+    top: -11px;
+  }
+  .filter-field {
+    display: inline-block;
+    max-width: 340px;
+    width: 100%;
+    margin-left: 6px;
+    position: relative;
+    overflow: hidden;
+    select {
+      width: 100%;
+      background-color: transparent;
+      border: 1px solid $darkgreen;
+      height: 30px;
+      -webkit-appearance: none;
+      box-shadow: none;
+      outline: none;
+      padding: 0 8px;
+    }
+
+    .select2-container--default .select2-selection--single {
+      background-color: transparent;
+      border: 1px solid $darkgreen;
+      border-radius: 0;
+      color: $darkgreen;
+      height: 30px;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__clear {
+      -webkit-appearance:none;
+      border: none;
+      box-shadow: none;
+      margin: 0 0;
+      padding: 0 8px;
+      position: absolute;
+      top: 0;
+      right: 25px;
+      height: 29px;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+      width: 28px;
+      height: 29px;
+    }
+    .select2-selection__rendered {
+      font-family: $font1;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 28px;
+      color: $darkgreen;
+      text-transform: uppercase;
+    }
+    .select2-selection__arrow {
+      b {
+        visibility: hidden;
+      }
+      &:before, &:after {
+        content:"";
+        display: block;
+        width: 10px;
+        height: 2px;
+        background: $darkgreen;
+        position: absolute;
+        top: 13px;
+        right: 6px;
+      }
+      &:before {
+        transform: translateX(-6px) rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+.select2-dropdown {
+  background-color: #F3E2CB;
+  border: 1px solid $darkgreen;
+  margin-top: 32px;
+}
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+  color: $darkgreen;
+}
+.select2-results__option {
+  font-family: $font1;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 28px;
+  color: $darkgreen;
+  text-transform: uppercase;
+}
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  background-color: #F3E2CB;
+  border: 1px solid $darkgreen;
+  border-radius: 0;
+  -webkit-appearance: none;
+  box-shadow: none;
+  outline: none;
+  font-family: $font1;
+  font-size: 14px;
+  font-weight: 600;
+  color: $darkgreen;
+}
+
+

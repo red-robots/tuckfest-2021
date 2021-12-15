@@ -39,6 +39,12 @@ $xxl: 1300px;
   @media screen and (max-width: $width) { @content; }
 }
 
+@mixin div_wrapper() {
+  max-width: 80%;
+  width: 100%;
+  margin:0 auto;
+}
+
 @mixin flexgroup() {
   @include flexbox();
   @include flexbox-wrap(wrap);
@@ -65,5 +71,6 @@ $xxl: 1300px;
 @function shade($color, $percentage) {
   @return mix(black, $color, $percentage);
 }
+
 
 

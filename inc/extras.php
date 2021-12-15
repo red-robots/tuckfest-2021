@@ -111,6 +111,10 @@ function getFullURL() {
                 $_SERVER['REQUEST_URI'];
 }
 
+function get_images_dir($fileName=null) {
+    return get_bloginfo('template_url') . '/images/' . $fileName;
+}
+
 
 add_action('admin_head', 'my_admin_head_scripts');
 function my_admin_head_scripts() { ?>
