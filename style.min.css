@@ -1993,11 +1993,11 @@ nav.mobilemenu ul.main li,nav.mobilemenu ul.main li a{font-family:"Recoleta",ser
 .select2-results__option{font-family:"Recoleta",serif;font-size:14px;font-weight:600;line-height:28px;color:#235b4e;text-transform:uppercase}
 .select2-container--default .select2-search--dropdown .select2-search__field{background-color:#f3e2cb;border:1px solid #235b4e;border-radius:0;-webkit-appearance:none;-webkit-box-shadow:none;box-shadow:none;outline:0;font-family:"Recoleta",serif;font-size:14px;font-weight:600;color:#235b4e}
 .entry-title{font-family:"Recoleta",serif;font-size:30px;font-weight:600;line-height:28px;color:#235b4e;text-transform:uppercase;letter-spacing:0}
-.single-competition{padding:50px 0}
-.single-competition .entry-title{margin:0 0 50px}
-.single-competition .event-info{width:100%;float:left;background:#235b4e;color:#f3e3cc}
-.single-competition .event-info .pad{padding:20px}
-.single-competition .event-info a{color:#ff7f30}
+#primary.single-competition{padding:50px 0}
+#primary.single-competition .entry-title{margin:0 0 50px}
+#primary.single-competition .event-info{width:100%;float:left;background:#235b4e;color:#f3e3cc}
+#primary.single-competition .event-info .pad{padding:20px}
+#primary.single-competition .event-info a{color:#ff7f30}
 ul.tabs-info{margin:0;padding:0;list-style:none;width:100%;float:left;position:relative}
 ul.tabs-info li{display:inline-block;float:left;font-family:"Recoleta",serif;font-size:18px;font-weight:500;text-transform:uppercase;color:#f3e3cc;margin:0 2px}
 ul.tabs-info a,ul.tabs-info span.nolink{padding:4px 15px}
