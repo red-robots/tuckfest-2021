@@ -1286,6 +1286,11 @@ nav.mobilemenu {
     }
     div.image {
       float: left;
+      a {
+        display: block;
+        width: 100%;
+        float: left;
+      }
       img {
         width: 100%;
         height: auto;
@@ -1296,7 +1301,8 @@ nav.mobilemenu {
       float: left;
       background: $darkgreen;
       padding: 15px;
-      .title {
+      .title,
+      .title a {
         font-family: $font2;
         font-size: 15px;
         font-weight: 400;
@@ -1304,6 +1310,14 @@ nav.mobilemenu {
         text-transform: none;
         letter-spacing: 0;
         color: $yellowish;
+      }
+      .title a {
+        display: block;
+        text-decoration: none;
+        olor: $yellowish;
+        &:hover {
+          opacity: 0.75;
+        }
       }
       .date {
         display: block;

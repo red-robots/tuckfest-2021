@@ -108,15 +108,17 @@ get_header();
             <div class="entry animated fadeIn">
               <div class="pad">
                 <div class="image">
+                  <a href="<?php echo get_permalink(); ?>">
                     <?php 
                     if(has_post_thumbnail()) {
                       the_post_thumbnail('tile');
                     } else { ?>
                       <img src="<?php echo $comingSoonURL; ?>" alt="" aria-hidden='true'>
                     <?php } ?>
+                  </a>  
                 </div>
                 <div class="info">
-                  <?php the_title( '<h2 class="title">', '</h2>' ); ?>
+                  <h2 class="title"><a href="<?php echo get_permalink(); ?>"><?php the_title() ?></a></h2>
                   <?php if ($start_date) { ?>
                   <span class="date"><?php echo $start_date ?></span>
                   <?php } ?>

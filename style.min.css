@@ -1967,9 +1967,12 @@ nav.mobilemenu ul.main li,nav.mobilemenu ul.main li a{font-family:"Recoleta",ser
 .competitions-page .entry div.pad,.competitions-page .entry div.image,.competitions-page .entry div.info{width:100%}
 .competitions-page .entry div.pad{height:100%;background:#235b4e}
 .competitions-page .entry div.image{float:left}
+.competitions-page .entry div.image a{display:block;width:100%;float:left}
 .competitions-page .entry div.image img{width:100%;height:auto;float:left}
 .competitions-page .entry div.info{float:left;background:#235b4e;padding:15px}
-.competitions-page .entry div.info .title{font-family:"DM Sans",sans-serif;font-size:15px;font-weight:400;line-height:1.2;text-transform:none;letter-spacing:0;color:#faf0d0}
+.competitions-page .entry div.info .title,.competitions-page .entry div.info .title a{font-family:"DM Sans",sans-serif;font-size:15px;font-weight:400;line-height:1.2;text-transform:none;letter-spacing:0;color:#faf0d0}
+.competitions-page .entry div.info .title a{display:block;text-decoration:none;olor:#faf0d0}
+.competitions-page .entry div.info .title a:hover{opacity:.75}
 .competitions-page .entry div.info .date{display:block;color:#ff7f30;font-size:12px}
 .competitions-page .entry div.info .date span{display:inline-block;margin:0 5px}
 .competitions-page .no-result{min-height:20em}
