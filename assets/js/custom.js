@@ -835,21 +835,25 @@ jQuery(document).ready(function ($) {
     $(document).ready($.proxy(anchorScrolls, 'init'));
   })(window.document, window.history, window.location);
 
-  $(".menu-item-type-custom.menu-item-has-children").on("click", function (e) {
-    e.preventDefault();
-    var parent_id = $(this).attr("id");
-    $(this).next(".sub-menu").addClass('active');
+  $(".menu-item-type-custom.menu-item-has-children > a").on("click", function (e) {
+    var link = $(this).attr("href").trim().replace(/\s/g, '');
 
-    if ($("#subnavdata ul.sub-menu").length) {
-      $("#subnavdata ul.sub-menu").each(function () {
-        var submenu = $(this);
+    if (link == '#') {
+      e.preventDefault();
+      var parent_id = $(this).parents(".menu-item-has-children").attr("id");
+      $(this).next(".sub-menu").addClass('active');
 
-        if (submenu.hasClass("link-" + parent_id)) {
-          submenu.toggleClass('active');
-        } else {
-          submenu.removeClass('active');
-        }
-      });
+      if ($("#subnavdata ul.sub-menu").length) {
+        $("#subnavdata ul.sub-menu").each(function () {
+          var submenu = $(this);
+
+          if (submenu.hasClass("link-" + parent_id)) {
+            submenu.toggleClass('active');
+          } else {
+            submenu.removeClass('active');
+          }
+        });
+      }
     }
   });
   $("#primary-menu.menu li.menu-item-has-children").each(function () {

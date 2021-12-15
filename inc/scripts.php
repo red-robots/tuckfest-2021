@@ -25,7 +25,7 @@ function acstarter_scripts() {
 		);
 
     wp_enqueue_script( 
-      'acstarter-custom', 
+      'acstarter-select2', 
       get_template_directory_uri() . '/assets/js/vendors/select2.min.js', 
       array(), '4.1.0', 
       true 
