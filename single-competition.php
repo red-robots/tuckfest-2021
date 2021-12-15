@@ -7,7 +7,7 @@
 		<?php while ( have_posts() ) : the_post(); ?>
       <?php  
       $eventStartDate = get_field("eventStartDate");
-      $start_date = ($eventStartDate) ? date('l, M d, Y',strtotime($eventStartDate)) . '<span>&ndash;</span>' . date('h:i a',strtotime($eventStartDate)) : '';
+      $start_date = ($eventStartDate) ? date('l, M d, Y',strtotime($eventStartDate)) . ' <span>&ndash;</span> ' . date('h:i a',strtotime($eventStartDate)) : '';
       ?>
       <div class="wrapper">
         <h2 class="entry-title"><?php the_title(); ?></h2>
