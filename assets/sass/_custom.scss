@@ -1454,5 +1454,82 @@ nav.mobilemenu {
   font-weight: 600;
   color: $darkgreen;
 }
+.subpage-banner {
+
+}
+.entry-title {
+  font-family: $font1;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 28px;
+  color: $darkgreen;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+.single-competition {
+  padding: 50px 0;
+  .entry-title {
+    margin: 0 0 50px;
+  }
+  .event-info {
+    width: 100%;
+    float: left;
+    background: $darkgreen;
+    color: $text_color;
+    .pad {
+      padding: 20px;
+    }
+    a {
+      color: $orange;
+    }
+  }
+}
+ul.tabs-info {
+  margin: 0 0;
+  padding: 0 0;
+  list-style: none;
+  width: 100%;
+  float: left;
+  position: relative;
+  @include mid {
+    left: -2px;
+  }
+  li {
+    display: inline-block;
+    float: left;
+    font-family: $font1;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $text_color;
+    margin:0 2px;
+  }
+  a, span.nolink {
+    padding: 4px 15px;
+  }
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: $text_color;
+  }
+  span {
+    display: inline-block;
+  }
+  span.orange {
+    background: $orange;
+  }
+  span.red {
+    background: $red_orange;
+    a:hover {
+      background:shade($red_orange,30%);
+    }
+  }
+  span.gray {
+    background: #6c6c6c;
+    a:hover {
+      background:shade(#6c6c6c,30%);
+    }
+  }
+}
 
 
