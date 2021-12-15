@@ -129,7 +129,7 @@ get_header();
       <?php } else { ?>
         <div class="no-result">
           <?php include( locate_template('template-parts/competitions-filter-form.php') ); ?>
-          <h2>No item found.</h2>
+          <h2>No results found.</h2>
         </div>
       <?php } ?>
         </div>
@@ -141,26 +141,7 @@ get_header();
 
 <script type="text/javascript">
 jQuery(document).ready(function ($) {
-  /* Select2 */
-  do_select2();
-  function do_select2() {
-    $('.jselect').select2({
-      placeholder: "Day",
-      allowClear: true,
-      minimumResultsForSearch: -1
-    });
-  }
-  $(document).on("change","select.filter-select",function(){
-    var opt = this.value;
-    var baseURL = $("#filter").attr("action");
-    var filtered = baseURL + '?day=' + opt;
-    $(".entries-wrapper").load(filtered+" .entries-inner",function(){
-      var changeURL = (opt) ? filtered : baseURL;
-      history.replaceState('',document.title,changeURL);
-      do_select2();
-    });
-    //$("#filter").trigger("submit");
-  });
+  
 });
 </script>
 <?php
