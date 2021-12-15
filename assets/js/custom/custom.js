@@ -608,7 +608,7 @@ var $container = $('#grid'),
 
 
   // filter buttons
-  $('select').change(function(){
+  $('select').not('.filter-select').change(function(){
     var $this = $(this);
     
     // store filter value in object
@@ -629,10 +629,32 @@ var $container = $('#grid'),
   });
 
   // show filtered results 
-  $('select.option-set').on('change', function() {
+  $('select.option-set').not('.filter-select').on('change', function() {
     $('#outer-container').removeClass('closed');
     $('#outer-container').addClass('open');
-  })
+  });
+
+
+  /* Select2 */
+  do_select2();
+  function do_select2() {
+    $('.jselect').select2({
+      placeholder: "Day",
+      allowClear: true,
+      minimumResultsForSearch: -1
+    });
+  }
+  $(document).on("change","select.filter-select",function(){
+    var opt = this.value;
+    var baseURL = $("#filter").attr("action");
+    var filtered = baseURL + '?day=' + opt;
+    $(".entries-wrapper").load(filtered+" .entries-inner",function(){
+      var changeURL = (opt) ? filtered : baseURL;
+      history.replaceState('',document.title,changeURL);
+      do_select2();
+    });
+  });
+
       
       // $('ul>li').click(function() {
       //     var $this = $(this);
