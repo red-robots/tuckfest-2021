@@ -199,6 +199,9 @@ body.home {
       }
     }
   }
+  @media only screen and (max-width: $tabwidth) {
+    display: none;
+  }
 }
 
 

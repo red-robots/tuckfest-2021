@@ -872,11 +872,15 @@ jQuery(document).ready(function ($) {
           var submenu = $(this);
 
           if (submenu.hasClass("link-" + parent_id)) {
-            submenu.toggleClass('active');
+            submenu.toggleClass('animated fadeInDown active');
           } else {
-            submenu.removeClass('active');
+            submenu.removeClass('animated fadeInDown active');
           }
         });
+
+        if ($('body').has('home')) {
+          $("body.home #subNavs").addClass("animated fadeInDown");
+        }
       }
     }
   });

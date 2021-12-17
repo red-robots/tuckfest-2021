@@ -2197,6 +2197,7 @@ body.theme2021.home ul.submenu.active{border-top:1px solid rgba(255,255,255,0.1)
 }@media screen and (max-width:768px){.flex-container.slide-horizontal .flex-direction-nav li .prev,.flex-direction-nav li .prev{display:none}
 .flex-container.slide-horizontal .flex-direction-nav li .next,.flex-direction-nav li .next{display:none}
 .flexslider .flex-control-nav{display:none}
+}@media only screen and (max-width:750px){#subNavs{display:none}
 }@media screen and (max-width:750px){.home-tiles-new .home-tile span.image{position:relative}
 .home-tiles-new .home-tile span.image-mirror{display:none}
 .home-tiles-new .home-tile.even .tile-link:hover span.image-mirror{display:block}
