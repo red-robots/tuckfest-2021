@@ -8,7 +8,7 @@ if( $soon== 'soon' ) {
   $text3 = ( isset($comingSoonText['text_dark_orange']) && $comingSoonText['text_dark_orange'] ) ? $comingSoonText['text_dark_orange'] : 'Soon';
   $texts = array($text1,$text2,$text3); 
   ?>
-  <div class="coming-soon">
+  <div class="coming-soon coming-soon-wrap">
   	<div class="lefty">
       <?php if( $texts && array_filter($texts) ) { ?>
   		<h2>
