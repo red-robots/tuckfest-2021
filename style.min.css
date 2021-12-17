@@ -1173,9 +1173,9 @@ button:focus{outline:0}
 @font-face{font-family:'GoBold';src:url("fonts/Gobold-Extra2.ttf.woff") format("woff");font-style:normal;font-weight:normal;text-rendering:optimizeLegibility}
 @font-face{font-family:'CoCo';src:url("fonts/COCOGOOSE.ttf.woff") format("woff");font-style:normal;font-weight:normal;text-rendering:optimizeLegibility}
 body,button,input,select,textarea{color:#404040;font-family:sans-serif;font-size:16px;font-size:1rem;line-height:1.5}
-h1,h2,h3,h4,h5,h6{clear:both;font-family:"CoCo",sans-serif;font-weight:100;letter-spacing:3px;color:#f4a74e;text-transform:uppercase}
+h1,h2,h3,h4,h5,h6{clear:both;font-family:"Recoleta",serif;font-weight:600;letter-spacing:0;color:#ff7f30;text-transform:uppercase}
 .entry-content h1{font-size:30px}
-h1.entry-title{width:100%;text-align:center;font-size:20pt;font-family:"GoBold",sans-serif;color:#092745;margin:40px auto 50px auto;float:left}
+h1.entry-title{width:100%;text-align:center;font-size:20pt;font-family:"Recoleta",serif;color:#092745;margin:40px auto 50px auto;float:left}
 h2.home{color:#092745;font-size:3rem}
 p{margin-bottom:1.5em}
 dfn,cite,em,i{font-style:italic}
@@ -1874,6 +1874,20 @@ body.theme2021.subpage #masthead.site-header.fixed{-webkit-animation-name:fadeIn
 body.theme2021.no-sub-nav #content{margin-top:0 !important}
 body.theme2021.home ul.submenu.active{opacity:1;position:relative;z-index:99}
 body.theme2021.logged-in.admin-bar.subpage #masthead.site-header{top:0}
+body.theme2021 .art-contents.active{text-align:center}
+body.theme2021 .art-contents .a-title{font-family:"DM Sans",sans-serif;font-weight:500;color:#235b4e}
+body.theme2021 .art-contents a{color:#235b4e}
+body.theme2021 .art-contents a:hover{color:#ff7f30}
+body.theme2021 .art-contents h3{font-family:"Recoleta",serif;font-weight:600;letter-spacing:0;color:#ff7f30}
+body.theme2021 section.artists .artists-tile header h2.active,body.theme2021 .art-close{color:#235b4e !important}
+body.theme2021 .coming-soon{width:100%;float:left;border-top:3px solid #f3e3cc;border-bottom:3px solid #f3e3cc}
+body.theme2021 .coming-soon .lefty h2 span.tan{font-family:"DM Sans",sans-serif;font-weight:400;color:#f3e3cc}
+body.theme2021 .coming-soon .lefty h2 span.orange{font-family:"DM Sans",sans-serif;font-weight:600}
+body.theme2021 .coming-soon .lefty h2 span.dark-orange{font-family:"Recoleta",serif;font-weight:600}
+body.theme2021 .coming-soon .righty{background-color:#ff7f30}
+body.theme2021 article .copy h1{letter-spacing:1px;color:#ff7f30}
+body.theme2021 .entry-content a{color:#235b4e}
+body.theme2021 .entry-content a:hover:after{background-color:#235b4e}
 footer.site-footer{background-color:#235b4e;color:#f3e3cc}
 footer.site-footer .footer-content{position:relative}
 footer.site-footer .footer-content:before{content:"";display:block;width:100%;height:1px;opacity:.35;background-image:url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='white' stroke-width='2' stroke-dasharray='6%2c 12' stroke-dashoffset='26' stroke-linecap='square'/%3e%3c/svg%3e")}
@@ -1917,7 +1931,17 @@ body.subpage .schedule .col-wrap .contents ul.list>li:nth-child(1){background-co
 body.subpage .schedule .col-wrap .contents ul.list>li:nth-child(even){background:rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.15)}
 body.subpage footer.site-footer{padding-top:0}
 body.subpage footer.site-footer .footer-content:before{display:none}
+header.special-title{z-index:100}
+header.special-title .wrapper{position:relative}
 header.special-title h1 span.dark-orange,header.special-title h2 span.dark-orange,.left h1 span.dark-orange,.left h2 span.dark-orange,.lefty h1 span.dark-orange,.lefty h2 span.dark-orange{font-family:"EB Garamond",serif;color:#faf0d0}
+.registrationBtn{display:inline-block;position:absolute;left:0;bottom:-112px}
+.registrationBtn a.register-btn{display:inline-block;text-decoration:none;color:#FFF;text-transform:uppercase;font-family:"DM Sans",sans-serif;font-size:18px;font-weight:400;line-height:50px;letter-spacing:1px;background:#e43d30;height:52px;width:120px;text-align:center;position:relative;-webkit-box-shadow:-12px 8px 17px rgba(0,0,0,0.3);box-shadow:-12px 8px 17px rgba(0,0,0,0.3);-webkit-transition:none !important;transition:none !important}
+.registrationBtn a.register-btn span{font-family:"DM Sans",sans-serif}
+.registrationBtn a.register-btn:before,.registrationBtn a.register-btn:after{content:"";display:block;width:0;height:0;position:absolute;bottom:-25px}
+.registrationBtn a.register-btn:before{left:0;border-top:25px solid #e43d30;border-right:65px solid transparent}
+.registrationBtn a.register-btn:after{right:0;border-top:25px solid #e43d30;border-left:65px solid transparent}
+.registrationBtn a.register-btn:hover{background:#235b4e}
+.registrationBtn a.register-btn:hover:before,.registrationBtn a.register-btn:hover:after{border-top-color:#235b4e}
 .faqs-page .faqrow .question{font-family:"Recoleta",serif;font-weight:600;color:#235b4e}
 .faqs-page .faqrow .plus-minus-toggle{-webkit-transform:translateY(-4px) scale(0.6);transform:translateY(-4px) scale(0.6)}
 .faqs-page .faqrow .plus-minus-toggle:before,.faqs-page .faqrow .plus-minus-toggle:after{background:#235b4e}
@@ -1951,7 +1975,7 @@ body.page-template-page-contact #content.no-subnav{margin-top:0 !important}
 .repeatable-content-blocks .content-block .textcol a{color:#fffda5}
 .repeatable-content-blocks .content-block .textcol a:hover{color:#FFF}
 .repeatable-content-blocks .content-block .imagecol .imagediv{width:100%;height:100%;float:left;background-size:cover;background-position:center;background-repeat:no-repeat}
-.repeatable-content-blocks .content-block .imagecol img{width:100%;height:auto;float:left;visibility:hidden}
+.repeatable-content-blocks .content-block .imagecol img{width:100%;height:auto;float:left;display:none}
 .repeatable-content-blocks .content-block .rb_buttons{margin-top:25px;margin-left:-10px}
 .repeatable-content-blocks .content-block .btn2{padding:6px 12px;background:#ff7f30;color:#FFF !important;margin:10px 10px}
 .repeatable-content-blocks .content-block .btn2:hover{background:#ffac30}
@@ -1959,6 +1983,7 @@ body.page-template-page-contact #content.no-subnav{margin-top:0 !important}
 .repeatable-content-blocks .content-block .btn2.btn-green:hover{background:#058d6d}
 .repeatable-content-blocks .content-block .rb_title{font-family:"Recoleta",serif;font-size:30px;font-weight:600;line-height:1.2;margin:0 0 20px;color:#faf0d0;letter-spacing:none}
 .repeatable-content-blocks .content-block:nth-child(even) .textcol{background:#ff7f30}
+.repeatable-content-blocks .content-block .rb_content *:last-child{margin-bottom:0}
 nav.mobilemenu{background-color:#235b4e}
 nav.mobilemenu ul.main li,nav.mobilemenu ul.main li a{font-family:"Recoleta",serif;font-size:18px;font-weight:600;color:#faf0d0}
 .competitions-page .entries-wrapper{max-width:80%;width:100%;margin:0 auto}
@@ -1993,11 +2018,36 @@ nav.mobilemenu ul.main li,nav.mobilemenu ul.main li a{font-family:"Recoleta",ser
 .select2-results__option{font-family:"Recoleta",serif;font-size:14px;font-weight:600;line-height:28px;color:#235b4e;text-transform:uppercase}
 .select2-container--default .select2-search--dropdown .select2-search__field{background-color:#f3e2cb;border:1px solid #235b4e;border-radius:0;-webkit-appearance:none;-webkit-box-shadow:none;box-shadow:none;outline:0;font-family:"Recoleta",serif;font-size:14px;font-weight:600;color:#235b4e}
 .entry-title{font-family:"Recoleta",serif;font-size:30px;font-weight:600;line-height:28px;color:#235b4e;text-transform:uppercase;letter-spacing:0}
+.title-orange{font-family:"Recoleta",serif;font-size:20px;font-weight:600;line-height:28px;color:#ff7f30;letter-spacing:0;text-transform:uppercase}
 #primary.single-competition{padding:50px 0}
+#primary.single-competition #main{max-width:1100px;width:100%;margin:0 auto}
 #primary.single-competition .entry-title{margin:0 0 50px}
 #primary.single-competition .event-info{width:100%;float:left;background:#235b4e;color:#f3e3cc}
 #primary.single-competition .event-info .pad{padding:20px}
 #primary.single-competition .event-info a{color:#ff7f30}
+#primary.single-competition .event-info p:last-child{margin-bottom:0}
+#primary.single-competition .map-image,#primary.single-competition .map-image img{width:100%;height:auto;float:left}
+#primary.single-competition .result-section{width:100%;float:left;background:#FFF}
+#primary.single-competition .result-section .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;padding:20px}
+#primary.single-competition .result-section .imagecol,#primary.single-competition .result-section .textcol{width:100%}
+#primary.single-competition .resultsCol .title-orange{margin-bottom:20px}
+#primary.single-competition .resultsCol .catname{font-family:"DM Sans",sans-serif;font-size:13px;font-weight:600;line-height:1.2;color:#235b4e;margin:0 0 5px;letter-spacing:0;border-bottom:1px solid #235b4e}
+#primary.single-competition .resultsCol .result-item{margin-bottom:20px}
+#primary.single-competition .resultsCol .result-list .item{margin:5px 0;color:#235b4e}
+#primary.single-competition .resultsCol .result-list .item,#primary.single-competition .resultsCol .result-list .item a{font-family:"DM Sans",sans-serif;font-size:13px;font-weight:400;line-height:1.2}
+#primary.single-competition .resultsCol .result-list a{display:inline-block;text-decoration:none;color:#235b4e}
+#primary.single-competition .resultsCol .result-list a:hover{color:#ff7f30}
+#primary.single-competition .event-info.pastresults .tab-title{font-family:"Recoleta",serif;font-size:20px;font-weight:600;line-height:1.2;letter-spacing:0;color:#f3e3cc;margin:0 0 20px}
+#primary.single-competition .event-info.pastresults .year{margin:0;font-weight:bold;font-size:18px;border-bottom:1px solid #f3e3cc}
+#primary.single-competition .event-info.pastresults .past-year{margin-bottom:30px}
+#primary.single-competition .event-info.pastresults .past-year:last-child{margin-bottom:0}
+#primary.single-competition .event-info.pastresults .divisions .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-left:-10px;margin-right:-10px}
+#primary.single-competition .event-info.pastresults .divisions .flexwrap .cat-info{width:100%;padding:10px}
+#primary.single-competition .event-info.pastresults .divisions .cat{font-family:"DM Sans",sans-serif;font-size:14px;font-weight:600;line-height:1.2;margin:0 0 5px;text-transform:uppercase;color:#f3e3cc}
+#primary.single-competition .event-info.pastresults .item a{display:inline-block;text-decoration:none;color:#f3e3cc}
+#primary.single-competition .event-info.pastresults .item a:hover{color:#ff7f30}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
 ul.tabs-info{margin:0;padding:0;list-style:none;width:100%;float:left;position:relative}
 ul.tabs-info li{display:inline-block;float:left;font-family:"Recoleta",serif;font-size:18px;font-weight:500;text-transform:uppercase;color:#f3e3cc;margin:0 2px}
 ul.tabs-info a,ul.tabs-info span.nolink{padding:4px 15px}
@@ -2008,6 +2058,13 @@ ul.tabs-info span.red{background:#e43d30}
 ul.tabs-info span.red a:hover{background:#a02b22}
 ul.tabs-info span.gray{background:#6c6c6c}
 ul.tabs-info span.gray a:hover{background:#4c4c4c}
+.footer-sponsors{text-align:center;width:100%}
+.footer-sponsors span.sponsor-logo{display:inline-block}
+.footer-sponsors span.sponsor-logo a{display:inline-block}
+.footer-sponsors span.sponsor-logo img{width:120px;height:auto}
+footer.site-footer .sponsors{padding-top:10px}
+footer.site-footer .sponsors .sponsor-text{color:#f3e3cc;font-size:13px;line-height:1.1;margin:0 0 5px;opacity:.5}
+footer.site-footer .sponsors li{width:80px}
 @media screen and (min-width:600px){#cboxTitle{position:absolute;top:0;left:0;text-align:left;width:20%;font-weight:bold;color:#fff;padding:8% 2% 8% 2%;line-height:1.3;font-size:20px}
 }@media(min-width:667px){nav.mobilemenu{padding:120px 90px 70px 90px}
 }@media screen and (min-width:750px){nav.subnav{padding:20px 10px;display:block;text-align:center}
@@ -2097,6 +2154,7 @@ section.artists .desc,section.artists .showlater,section.home-tiles .desc,sectio
 .repeatable-content-blocks .content-block.half .textcol{width:40%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-line-pack:center;align-content:center}
 .repeatable-content-blocks .content-block.half .imagecol{width:60%}
 .repeatable-content-blocks .content-block:nth-child(even){-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}
+#primary.single-competition .event-info.pastresults .divisions .flexwrap .cat-info{width:33.33%}
 }@media screen and (min-width:767px){.flexslider .slides .iframe-wrapper iframe,.flexslider .slides .iframe-wrapper video{width:100%;height:100%;position:absolute;top:0;left:0;z-index:5}
 .flexslider .slides .iframe-wrapper{padding:40% 0 0 0}
 .flexslider .slides .iframe-wrapper.yes-mobile{padding:40% 0 0 0}
@@ -2105,6 +2163,9 @@ section.artists .desc,section.artists .showlater,section.home-tiles .desc,sectio
 .flexslider .slides .iframe-wrapper,.flexslider .slides .image-wrapper{background-image:none !important}
 .flexslider .slides .image-wrapper img{opacity:1}
 }@media(min-width:900px){.competitions-page .entry{width:33.33%}
+#primary.single-competition .result-section .flexwrap{padding:30px}
+#primary.single-competition .result-section .imagecol{width:30%}
+#primary.single-competition .result-section .textcol{width:70%;padding-left:30px}
 ul.tabs-info{left:-2px}
 }@media screen and (min-width:1200px){nav.subnav{padding:20px 0}
 ul.submenu.active{padding:130px 10% 20px 10%}

@@ -58,6 +58,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+@import "custom_mixin"; 
 @import "typography/typography";
 
 /*--------------------------------------------------------------

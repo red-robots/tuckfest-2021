@@ -151,8 +151,12 @@ $('.js-closecopy').on('click', function() {
 
 
 */
+
+
+// console.log('Body: ' + $('body').height());
+// console.log('Window: ' + $(window).height());
+
 $(document).scroll(function() {
-    
     if($('.bottom-graphic').offset().top + $('.bottom-graphic').height() >= $('.site-footer').offset().top - 10) {
         //$('.bottom-graphic').css('position', 'absolute');
         $('.bottom-graphic').addClass('hitit');
@@ -951,11 +955,16 @@ var $container = $('#grid'),
 
   $(window).scroll(function() {
     var nav = $('#masthead');
-    var top = 200;
-    if ($(window).scrollTop() >= top) {
-      nav.addClass('fixed');
+    var top = 250;
+    //var top = nav.offset().top;
+    if( $('body').hasClass("error404") ) {
+
     } else {
-      nav.removeClass('fixed');
+      if ($(window).scrollTop() >= top) {
+        nav.addClass('fixed');
+      } else {
+        nav.removeClass('fixed');
+      }
     }
   });
 

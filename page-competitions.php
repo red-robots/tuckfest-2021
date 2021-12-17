@@ -92,6 +92,7 @@ get_header();
       $entries =  new WP_Query($args);
       $comingSoon = get_field('coming_soon', 'option');
       $comingSoonURL = ($comingSoon) ? $comingSoon['url'] : get_images_dir('competition-coming-soon.gif');
+      
       ?>
 
       <div class="entries-wrapper">

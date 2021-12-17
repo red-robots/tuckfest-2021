@@ -4,7 +4,11 @@
  */
 
 get_header(); 
-?>
+get_template_part('inc/coming-soon');
+$comingSoon = get_field('coming_soon');
+$soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
+if($soon !== 'soon') { ?>
+
 <div id="primary" class="content-area-full repeatable-blocks">
 	<main id="main" class="site-main" role="main">
 			<?php while ( have_posts() ) : the_post(); 
@@ -75,5 +79,12 @@ get_header();
 		</div>
 	</main><!-- #main -->
 </div><!-- #primary -->
+
+<script type="text/javascript">
+jQuery(document).ready(function($){
+});
+</script>
+<?php } ?>
+
 <?php
 get_footer();

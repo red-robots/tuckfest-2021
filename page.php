@@ -16,8 +16,7 @@ get_header();
 get_template_part('inc/coming-soon');
 $comingSoon = get_field('coming_soon');
 $soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
-if($soon !== 'soon') :
-?>
+if($soon !== 'soon') : ?>
 
 	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main" role="main">

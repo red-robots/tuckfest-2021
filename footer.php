@@ -82,24 +82,6 @@ if( !is_page( array(3447) )) {
 	<footer class="site-footer">
 		<div class="wrapper footer-content">
 
-		<?php if( have_rows('footer_sponsors', 'option') ) : ?>
-			<div class="sponsors container rotator">
-				<ul>
-				<?php while( have_rows('footer_sponsors', 'option') ) : the_row();
-
-					$icon = get_sub_field('icon', 'option');
-					$link = get_sub_field('link', 'option');
-
-				?>
-						<li>
-							<a href="<?php echo $link; ?>" target="_blank">
-								<img src="<?php echo $icon['url']; ?>">
-							</a>
-						</li>
-					<?php endwhile; ?>
-				</ul>
-			</div>
-			<?php endif; ?>
 
       <div class="footer-info">
         <div class="wrap">
@@ -114,6 +96,32 @@ if( !is_page( array(3447) )) {
           </div>
         </div>
       </div>
+
+
+      <?php 
+      $sponsors_text = get_field("footer_sponsors_text","option"); 
+      if( have_rows('footer_sponsors', 'option') ) : ?>
+      <div class="footer-sponsors sponsors container rotator">
+        <?php if ($sponsors_text) { ?>
+          <div class="sponsor-text"><?php echo $sponsors_text ?></div> 
+        <?php } ?>
+        <ul>
+        <?php while( have_rows('footer_sponsors', 'option') ) : the_row();
+
+          $icon = get_sub_field('icon', 'option');
+          $link = get_sub_field('link', 'option');
+
+        ?>
+            <li>
+              <a href="<?php echo $link; ?>" target="_blank">
+                <img src="<?php echo $icon['url']; ?>">
+              </a>
+            </li>
+          <?php endwhile; ?>
+        </ul>
+      </div>
+      <?php endif; ?>
+
 
     </div>
 	</footer>
