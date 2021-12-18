@@ -716,25 +716,27 @@ body.theme2021 {
     float: left;
     border-top: 3px solid $text_color;
     border-bottom: 3px solid $text_color;
-  }
-  .coming-soon .lefty {
-    h2 span.tan {
-      font-family: $font2;
-      font-weight: 400;
-      color: $text_color;
+    &.coming-soon .lefty {
+      h2 span.tan {
+        font-family: $font2;
+        font-weight: 400;
+        color: $text_color;
+      }
+      h2 span.orange {
+        font-family: $font2;
+        font-weight: 600;
+      }
+      h2 span.dark-orange {
+        font-family: $font1;
+        font-weight: 600;
+      }
     }
-    h2 span.orange {
-      font-family: $font2;
-      font-weight: 600;
-    }
-    h2 span.dark-orange {
-      font-family: $font1;
-      font-weight: 600;
+    &.coming-soon .righty {
+      // background-color: $orange;
+      background-color: $darkgreen;
     }
   }
-  .coming-soon .righty {
-    background-color: $orange;
-  }
+  
   article .copy h1 {
     letter-spacing: 1px;
     color: $orange;
