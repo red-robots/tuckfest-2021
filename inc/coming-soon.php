@@ -7,6 +7,7 @@ if( $soon== 'soon' ) {
   $text2 = ( isset($comingSoonText['text_orange']) && $comingSoonText['text_orange'] ) ? $comingSoonText['text_orange'] : 'Coming';
   $text3 = ( isset($comingSoonText['text_dark_orange']) && $comingSoonText['text_dark_orange'] ) ? $comingSoonText['text_dark_orange'] : 'Soon';
   $texts = array($text1,$text2,$text3); 
+  $coming_soon_image = get_field("coming_soon","option");
   ?>
   <div class="coming-soon coming-soon-wrap">
   	<div class="lefty">
@@ -20,7 +21,11 @@ if( $soon== 'soon' ) {
   	</div>
   	<div class="righty">
   		<div class="img">
+        <?php if ($coming_soon_image) { ?>
+          <img src="<?php echo $coming_soon_image['url'] ?>" alt="Coming Soon">
+        <?php } else { ?>
   			<img src="<?php bloginfo('stylesheet_directory'); ?>/images/trees.png">
+        <?php } ?>
   		</div>
   	</div>
   </div>
