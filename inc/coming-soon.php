@@ -8,6 +8,8 @@ if( $soon== 'soon' ) {
   $text3 = ( isset($comingSoonText['text_dark_orange']) && $comingSoonText['text_dark_orange'] ) ? $comingSoonText['text_dark_orange'] : 'Soon';
   $texts = array($text1,$text2,$text3); 
   $coming_soon_image = get_field("coming_soon","option");
+  $bgcolor = get_field("coming_soon_bgcolor","option");
+  $bg_color = ($bgcolor) ? $bgcolor : '#FF7F30';
   ?>
   <div class="coming-soon coming-soon-wrap">
   	<div class="lefty">
@@ -19,7 +21,7 @@ if( $soon== 'soon' ) {
   		</h2>
       <?php } ?>
   	</div>
-  	<div class="righty">
+  	<div class="righty" style="background-color:<?php echo $bg_color?>">
   		<div class="img">
         <?php if ($coming_soon_image) { ?>
           <img src="<?php echo $coming_soon_image['url'] ?>" alt="Coming Soon">
