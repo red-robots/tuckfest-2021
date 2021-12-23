@@ -46,14 +46,12 @@ if($soon !== 'soon') : ?>
 				)
 			));
 			if ($wp_query->have_posts()) : ?>
-			<?php while ($wp_query->have_posts()) : ?>
-			<?php $wp_query->the_post();
-			?>
-				<?php include( locate_template('inc/article.php', false, false)); ?>
-			
-
-<?php endwhile; ?>
-<?php endif; ?>
+				<div class="repeatable-content-blocks">
+					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+						<?php include( locate_template('inc/article.php', false, false)); ?>
+					<?php endwhile; ?>
+				</div>
+			<?php endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

@@ -1467,7 +1467,8 @@ header.blue h1:before{width:800px;position:absolute;left:-800px;top:0;height:100
 .coming-soon .lefty h2 span.blue,.coming-soon .righty h2 span.blue{color:#092745}
 .coming-soon .lefty h2 span.orange,.coming-soon .righty h2 span.orange{color:#f4a74e}
 .coming-soon .lefty h2 span.dark-orange,.coming-soon .righty h2 span.dark-orange{color:#ec663c}
-.coming-soon .lefty{background-color:#092745}
+.coming-soon .lefty h2 span.green,.coming-soon .righty h2 span.green{color:#235b4e}
+.coming-soon .lefty{background-color:#e63e31}
 .coming-soon .righty .img{width:40%}
 .coming-soon .righty .img img{width:100%}
 header.special-title,.left,.lefty{width:100%;float:left;position:relative;background-color:#092745;padding:50px 0}

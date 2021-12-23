@@ -17,7 +17,7 @@ if( $soon== 'soon' ) {
   		<h2>
   			<span class="pagename tan"><?php echo $text1; ?></span>
   			<?php if ($text2) { ?><span class="pagename orange"><?php echo $text2; ?></span><?php } ?>
-  			<?php if ($text3) { ?><span class="pagename dark-orange"><?php echo $text3; ?></span><?php } ?>
+  			<?php if ($text3) { ?><span class="pagename green"><?php echo $text3; ?></span><?php } ?>
   		</h2>
       <?php } ?>
   	</div>

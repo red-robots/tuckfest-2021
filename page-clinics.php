@@ -38,6 +38,7 @@ if($soon !== 'soon') :
 				'post_type'=>'demo_clinic',
 				'posts_per_page' => -1,
 				'paged' => $paged,
+				'facetwp' => true
 				// 'tax_query' => array(
 				// 	array(
 				// 		'taxonomy' => 'yoga_day', // your custom taxonomy
@@ -47,14 +48,13 @@ if($soon !== 'soon') :
 				// )
 			));
 			if ($wp_query->have_posts()) : ?>
-			<?php while ($wp_query->have_posts()) : ?>
-			<?php $wp_query->the_post();
-			?>
-				<?php include( locate_template('inc/article.php', false, false)); ?>
-			
-
-<?php endwhile; ?>
-<?php endif; ?>
+				<?php //echo do_shortcode('[facetwp facet="clinic_day"]'); ?>
+				<div class="repeatable-content-blocks">
+					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+						<?php include( locate_template('inc/article.php', false, false)); ?>
+					<?php endwhile; ?>
+				</div>
+			<?php endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
