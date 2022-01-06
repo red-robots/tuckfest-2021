@@ -70,6 +70,32 @@ body {
 		padding: 40px 0;
 	}
 }
+.filter-wrapper {
+	width: 100%;
+	text-align: center;
+	padding: 30px 0;
+	float: left;
+	font-family: $font1;
+}
+.facetwp-type-dropdown, .filter-title  {
+	width: auto;
+	display: inline-block;
+	margin: 0 10px;
+}
+.filter-title {
+	font-weight: bold;
+	font-size: 20px;
+	text-transform: uppercase;
+	color: $color-dark-green;
+}
+select.facetwp-dropdown {
+	
+	border-radius: 0;
+	border: 1px solid $color-dark-green;
+	padding: 5px 15px 5px 5px;
+	background-color: rgba(#fff, 0);
+	color: $color-dark-green;
+}
 #primary {
 	width: 100%;
 	float: left;

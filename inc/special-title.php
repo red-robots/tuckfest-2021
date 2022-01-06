@@ -7,6 +7,10 @@ $arrpage[3251] = 'Tuck Fest Insiders Guide';
 $arrpage[1017] = 'Race and Comp Registration';
 $arrpage[19] = 'Schedule';
 $page_title = ( isset($arrpage[$id]) && $arrpage[$id] ) ? $arrpage[$id] : get_the_title();
+$comingSoon = get_field('coming_soon');
+$soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
+
+
 ?>
 <header class="special-title">
 	<div class="wrapper">
@@ -23,9 +27,11 @@ $page_title = ( isset($arrpage[$id]) && $arrpage[$id] ) ? $arrpage[$id] : get_th
     <?php if ($post_name=='competitions') { 
     $registration = get_field("registration_link","option");
     ?>
-    <div class="registrationBtn">
-      <a href="<?php echo $registration ?>" target="_blank" title="Click Here To Register"  class="register-btn"><span>Register</span></a>
-    </div>
+      <?php if($soon !== 'soon') { ?>
+        <div class="registrationBtn">
+          <a href="<?php echo $registration ?>" target="_blank" title="Click Here To Register"  class="register-btn"><span>Register</span></a>
+        </div>
+    <?php } ?>
     <?php } ?>
 
 	</div>

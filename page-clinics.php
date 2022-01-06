@@ -48,7 +48,12 @@ if($soon !== 'soon') :
 				// )
 			));
 			if ($wp_query->have_posts()) : ?>
-				<?php //echo do_shortcode('[facetwp facet="clinic_day"]'); ?>
+				<div class="filter-wrapper">
+					<div class="filter-title">Filter By:</div>
+					<?php echo do_shortcode('[facetwp facet="clinic_type"]'); ?>
+					<?php echo do_shortcode('[facetwp facet="clinic_day"]'); ?>
+				</div>
+				
 				<div class="repeatable-content-blocks">
 					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 						<?php include( locate_template('inc/article.php', false, false)); ?>

@@ -1429,6 +1429,10 @@ body.search h2 a{color:#f4a74e;text-decoration:none}
 .wrapper{width:100%;margin:0 auto;clear:both}
 .wrapper.pagecontent{padding:40px 20px 0 20px;clear:both}
 .sub-wrapper{width:100%;margin:0 auto;clear:both}
+.filter-wrapper{width:100%;text-align:center;padding:30px 0;float:left;font-family:"Recoleta",serif}
+.facetwp-type-dropdown,.filter-title{width:auto;display:inline-block;margin:0 10px}
+.filter-title{font-weight:bold;font-size:20px;text-transform:uppercase;color:#235b4e}
+select.facetwp-dropdown{border-radius:0;border:1px solid #235b4e;padding:5px 15px 5px 5px;background-color:rgba(255,255,255,0);color:#235b4e}
 #primary{width:100%;float:left;position:relative;z-index:2}
 #content.no-subnav{margin-top:45px}
 .site-content{width:100%;position:relative;float:left;z-index:2;padding-bottom:50px}
