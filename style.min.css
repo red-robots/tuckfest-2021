@@ -1976,7 +1976,7 @@ body.page-template-page-contact #content.no-subnav{margin-top:0 !important}
 .repeatable-content-blocks{margin-bottom:80px}
 .repeatable-content-blocks .content-block{margin:20px 0;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 .repeatable-content-blocks .content-block .textcol,.repeatable-content-blocks .content-block .imagecol{width:100%;position:relative}
-.repeatable-content-blocks .content-block .textcol{background:#e43d30;color:#faf0d0;padding:30px}
+.repeatable-content-blocks .content-block .textcol{background:#e43d30;color:#faf0d0;padding:60px 30px}
 .repeatable-content-blocks .content-block .textcol a{color:#fffda5}
 .repeatable-content-blocks .content-block .textcol a:hover{color:#FFF}
 .repeatable-content-blocks .content-block .imagecol .imagediv{width:100%;height:100%;float:left;background-size:cover;background-position:center;background-repeat:no-repeat}
