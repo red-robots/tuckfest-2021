@@ -417,6 +417,7 @@ header.blue {
 		align-items: center;
 		position: relative;
 		z-index: 10;
+		padding: 30px 0;
 		@media screen and (min-width: $tabwidth) {
 			width: 50%;
 			float: left;

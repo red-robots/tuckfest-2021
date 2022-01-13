@@ -10,7 +10,7 @@
       $eventStartDate = get_field("eventStartDate");
       $start_date = ($eventStartDate) ? date('l, M d, Y',strtotime($eventStartDate)) . ' <span>&ndash;</span> ' . date('h:i a',strtotime($eventStartDate)) : '';
       ?>
-      <div class="wrapper">
+      <div class="wrapper pagecontent">
         <h2 class="entry-title"><?php the_title(); ?></h2>
 
         <?php if ($start_date || $registrationLink) { ?>

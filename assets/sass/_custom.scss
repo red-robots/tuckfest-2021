@@ -1238,9 +1238,12 @@ body.page-template-page-contact #content.no-subnav {
     .imagecol {
       .imagediv {
         width: 100%;
-        height: 100%;
+        height: 300px;
         float: left;
         @include backgroundImage(center);
+        @media only screen and (min-width: $tabwidth) {
+          height: 100%;
+        }
       }
       img {
         width: 100%;
@@ -1789,21 +1792,32 @@ ul.tabs-info {
     font-weight: 500;
     text-transform: uppercase;
     color: $text_color;
-    margin:0 2px;
+    margin:0;
+    width: 100%;
+    @media screen and (min-width: $tabwidth) {
+      width: auto;
+      margin:0 2px;
+    }
   }
   a, span.nolink {
     padding: 4px 15px;
   }
   a {
-    display: inline-block;
+    display: block;
     text-decoration: none;
     color: $text_color;
+    width: 100%;
+    @media screen and (min-width: $tabwidth) {
+      display: inline-block;
+    }
   }
   span {
     display: inline-block;
+
   }
   span.orange {
     background: $orange;
+
   }
   span.red {
     background: $red_orange;
@@ -1818,7 +1832,9 @@ ul.tabs-info {
     }
   }
 }
-
+span.gray, span.red, span.orange {
+  width: 100%;
+}
 .footer-sponsors {
   text-align: center;
   width: 100%;

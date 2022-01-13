@@ -25,75 +25,79 @@ if($soon !== 'soon') : ?>
 
 
       <?php 
-      $filter_day = ( isset($_GET['day']) && $_GET['day'] ) ? $_GET['day'] : '';
+      //$filter_day = ( isset($_GET['day']) && $_GET['day'] ) ? $_GET['day'] : '';
       // $today = date('Y-m-d');
       // $time = date('H:i:s'); 
       $today = date('Y-m-d H:i:s');
 
+      
+
+      // if( $filter_day ) {
+
+      //   $args['tax_query'] = array(
+      //     'relation' => 'AND',
+      //     array(
+      //       'taxonomy' => 'event_day',
+      //       'field'    => 'name',
+      //       'terms'    => $filter_day,
+      //     )
+      //   );
+
+      //   $args['meta_query'] = array(
+      //    'relation' => 'AND',
+      //     array(
+      //      'key' => 'eventStartDate',
+      //      'compare' => 'EXISTS',
+      //     )
+      //   );
+
+      //   $args['orderby'] = 'meta_value';
+      //   $args['order'] = 'DESC';
+
+      // } else {
+
+        // $args['meta_query'] = array(
+        //  'relation' => 'OR',
+        //   array(
+        //    'key' => 'eventStartDate',
+        //    'compare' => '>=',
+        //    'value' => $today,
+        //   ),
+        //   array(
+        //    'key' => 'eventStartDate',
+        //    'compare' => '=',
+        //    'value' => ''
+        //   ),
+        //   array(
+        //    'key' => 'eventStartDate',
+        //    'compare' => '=',
+        //    'value' => NULL
+        //   ),
+        //   array(
+        //    'key' => 'eventStartDate',
+        //    'compare' => 'NOT EXISTS', // works!
+        //    'value' => '' // This is ignored, but is necessary...
+        //   ),
+        // );
+        // $args['orderby'] = 'meta_value';
+        // $args['order'] = 'DESC';
+      // }
       $args = array(
         'posts_per_page'  => -1,
         'post_type'       => 'competition',
         'post_status'     => 'publish',
-        'facetwp' => true,
+        'order'          => 'ASC',
+        'orderby'        => 'meta_value',
+        'meta_key'       => 'eventStartDate',
+        'meta_type'      => 'DATETIME',
+        'facetwp' => true
       );
-
-      if( $filter_day ) {
-
-        $args['tax_query'] = array(
-          'relation' => 'AND',
-          array(
-            'taxonomy' => 'event_day',
-            'field'    => 'name',
-            'terms'    => $filter_day,
-          )
-        );
-
-        $args['meta_query'] = array(
-         'relation' => 'AND',
-          array(
-           'key' => 'eventStartDate',
-           'compare' => 'EXISTS',
-          )
-        );
-
-        $args['orderby'] = 'meta_value';
-        $args['order'] = 'DESC';
-
-      } else {
-
-        $args['meta_query'] = array(
-         'relation' => 'OR',
-          array(
-           'key' => 'eventStartDate',
-           'compare' => '>=',
-           'value' => $today,
-          ),
-          array(
-           'key' => 'eventStartDate',
-           'compare' => '=',
-           'value' => ''
-          ),
-          array(
-           'key' => 'eventStartDate',
-           'compare' => '=',
-           'value' => NULL
-          ),
-          array(
-           'key' => 'eventStartDate',
-           'compare' => 'NOT EXISTS', // works!
-           'value' => '' // This is ignored, but is necessary...
-          ),
-        );
-        $args['orderby'] = 'meta_value';
-        $args['order'] = 'DESC';
-      }
-
 
       // echo "<pre>";
       // print_r($args);
       // echo "</pre>";
       
-
+      $i=0;
       $entries =  new WP_Query($args);
       // $comingSoon = get_field('coming_soon', 'option');
       // $comingSoonURL = ($comingSoon) ? $comingSoon['url'] : get_images_dir('competition-coming-soon.gif');
@@ -113,7 +117,7 @@ if($soon !== 'soon') : ?>
           </div>
           
           <div class="entries">
-            <?php while ( $entries->have_posts() ) : $entries->the_post(); 
+            <?php while ( $entries->have_posts() ) : $entries->the_post(); $i++;
               $eventStartDate = get_field("eventStartDate");
               $start_date = ($eventStartDate) ? date('l, M d, Y',strtotime($eventStartDate)) . '<span>&#8226;</span>' . date('h:i a',strtotime($eventStartDate)) : '';
             ?>
@@ -132,7 +136,7 @@ if($soon !== 'soon') : ?>
                 <div class="info">
                   <h2 class="title"><a href="<?php echo get_permalink(); ?>"><?php the_title() ?></a></h2>
                   <?php if ($start_date) { ?>
-                  <span class="date"><?php echo $start_date ?></span>
+                  <span class="date"><?php echo $start_date ?> <?php echo $i; ?></span>
                   <?php } ?>
                 </div>
               </div>

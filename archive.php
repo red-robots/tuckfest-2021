@@ -14,6 +14,7 @@ $soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
 ?>
 <div class="content-wrapper pagecontent">
 	<div id="primary" class="content-area-full">
+		<div class="wrapper pagecontent">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -60,8 +61,10 @@ $soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
 				<?php the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
 			</header>.page-header -->
 
+			<div class="repeatable-content-blocks">
 			<?php
 			/* Start the Loop */
+			$n=1;
 			while ( have_posts() ) : the_post();
 
 				
@@ -77,11 +80,12 @@ $soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
 			<?php 
 			endif; // coming soon
 			endwhile; ?>
-			
+			</div>
 
 		<?php endif; ?>
 
 		</main><!-- #main -->
+	</div>
 	</div><!-- #primary -->
 </div>
 <?php

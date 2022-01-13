@@ -51,3 +51,5 @@ if( ($title || $text) ||  $image ) { ?>
   <?php } ?>
 </div>
 <?php } ?>
+
+
