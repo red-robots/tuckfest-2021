@@ -1931,7 +1931,9 @@ body.subpage .schedule .col-wrap{background-color:#235b4e;padding:0}
 body.subpage .schedule .col-wrap .title{font-size:15px}
 body.subpage .schedule .col-wrap .time{font-size:13px;color:#ff7f30}
 body.subpage .schedule .col-wrap .contents ul.list{margin:0;padding:0;list-style:none;width:100%;float:left}
-body.subpage .schedule .col-wrap .contents ul.list>li{padding:15px 20px;margin:0;width:100%;float:left}
+body.subpage .schedule .col-wrap .contents ul.list a{display:block;text-decoration:none;padding:15px 20px}
+body.subpage .schedule .col-wrap .contents ul.list>li{margin:0;width:100%;float:left;-webkit-transition:all ease .2s;transition:all ease .2s}
+body.subpage .schedule .col-wrap .contents ul.list>li:hover{opacity:.6}
 body.subpage .schedule .col-wrap .contents ul.list>li:nth-child(1){background-color:#235b4e}
 body.subpage .schedule .col-wrap .contents ul.list>li:nth-child(even){background:rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.15)}
 body.subpage footer.site-footer{padding-top:0}
@@ -1973,6 +1975,7 @@ body.page-template-page-contact #content.no-subnav{margin-top:0 !important}
 .repeatable-blocks .entry-content{margin-bottom:50px}
 .repeatable-blocks .entry-content h1,.repeatable-blocks .entry-content h2,.repeatable-blocks .entry-content h3,.repeatable-blocks .entry-content h4,.repeatable-blocks .entry-content h5,.repeatable-blocks .entry-content h6{font-family:"EB Garamond",serif;font-weight:600;letter-spacing:0}
 .btn2{display:inline-block;text-decoration:none;cursor:pointer;-webkit-transition:all ease .3s;transition:all ease .3s}
+.imagecol.xtra img{width:100%}
 .repeatable-content-blocks{margin-bottom:80px}
 .repeatable-content-blocks .content-block{margin:20px 0;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 .repeatable-content-blocks .content-block .textcol,.repeatable-content-blocks .content-block .imagecol{width:100%;position:relative}
@@ -1991,22 +1994,22 @@ body.page-template-page-contact #content.no-subnav{margin-top:0 !important}
 .repeatable-content-blocks .content-block .rb_content *:last-child{margin-bottom:0}
 nav.mobilemenu{background-color:#235b4e}
 nav.mobilemenu ul.main li,nav.mobilemenu ul.main li a{font-family:"Recoleta",serif;font-size:18px;font-weight:600;color:#faf0d0}
-.competitions-page .entries-wrapper{max-width:80%;width:100%;margin:0 auto}
-.competitions-page .entries{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-top:50px;margin-left:-10px;margin-right:-10px;margin-bottom:80px}
-.competitions-page .entry{width:100%;padding:10px}
-.competitions-page .entry div.pad,.competitions-page .entry div.image,.competitions-page .entry div.info{width:100%}
-.competitions-page .entry div.pad{height:100%;background:#235b4e}
-.competitions-page .entry div.image{float:left}
-.competitions-page .entry div.image a{display:block;width:100%;float:left}
-.competitions-page .entry div.image img{width:100%;height:auto;float:left}
-.competitions-page .entry div.info{float:left;background:#235b4e;padding:15px}
-.competitions-page .entry div.info .title,.competitions-page .entry div.info .title a{font-family:"DM Sans",sans-serif;font-size:15px;font-weight:400;line-height:1.2;text-transform:none;letter-spacing:0;color:#faf0d0}
-.competitions-page .entry div.info .title a{display:block;text-decoration:none;olor:#faf0d0}
-.competitions-page .entry div.info .title a:hover{opacity:.75}
-.competitions-page .entry div.info .date{display:block;color:#ff7f30;font-size:12px}
-.competitions-page .entry div.info .date span{display:inline-block;margin:0 5px}
-.competitions-page .no-result{min-height:20em}
-.competitions-page .no-result h2{font-family:"Recoleta",serif;font-size:20px;font-weight:600;line-height:1.2;letter-spacing:0;color:#235b4e;margin:40px 0 0}
+.competitions-page .entries-wrapper,.about-pages .entries-wrapper{max-width:80%;width:100%;margin:0 auto}
+.competitions-page .entries,.about-pages .entries{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-top:50px;margin-left:-10px;margin-right:-10px;margin-bottom:80px}
+.competitions-page .entry,.about-pages .entry{width:100%;padding:10px}
+.competitions-page .entry div.pad,.competitions-page .entry div.image,.competitions-page .entry div.info,.about-pages .entry div.pad,.about-pages .entry div.image,.about-pages .entry div.info{width:100%}
+.competitions-page .entry div.pad,.about-pages .entry div.pad{height:100%;background:#235b4e}
+.competitions-page .entry div.image,.about-pages .entry div.image{float:left}
+.competitions-page .entry div.image a,.about-pages .entry div.image a{display:block;width:100%;float:left}
+.competitions-page .entry div.image img,.about-pages .entry div.image img{width:100%;height:auto;float:left}
+.competitions-page .entry div.info,.about-pages .entry div.info{float:left;background:#235b4e;padding:15px}
+.competitions-page .entry div.info .title,.competitions-page .entry div.info .title a,.about-pages .entry div.info .title,.about-pages .entry div.info .title a{font-family:"DM Sans",sans-serif;font-size:15px;font-weight:400;line-height:1.2;text-transform:none;letter-spacing:0;color:#faf0d0}
+.competitions-page .entry div.info .title a,.about-pages .entry div.info .title a{display:block;text-decoration:none;olor:#faf0d0}
+.competitions-page .entry div.info .title a:hover,.about-pages .entry div.info .title a:hover{opacity:.75}
+.competitions-page .entry div.info .date,.about-pages .entry div.info .date{display:block;color:#ff7f30;font-size:12px}
+.competitions-page .entry div.info .date span,.about-pages .entry div.info .date span{display:inline-block;margin:0 5px}
+.competitions-page .no-result,.about-pages .no-result{min-height:20em}
+.competitions-page .no-result h2,.about-pages .no-result h2{font-family:"Recoleta",serif;font-size:20px;font-weight:600;line-height:1.2;letter-spacing:0;color:#235b4e;margin:40px 0 0}
 .filter-action .filter-label{font-family:"Recoleta",serif;font-size:14px;font-weight:600;line-height:1.2;color:#235b4e;text-transform:uppercase;position:relative;top:-11px}
 .filter-action .filter-field{display:inline-block;max-width:340px;width:100%;margin-left:6px;position:relative;overflow:hidden}
 .filter-action .filter-field select{width:100%;background-color:transparent;border:1px solid #235b4e;height:30px;-webkit-appearance:none;-webkit-box-shadow:none;box-shadow:none;outline:0;padding:0 8px}
@@ -2024,6 +2027,9 @@ nav.mobilemenu ul.main li,nav.mobilemenu ul.main li a{font-family:"Recoleta",ser
 .select2-container--default .select2-search--dropdown .select2-search__field{background-color:#f3e2cb;border:1px solid #235b4e;border-radius:0;-webkit-appearance:none;-webkit-box-shadow:none;box-shadow:none;outline:0;font-family:"Recoleta",serif;font-size:14px;font-weight:600;color:#235b4e}
 .entry-title{font-family:"Recoleta",serif;font-size:30px;font-weight:600;line-height:28px;color:#235b4e;text-transform:uppercase;letter-spacing:0}
 .title-orange{font-family:"Recoleta",serif;font-size:20px;font-weight:600;line-height:28px;color:#ff7f30;letter-spacing:0;text-transform:uppercase}
+#primary.single-competition .other-links-btn{width:auto;display:inline-block}
+#primary.single-competition .other-links-btn a{background-color:#0e7379;color:#f4a74e;padding:10px 25px;-webkit-transition:all ease .2s;transition:all ease .2s;text-decoration:none}
+#primary.single-competition .other-links-btn a:hover{background-color:#f4a74e;color:#0e7379}
 #primary.single-competition{padding:50px 0}
 #primary.single-competition #main{max-width:1100px;width:100%;margin:0 auto}
 #primary.single-competition .entry-title{margin:0 0 50px}
@@ -2035,6 +2041,7 @@ nav.mobilemenu ul.main li,nav.mobilemenu ul.main li a{font-family:"Recoleta",ser
 #primary.single-competition .result-section{width:100%;float:left;background:#FFF}
 #primary.single-competition .result-section .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;padding:20px}
 #primary.single-competition .result-section .imagecol,#primary.single-competition .result-section .textcol{width:100%}
+#primary.single-competition .result-section .imagecol img{width:100%}
 #primary.single-competition .resultsCol .title-orange{margin-bottom:20px}
 #primary.single-competition .resultsCol .catname{font-family:"DM Sans",sans-serif;font-size:13px;font-weight:600;line-height:1.2;color:#235b4e;margin:0 0 5px;letter-spacing:0;border-bottom:1px solid #235b4e}
 #primary.single-competition .resultsCol .result-item{margin-bottom:20px}
@@ -2171,7 +2178,7 @@ ul.tabs-info a{display:inline-block}
 .flexslider .slides .iframe-wrapper.yes-mobile .mobile,.flexslider .slides .image-wrapper.yes-mobile .mobile{display:none}
 .flexslider .slides .iframe-wrapper,.flexslider .slides .image-wrapper{background-image:none !important}
 .flexslider .slides .image-wrapper img{opacity:1}
-}@media(min-width:900px){.competitions-page .entry{width:33.33%}
+}@media(min-width:900px){.competitions-page .entry,.about-pages .entry{width:33.33%}
 #primary.single-competition .result-section .flexwrap{padding:30px}
 #primary.single-competition .result-section .imagecol{width:30%}
 #primary.single-competition .result-section .textcol{width:70%;padding-left:30px}

@@ -977,12 +977,21 @@ body.subpage {
           list-style: none;
           width: 100%;
           float: left;
+          a {
+            display: block;
+            text-decoration: none;
+            padding: 15px 20px;
+          }
         }
         ul.list > li {
-          padding: 15px 20px;
+          
           margin: 0 0;
           width: 100%;
           float: left;
+          transition : all ease .2s;
+          &:hover {
+            opacity: .6;
+          }
         }
         ul.list > li:nth-child(1) {
           background-color: $darkgreen;
@@ -1214,7 +1223,11 @@ body.page-template-page-contact #content.no-subnav {
   cursor: pointer;
   transition: all ease .3s;
 }
-
+.imagecol.xtra {
+  img {
+    width: 100%;
+  }
+}
 .repeatable-content-blocks {
   margin-bottom: 80px;
   .content-block {
@@ -1397,7 +1410,8 @@ nav.mobilemenu {
   }
 }
 
-.competitions-page {
+.competitions-page,
+.about-pages {
   .entries-wrapper {
     @include div_wrapper();
   }
@@ -1614,7 +1628,23 @@ nav.mobilemenu {
   letter-spacing: 0;
   text-transform: uppercase;
 }
-
+#primary.single-competition {
+  .other-links-btn {
+    width: auto;
+    display: inline-block;
+    a {
+      background-color: $color-green;
+      color: $color-orange;
+      padding: 10px 25px;
+      transition: all ease .2s;
+      text-decoration: none;
+      &:hover {
+        background-color: $color-orange;
+        color: $color-green;
+      }
+    }
+  }
+}
 #primary.single-competition {
   padding: 50px 0;
   #main {
@@ -1664,6 +1694,9 @@ nav.mobilemenu {
     .imagecol {
       @include mid {
         width: 30%;
+      }
+      img {
+        width: 100%;
       }
     }
     .textcol {

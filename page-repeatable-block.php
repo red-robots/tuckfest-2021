@@ -9,7 +9,7 @@ $comingSoon = get_field('coming_soon');
 $soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
 if($soon !== 'soon') { ?>
 
-<div id="primary" class="content-area-full repeatable-blocks">
+<div id="primary" class="content-area-full repeatable-blocks about-pages">
 	<main id="main" class="site-main" role="main">
 			<?php while ( have_posts() ) : the_post(); 
 				get_template_part('inc/banner');
@@ -22,6 +22,8 @@ if($soon !== 'soon') { ?>
           <?php echo anti_email_spam($main_content); ?>
         </div>
         <?php } ?>
+
+        
 				
         <?php if( have_rows('repeatable_block') ) { ?>
         <div class="repeatable-content-blocks">
@@ -75,7 +77,11 @@ if($soon !== 'soon') { ?>
         <?php } ?>
 
 			</div>
+
 			<?php endwhile; ?>
+      <?php if( is_page('about-tuck-fest') ) {
+          get_template_part('about-page-tiles');
+        } ?>
 		</div>
 	</main><!-- #main -->
 </div><!-- #primary -->

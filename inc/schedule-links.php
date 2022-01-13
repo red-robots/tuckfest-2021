@@ -152,11 +152,11 @@ if( $postType == 'music' ) {
 	// echo 'mussiiic';
 
 	$url = get_bloginfo('url').'/tuckfest-music/2020-artists/#'.$hash;
-} elseif ( $postType == 'demo_clinic' ) {
-	$url = get_bloginfo('url').'/clinics/#'.$hash;
+// } elseif ( $postType == 'demo_clinic' ) {
+// 	$url = get_bloginfo('url').'/clinics/#'.$hash;
 } else {
-	
-	$url = get_bloginfo('url').'/'.$taxSlug.'/'.$term.'/#'.$hash;
+	$url = get_the_permalink();
+	// $url = get_bloginfo('url').'/'.$taxSlug.'/'.$term.'/#'.$hash;
 } 
 
 
@@ -164,54 +164,60 @@ if( $i == 1 ) {
 
 ?>
 	<li class="item ">
-		<div class="title first">
-			<a href="<?php echo $regLink; ?>">Tuck Fest Registration & Packet Pick-up</a>
-		</div>
-		<div class="time">
-			<?php 
-			if( $regStart && $regEnd ) {
-				echo $regStart.' - '.$regEnd;  
-			}
-			if( $regStartTwo && $regEndTwo ) {
-				echo '<br>' . $regStartTwo.' - '.$regEndTwo;  
-			}
+		<a href="<?php echo $regLink; ?>">
+			<div class="title first">
+				Tuck Fest Registration & Packet Pick-up
+			</div>
+			<div class="time">
+				<?php 
+				if( $regStart && $regEnd ) {
+					echo $regStart.' - '.$regEnd;  
+				}
+				if( $regStartTwo && $regEndTwo ) {
+					echo '<br>' . $regStartTwo.' - '.$regEndTwo;  
+				}
 
-			?>
-		</div>
+				?>
+			</div>
+		</a>
 	</li>
 	<li>
-		<div class="title first">
-			<a href="<?php echo $wwAct; ?>">Whitewater Center Activities</a>
-		</div>
-		<div class="time">
-			<?php echo $actTime; ?>
-		</div>
+		<a href="<?php echo $wwAct; ?>">
+			<div class="title first">
+				Whitewater Center Activities
+			</div>
+			<div class="time">
+				<?php echo $actTime; ?>
+			</div>
+		</a>
 	</li>
 <?php } ?>
 
 <li class="item <?php echo $classes; ?> sched-act">
-<?php if( get_post_type() == 'music' ) { ?>
+	<a href="<?php echo $url; ?>">
+	<?php if( get_post_type() == 'music' ) { ?>
 	<div class="musicnote">
 		<img src="<?php bloginfo('template_url'); ?>/images/MusicNote.png">
 	</div>
 	
-<?php } ?>
-	<div class="title">
-		<?php 
-		// Temporary link for music
-		//if(get_post_type() == 'music') { ?>
-		 <?php //} else { ?>
-			<a href="<?php echo $url; ?>">
-		<?php //} ?>
-			<?php the_title(); ?>
-			<!-- <br>|| <?php echo $classes; ?> -->
-		</a>
-	</div>
-	<div class="time">
-		<?php 
-		echo $startTime; 
-		if( $EndTime != '') {
-			echo ' - '.$EndTime;
-			}?>
-	</div>
+	<?php } ?>
+		<div class="title">
+			<?php 
+			// Temporary link for music
+			//if(get_post_type() == 'music') { ?>
+			 <?php //} else { ?>
+				
+			<?php //} ?>
+				<?php the_title(); ?>
+				<!-- <br>|| <?php echo $classes; ?> -->
+			
+		</div>
+		<div class="time">
+			<?php 
+			echo $startTime; 
+			if( $EndTime != '') {
+				echo ' - '.$EndTime;
+				}?>
+		</div>
+	</a>
 </li>

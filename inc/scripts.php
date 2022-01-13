@@ -6,7 +6,7 @@ function acstarter_scripts() {
 	wp_enqueue_style( 
 		'acstarter-style', 
 		get_template_directory_uri() . '/style.css',
-		array(), '20191010', 
+		array(), '4.1', 
 			false 
 		 );
 
