@@ -788,12 +788,18 @@ article {
 	}
 
 }
+body.search {
+	.wrapper {
+		padding: 20px;
+	}
+}
 .eyeglass {
 	width: 33px;
 	height: 30px;
 	position: absolute;
 	top: 12px;
 	right: 5%;;
+	z-index: 1000000;
 	@media screen and (min-width: $tabwidth) {
 		display: none;
 	}
@@ -803,7 +809,7 @@ article {
 }
 input.search-field {
 	width: 100%;
-	padding: 20px 0;
+	padding: 10px;
 	@media screen and (min-width: $tabwidth) {
 		
 	}
