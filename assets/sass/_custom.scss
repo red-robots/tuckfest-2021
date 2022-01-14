@@ -47,8 +47,14 @@ body.home {
 
   #banner {
     .logo-w-date {
-      top: 120px;
+      top: 30px;
       text-align: center;
+      @media screen and (min-width: $tabwidth) {
+        top: 60px;
+      }
+      @media screen and (min-width: $deskwidth) {
+        top: 120px;
+      }
       img {
         width: 550px;
         height: auto;
@@ -91,9 +97,12 @@ body.home {
 }
 #primary-menu > li {
   display: inline-block;
-  margin: 0 0 0 3vw;
+  margin: 0 0 0 2vw;
   transition: all ease .3s;
   padding: 0 0;
+  @media screen and (min-width: $tabwidth) {
+    font-size: 14px;
+  }
   &:before {
     content:"";
     display: block;
@@ -314,6 +323,12 @@ body.home {
   }
   #primary-menu > li {
     margin: 0 2vw;
+    @media screen and (min-width: $tabwidth) {
+      margin: 0 1vw;
+    }
+    @media screen and (min-width: $deskwidth) {
+      margin: 0 2vw;
+    }
   }
   #site-navigation.main-navigation {
     background: transparent;
@@ -343,6 +358,12 @@ body.home {
 
 .home-tiles-new {
   margin-bottom: 30px;
+  .wrapper {
+    padding: 20px 10px;
+    @media screen and ( min-width:$tabwidth ) {
+      padding: 30px 0 0 0;
+    }
+  }
   .flexwrap {
     @include flexgroup();
   }
@@ -351,6 +372,10 @@ body.home {
     padding: 0 0;
     position: relative;
     overflow: hidden;
+    margin: 0 0 30px 0;
+    @media screen and ( min-width:$tabwidth ) {
+      margin: 0;
+    }
     .inside, .tile-link {
       display: block;
       width: 100%;
@@ -1632,12 +1657,17 @@ nav.mobilemenu {
   .other-links-btn {
     width: auto;
     display: inline-block;
+    margin: 5px;
+    @media screen and (min-width: $tabwidth) {
+      margin: 0 10px 0 0;
+    }
     a {
       background-color: $color-green;
       color: $color-orange;
       padding: 10px 25px;
       transition: all ease .2s;
       text-decoration: none;
+      display: block;
       &:hover {
         background-color: $color-orange;
         color: $color-green;
@@ -1668,6 +1698,15 @@ nav.mobilemenu {
     }
     p:last-child {
       margin-bottom: 0;
+    }
+    .comp-footer {
+      width: 100%;
+      padding: 10px 0 0 0;
+      border-top: 1px solid $color-orange;
+      text-align: center;
+      @media screen and (min-width: $tabwidth) {
+        text-align: left;
+      }
     }
   }
   .map-image,

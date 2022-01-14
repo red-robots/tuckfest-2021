@@ -111,7 +111,7 @@ select.facetwp-dropdown {
 		
 	}
 	&.no-subnav {
-		margin-top: 45px;
+		// margin-top: 45px;
 	}
 
 }
@@ -889,6 +889,10 @@ footer.site-footer {
 }
 .error {
 	width: 100%;
+	@media screen and (min-width: $deskwidth) {
+		width: 60%;
+		margin: 0 auto;
+	}
 	img {
 		width: 100%;
 	}

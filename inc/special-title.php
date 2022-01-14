@@ -1,5 +1,8 @@
 <?php
 $obj = get_queried_object();
+// echo '<pre>';
+// print_r($obj);
+// echo '</pre>';
 $post_name = (isset($obj->post_name) && $obj->post_name) ? $obj->post_name : '';
 $is_archive = ( isset($obj->taxonomy) && $obj->taxonomy ) ? $obj->taxonomy : '';
 $id = get_the_ID(); 
@@ -24,7 +27,7 @@ $soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
       <h1 class="pageTitle"><span class="tan"><?php echo $page_title; ?></span></h1>
     <?php } ?>
 
-    <?php if ($post_name=='competitions') { 
+    <?php if ($post_name=='competitions' || $obj->post_type == 'competition') { 
     $registration = get_field("registration_link","option");
     ?>
       <?php if($soon !== 'soon') { ?>

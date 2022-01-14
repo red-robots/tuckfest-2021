@@ -3,9 +3,7 @@
 get_template_part('inc/subpage-banner'); 
 $posttype = get_post_type();
 
-// echo '<pre>';
-// print_r($posttype);
-// echo '</pre>';
+
 ?>
 
 	<div id="primary" class="content-area-full single-competition">
@@ -16,6 +14,17 @@ $posttype = get_post_type();
       $registrationLink = get_field("registration_link","option");
       $eventStartDate = get_field("eventStartDate");
       $start_date = ($eventStartDate) ? date('l, M d, Y',strtotime($eventStartDate)) . ' <span>&ndash;</span> ' . date('h:i a',strtotime($eventStartDate)) : '';
+      if( $posttype === 'competition' ) {
+	      $terms = get_the_terms( get_the_ID(), 'competition_type');
+	      foreach ($terms as $t) {
+	      	$termName = $t->name;
+	      	$termID = $t->term_id;
+	      }
+	      $termLink = get_term_link( $termID );
+	  }
+      // echo '<pre>';
+	  // print_r($termLink);
+	  // echo '</pre>';
       ?>
       <div class="wrapper pagecontent">
         <!-- <h2 class="entry-title"><?php the_title(); ?></h2> -->
@@ -41,16 +50,18 @@ $posttype = get_post_type();
         <?php if ( get_the_content() ) { ?>
         <div id="eventinfo" class="event-info tab-panel active">
           <div class="pad">
-          	<?php 
-          	the_content(); 
-          	if( $posttype === 'competition' ) { 
-          		echo '<span class="other-links-btn"><a href="'.get_bloginfo('url').'/competitions">See All Competitions</a></span>';
-          	} elseif( $posttype === 'yoga' ) { 
-          		echo '<span class="other-links-btn"><a href="'.get_bloginfo('url').'/tuckfest-yoga">See Yoga</a></span>';
-          	} elseif( $posttype === 'demo_clinic' ) { 
-          		echo '<span class="other-links-btn"><a href="'.get_bloginfo('url').'/clinics">See All Clinics</a></span>';
-          	}
-          	?>
+          	<?php the_content(); ?>
+          	<div class="comp-footer">
+	          	<?php if( $posttype === 'competition' ) { 
+	          		echo '<div class="other-links-btn"><a href="'.get_bloginfo('url').'/competitions">See All Competitions</a></div>';
+	          		echo '<div class="other-links-btn"><a href="'.$termLink.'">See All '.$termName.' Competitions</a></div>';
+	          	} elseif( $posttype === 'yoga' ) { 
+	          		echo '<div class="other-links-btn"><a href="'.get_bloginfo('url').'/tuckfest-yoga">See All Yoga</a></div>';
+	          	} elseif( $posttype === 'demo_clinic' ) { 
+	          		echo '<div class="other-links-btn"><a href="'.get_bloginfo('url').'/clinics">See All Clinics</a></div>';
+	          	}
+	          	?>
+          	</div>
           </div>
         </div> 
         <?php } ?>
