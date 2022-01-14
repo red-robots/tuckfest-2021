@@ -1547,8 +1547,9 @@ section.divider h2{font-size:1.8rem}
 .schedule{-ms-flex-wrap:wrap;flex-wrap:wrap}
 .schedule .col{-ms-flex-preferred-size:100%;flex-basis:100%;text-align:left}
 .schedule .col h2{width:100%;text-align:center;margin:0 0 25px 0;font-size:24px}
-.schedule .col .musicnote{width:25px;display:inline-block}
+.schedule .col .musicnote{width:30px;display:inline-block}
 .schedule .col .musicnote img{width:100%}
+.schedule .col .mis{width:auto;display:inline-block;margin-left:10px}
 .schedule .col .title{width:auto;display:inline-block;padding:0;color:#faf0d0}
 section.schedule-music{-ms-flex-wrap:wrap;flex-wrap:wrap}
 section.schedule-music .col{-ms-flex-preferred-size:22%;flex-basis:22%}
@@ -1565,9 +1566,16 @@ section.schedule-music .col{-ms-flex-preferred-size:22%;flex-basis:22%}
 .schedule .col-wrap .title a,section.schedule-music .col-wrap .title a{text-decoration:none;color:#faf0d0;-webkit-transition:all ease .2s;transition:all ease .2s}
 .schedule .col-wrap li,section.schedule-music .col-wrap li{list-style:none;margin:0 0 25px 0}
 .schedule .col-wrap li.item,section.schedule-music .col-wrap li.item{width:100%;position:relative;float:left}
+.schedule .col-wrap li.clinics a,section.schedule-music .col-wrap li.clinics a{background-color:#f4a74e}
+.schedule .col-wrap li.clinics a .title,.schedule .col-wrap li.clinics a .time,section.schedule-music .col-wrap li.clinics a .title,section.schedule-music .col-wrap li.clinics a .time{color:#235b4e}
+.schedule .col-wrap li.music a,section.schedule-music .col-wrap li.music a{background-color:#ec663c}
+.schedule .col-wrap li.music a .time,section.schedule-music .col-wrap li.music a .time{color:#faf0d0}
+.schedule .col-wrap li.bike a,.schedule .col-wrap li.trail-run a,.schedule .col-wrap li.raft a,.schedule .col-wrap li.adventure-obstacle a,.schedule .col-wrap li.deep-water-solo a,.schedule .col-wrap li.swim a,.schedule .col-wrap li.kayak a,.schedule .col-wrap li.sup a,.schedule .col-wrap li.climb a,section.schedule-music .col-wrap li.bike a,section.schedule-music .col-wrap li.trail-run a,section.schedule-music .col-wrap li.raft a,section.schedule-music .col-wrap li.adventure-obstacle a,section.schedule-music .col-wrap li.deep-water-solo a,section.schedule-music .col-wrap li.swim a,section.schedule-music .col-wrap li.kayak a,section.schedule-music .col-wrap li.sup a,section.schedule-music .col-wrap li.climb a{background-color:#0e7379}
+.schedule .col-wrap li.yoga a,section.schedule-music .col-wrap li.yoga a{background-color:#235b4e}
 .drops{text-align:center}
-#filters,.drops{width:100%;padding:0 0 30px 0}
+#filters,.drops{width:100%;padding:20px 10px 30px 10px}
 #filters h2,.drops h2{font-size:20px;margin:0 20px 0 0}
+#filters .types,.drops .types{margin-bottom:15px}
 #filters select,.drops select{display:none}
 #filters .select-hidden,.drops .select-hidden{display:none;visibility:hidden;padding-right:10px}
 #filters .select,.drops .select{cursor:pointer;display:inline-block;position:relative;font-size:12px;width:100%;height:60px}
@@ -1795,12 +1803,13 @@ body.home #banner .eventDate span{display:inline-block;background:#235b4e;color:
 .main-navigation #primary-menu{display:inline-block;float:right}
 .main-navigation #primary-menu li{float:left;position:relative}
 .main-navigation #primary-menu ul.sub-menu{position:absolute;margin:0;padding:0;width:100vw;background-color:#235b4e}
+.main-navigation #primary-menu ul.sub-menu a{color:#faf0d0}
 #subNavs{width:100%;float:left;text-align:center;position:relative;top:0;z-index:1005}
 #subNavs #subnavdata{border-top:1px solid rgba(255,255,255,0.15)}
 #subNavs ul.sub-menu{display:none;margin:0;padding:0;list-style:none;position:relative;top:5px}
 #subNavs ul.sub-menu li{display:inline-block;float:left;text-align:left;padding:0 14px}
 #subNavs ul.sub-menu.active{display:inline-block}
-#subNavs ul.sub-menu a{display:inline-block;text-decoration:none;font-family:"Recoleta",serif;font-size:13px;font-weight:500;text-transform:uppercase;color:#6abea3;padding:11px 0 13px;position:relative}
+#subNavs ul.sub-menu a{display:inline-block;text-decoration:none;font-family:"Recoleta",serif;font-size:13px;font-weight:500;text-transform:uppercase;color:#faf0d0;padding:11px 0 13px;position:relative}
 #subNavs ul.sub-menu a:after{content:"";width:0;height:2px;background:#6abea3;position:absolute;bottom:11px;left:0;-webkit-transition:all ease .2s;transition:all ease .2s}
 #subNavs ul.sub-menu a:hover:after{width:50%}
 .boxed-content{width:100%;float:left;margin-top:80px;margin-bottom:50px;text-align:center;padding:0 20px}
@@ -1913,7 +1922,7 @@ body.subpage #masthead.site-header .wrapper{position:relative}
 body.subpage #masthead.site-header .main-navigation{width:100%;padding:20px 0;position:relative}
 body.subpage #masthead.site-header .mobile-wrapper{display:inline-block;width:auto;height:100%;position:absolute;top:0;left:0;z-index:1010;background-color:transparent}
 body.subpage #masthead.site-header .mobile-wrapper .logo{margin:0;padding:0;position:absolute;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
-body.subpage #masthead.site-header #subNavs{background:#235b4e}
+body.subpage #masthead.site-header #subNavs{background:#ec663c}
 body.subpage #primary-menu>li{margin-left:2vw}
 body.subpage .special-title{background:#ff7f30;padding:10px 0;position:relative}
 body.subpage .special-title:after{content:"";display:block;width:200px;height:100%;position:absolute;top:0;right:0;background-image:url("images/half-circle-pattern.png");background-repeat:repeat;background-position:7px 0;background-size:35px}

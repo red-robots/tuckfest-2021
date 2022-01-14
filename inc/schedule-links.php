@@ -196,11 +196,20 @@ if( $i == 1 ) {
 <li class="item <?php echo $classes; ?> sched-act">
 	<a href="<?php echo $url; ?>">
 	<?php if( get_post_type() == 'music' ) { ?>
-	<div class="musicnote">
-		<img src="<?php bloginfo('template_url'); ?>/images/MusicNote.png">
-	</div>
-	
-	<?php } ?>
+		<div class="musicnote">
+			<img src="<?php bloginfo('template_url'); ?>/images/MusicNote.png">
+		</div>
+		<div class="mis">
+			<div class="title"><?php the_title(); ?></div>
+			<div class="time">
+			<?php 
+				echo $startTime; 
+				if( $EndTime != '') {
+					echo ' - '.$EndTime;
+					}?>
+			</div>
+		</div>
+	<?php } else { ?>
 		<div class="title">
 			<?php 
 			// Temporary link for music
@@ -219,5 +228,6 @@ if( $i == 1 ) {
 				echo ' - '.$EndTime;
 				}?>
 		</div>
+	<?php } ?>
 	</a>
 </li>

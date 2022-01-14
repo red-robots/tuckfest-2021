@@ -153,6 +153,9 @@ body.home {
     padding: 0 0;
     width: 100vw;
     background-color: $darkgreen;
+    a {
+      color: $color-tan;
+    }
   }
 }
 #subNavs {
@@ -188,7 +191,7 @@ body.home {
       font-size: 13px;
       font-weight: 500;
       text-transform: uppercase;
-      color: $teal;
+      color: $color-tan;
       padding: 11px 0 13px;
       position: relative;
       &:after {
@@ -885,7 +888,7 @@ body.subpage {
       }
     }
     #subNavs {
-      background: $darkgreen;
+      background: $color-dark-orange;
     }
   }
   #primary-menu > li {

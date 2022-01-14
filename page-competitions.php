@@ -136,7 +136,7 @@ if($soon !== 'soon') : ?>
                 <div class="info">
                   <h2 class="title"><a href="<?php echo get_permalink(); ?>"><?php the_title() ?></a></h2>
                   <?php if ($start_date) { ?>
-                  <span class="date"><?php echo $start_date ?> <?php echo $i; ?></span>
+                  <span class="date"><?php echo $start_date ?></span>
                   <?php } ?>
                 </div>
               </div>

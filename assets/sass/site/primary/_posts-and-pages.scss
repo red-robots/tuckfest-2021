@@ -89,11 +89,16 @@ section.divider {
 			font-size: 24px;
 		}
 		.musicnote {
-			width: 25px;
+			width: 30px;
 			display: inline-block;
 			img {
 				width: 100%;
 			}
+		}
+		.mis {
+			width: auto;
+			display: inline-block;
+			margin-left: 10px;
 		}
 		.title {
 			width: auto;
@@ -196,6 +201,25 @@ section.schedule-music {
 				width: 100%;
 				position: relative;
 				float: left;
+
+			}
+			&.clinics a {
+				background-color: $color-orange;
+				.title, .time {
+					color: $color-dark-green;
+				}
+			}
+			&.music a {
+				background-color: $color-dark-orange;
+				.time {
+					color: $color-tan;
+				}
+			}
+			&.bike a, &.trail-run a, &.raft a, &.adventure-obstacle a, &.deep-water-solo a, &.swim a, &.kayak a, &.sup a, &.climb a {
+				background-color: $color-green;
+			}
+			&.yoga a {
+				background-color: $color-dark-green;
 			}
 		}
 	}
@@ -216,7 +240,7 @@ section.schedule-music {
 }
 #filters, .drops {
 	width: 100%;
-	padding: 0 0 30px 0;
+	padding: 20px 10px 30px 10px;
 	@media screen and (min-width: $tabwidth) {
 		padding: 50px 20px;
 		flex-direction: row;
@@ -235,6 +259,9 @@ section.schedule-music {
 		@media screen and (min-width: $deskwidth) {
 			font-size: 28px;
 		}
+	}
+	.types {
+		margin-bottom: 15px;
 	}
 	select {display: none;}
 	.days .select-styled {
