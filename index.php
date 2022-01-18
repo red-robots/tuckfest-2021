@@ -28,13 +28,13 @@ get_header();
     $pattern = "/<p[^>]*><\\/p[^>]*>/";
 
     if ( preg_replace($pattern, '', get_the_content()) ) { ?>
-    <div class="boxed-content">
-      <div class="wrapper">
-        <div class="inside">
-          <div class="text"><?php the_content(); ?></div>
+      <div class="boxed-content">
+        <div class="wrapper">
+          <div class="inside">
+            <div class="text"><?php the_content(); ?></div>
+          </div>
         </div>
-      </div>
-    </div>  
+      </div>  
     <?php } ?>
 
     <?php if( have_rows('tiles') ) { ?>

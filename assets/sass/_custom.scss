@@ -103,6 +103,12 @@ body.home {
   @media screen and (min-width: $tabwidth) {
     font-size: 14px;
   }
+  @media screen and (min-width: 1200px ) {
+    font-size: 12px;
+  }
+  @media screen and (min-width: 1400px ) {
+    font-size: 14px;
+  }
   &:before {
     content:"";
     display: block;
@@ -705,6 +711,12 @@ body.theme2021 {
   &.logged-in.admin-bar {
     &.subpage #masthead.site-header {
       top: 0;
+      &.fixed {
+        top: 45px;
+        @media only screen and (min-width: $tabwidth) {
+          top: 32px;
+        }
+      }
     }
     .site {
       @media only screen and (max-width: $tabwidth - 1px) {
@@ -915,12 +927,15 @@ body.subpage {
       background-size: 35px;
     }
     h1 {
-      font-size: 45px;
+      font-size: 36px;
       line-height: 1.1;
       letter-spacing: 1px;
       margin: 0 0;
       position: relative;
       z-index: 10;
+      @media screen and (min-width: $tabwidth) {
+        font-size: 45px;
+      }
     }
     span {
       font-family: $font5;
@@ -1058,7 +1073,10 @@ header.special-title h2 span.dark-orange,
   display: inline-block;
   position: absolute;
   left: 0;
-  bottom: -112px;
+  bottom: -102px;
+  @media screen and (min-width: $tabwidth) {
+    bottom: -112px;
+  }
 
   a.register-btn {
     display: inline-block;
@@ -1358,7 +1376,7 @@ body.page-template-page-contact #content.no-subnav {
   }
 }
 
-@media screen and (max-width: $tabwidth - 1px) {
+@media screen and (max-width: $deskwidth - 1px) {
   body.subpage {
     #masthead.site-header {
       height: 58px;
