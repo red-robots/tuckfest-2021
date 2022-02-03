@@ -1422,7 +1422,7 @@ html[xmlns] .flexslider .slides{display:block}
 .flex-control-thumbs .flex-active{opacity:1;cursor:default}
 .widget{margin:0 0 1.5em}
 .widget select{max-width:100%}
-body{font-family:"Helvetica",sans-serif;background-size:100%;background-color:#faf0d0}
+body{font-family:"Recoleta",serif;background-size:100%;background-color:#faf0d0}
 body.search article,body.search header.page-header{width:90%;margin:20px auto;float:none}
 body.search h2 a{color:#f4a74e;text-decoration:none}
 .clear{clear:both}
@@ -1875,6 +1875,7 @@ body.home #subNavs ul.sub-menu a:after{background:#235b4e}
 .home-tiles-new .image{display:block;width:100%;float:left;position:relative;background-size:cover;background-position:center;background-repeat:no-repeat}
 .drops-wrap{width:100%;float:left;position:relative}
 .drops-wrap .drops{padding:0}
+body.theme2021{font-family:"Recoleta",serif}
 body.theme2021 .site-content{padding-bottom:0}
 body.theme2021 #masthead.site-header .subnav a{font-family:"Recoleta",serif;font-weight:500;color:#6abea3}
 body.theme2021 #masthead.site-header .subnav a:after{bottom:-1px}
