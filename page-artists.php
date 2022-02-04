@@ -10,7 +10,7 @@ get_header();
 
 get_template_part('inc/coming-soon');
 
-get_template_part('inc/banner');
+//get_template_part('inc/banner');
 
 $comingSoon = get_field('coming_soon');
 $soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
@@ -21,7 +21,7 @@ if($soon !== 'soon') : ?>
 			<?php
 			while ( have_posts() ) : the_post(); 
 				//get_template_part('inc/special-title');
-        //get_template_part('inc/banner');
+        get_template_part('inc/banner');
 			endwhile; // End of the loop.$wp_query = new WP_Query();
 
 			$wp_query->query(array(
@@ -31,7 +31,7 @@ if($soon !== 'soon') : ?>
 				'order'     => 'ASC'
 			));
 			if ($wp_query->have_posts()) :  ?>
-      <div class="wrapper">
+      <div class="wrapper pagecontent">
   			<section class="artists">
   				<?php while ($wp_query->have_posts()) :  $wp_query->the_post(); 
 
