@@ -21,7 +21,7 @@ if($soon !== 'soon') : ?>
 			<?php
 			while ( have_posts() ) : the_post(); 
 				//get_template_part('inc/special-title');
-        get_template_part('inc/banner');
+        //get_template_part('inc/banner');
 			endwhile; // End of the loop.$wp_query = new WP_Query();
 
 			$wp_query->query(array(
