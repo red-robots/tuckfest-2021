@@ -55,7 +55,7 @@ if($soon !== 'soon') :
 				</div>
 				
 				<div class="repeatable-content-blocks">
-					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+					<?php while ($wp_query->have_posts()) : $wp_query->the_post(); $i++; ?>
 						<?php include( locate_template('inc/article.php', false, false)); ?>
 					<?php endwhile; ?>
 				</div>

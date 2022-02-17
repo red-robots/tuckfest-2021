@@ -1988,7 +1988,7 @@ body.page-template-page-contact #content.no-subnav{margin-top:0 !important}
 .repeatable-blocks .entry-content h1,.repeatable-blocks .entry-content h2,.repeatable-blocks .entry-content h3,.repeatable-blocks .entry-content h4,.repeatable-blocks .entry-content h5,.repeatable-blocks .entry-content h6{font-family:"EB Garamond",serif;font-weight:600;letter-spacing:0}
 .btn2{display:inline-block;text-decoration:none;cursor:pointer;-webkit-transition:all ease .3s;transition:all ease .3s}
 .imagecol.xtra img{width:100%}
-.repeatable-content-blocks{margin-bottom:80px}
+.repeatable-content-blocks{margin-bottom:80px;width:100%;float:left}
 .repeatable-content-blocks .content-block{margin:20px 0;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 .repeatable-content-blocks .content-block .textcol,.repeatable-content-blocks .content-block .imagecol{width:100%;position:relative}
 .repeatable-content-blocks .content-block .textcol{background:#e43d30;color:#faf0d0;padding:60px 30px}

@@ -13,7 +13,7 @@ $image = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'large' );
 // echo '</pre>';
 $column_class = ( ($title || $text) &&  $image ) ? 'half':'full';
 if( ($title || $text) ||  $image ) { ?>
-<div class="content-block <?php echo $column_class ?>">
+<div class="content-block <?php echo $column_class.' '.$i; ?>">
   <?php if ( $title || $text ) { ?>
   <div class="textcol block">
     <div class="inside">

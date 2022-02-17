@@ -1277,6 +1277,8 @@ body.page-template-page-contact #content.no-subnav {
 }
 .repeatable-content-blocks {
   margin-bottom: 80px;
+  width: 100%;
+  float: left;
   .content-block {
     margin: 20px 0;
     @include flexgroup();
