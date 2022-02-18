@@ -1364,7 +1364,7 @@ nav.mobilemenu ul.sub li a:hover{color:#b7ac7f}
 #cboxPrevious:active,#cboxNext:active,#cboxSlideshow:active,#cboxClose:active{outline:0}
 #cboxPrevious{left:20px;opacity:.7}
 #cboxNext{left:90px;opacity:.7}
-#cboxClose{right:20px;opacity:.7}
+#cboxClose{right:0;opacity:.7}
 #cboxClose:hover,#cboxNext:hover,#cboxPrevious:hover{opacity:1}
 .cboxSlideshow_on #cboxSlideshow{background-position:-125px 0;right:27px}
 .cboxSlideshow_on #cboxSlideshow:hover{background-position:-150px 0}
@@ -1511,10 +1511,11 @@ article .copy{width:100%;position:relative;background-color:#fff;margin:-50px au
 article .copy header.entry-header{display:none}
 article .copy h1{display:block;text-align:left;font-size:14pt;letter-spacing:.20em;text-transform:uppercase;color:#f4a74e}
 article .copy p{max-width:100%;display:block;float:left}
+#search{padding:40px 0}
 body.search .wrapper{padding:20px}
 .eyeglass{width:33px;height:30px;position:absolute;top:12px;right:5%;z-index:1000000}
 .search-submit{display:none}
-input.search-field{width:100%;padding:10px}
+input.search-field{width:96%;padding:2%;border-radius:0}
 .social{width:auto;display:inline-block;margin:20px auto}
 .social ul{padding:0;margin:0;list-style:none}
 .social li{display:inline-block;font-size:2.5em;margin:0 5px 0 0}

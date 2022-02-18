@@ -788,6 +788,9 @@ article {
 	}
 
 }
+#search {
+	padding: 40px 0;
+}
 body.search {
 	.wrapper {
 		padding: 20px;
@@ -808,8 +811,9 @@ body.search {
 	display: none;
 }
 input.search-field {
-	width: 100%;
-	padding: 10px;
+	width: 96%;
+	padding: 2%;
+	border-radius: 0;
 	@media screen and (min-width: $tabwidth) {
 		
 	}
