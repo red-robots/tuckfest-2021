@@ -1,0 +1,101 @@
+.facetwp-facet .select2-container--default .select2-selection--single {
+  font-family: "Recoleta", serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #235B4E;
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid #235B4E;
+  border-radius: 0;
+  padding: 0 5px;
+  position: relative;
+}
+.facetwp-facet.facetwp-facet-clinic_type {
+  width: 270px;
+}
+.facetwp-facet.facetwp-facet-clinic_type,
+.facetwp-facet.facetwp-facet-clinic_day {
+  position: relative;
+}
+
+.facetwp-facet  .select2-container .select2-selection--single {
+  height: 35px;
+}
+.facetwp-facet .select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 35px;
+  color: #235B4E;
+  text-align: left;
+  text-transform: uppercase;
+}
+.page-template-page-clinics .filter-title {
+  position: relative;
+  top: 3px;
+}
+
+.facetwp-facet .select2-container--default .select2-selection--single .select2-selection__clear {
+  height: 30px;
+  -webkit-apperance: none;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  margin-right: 18px;
+}
+
+.facetwp-facet .select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 32px;
+}
+.page-template-page-clinics .select2-container--open {
+  border-radius: 0;
+  color: #fff;
+  background: transparent;
+}
+.page-template-page-clinics .select2-dropdown {
+  margin-top: 0;
+  border-radius: 0;
+}
+.page-template-page-clinics .select2-container--default .select2-results__option--selected,
+.page-template-page-clinics .select2-results {
+  background-color: #f39b36;
+  text-transform: uppercase;
+}
+.page-template-page-clinics .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable li {
+  color: #fff;
+  transform: uppercase;
+}
+.page-template-page-clinics .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable,
+.page-template-page-clinics .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable li:hover {
+  background: #F4A74E;
+}
+.page-template-page-clinics .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable li:first-child {
+  border-top: none!important;
+}
+.select2-dropdown li.select2-results__option {
+  border-top: 1px solid #235B4E;
+  transition: all ease .3s;
+}
+.select2-dropdown li.select2-results__option:first-child {
+  border-top: none;
+}
+.page-template-page-clinics .facetwp-facet.facetwp-facet-clinic_day,
+.page-template-page-clinics .facetwp-facet.facetwp-facet-clinic_day select {
+   width: 200px!important;
+}
+.page-template-page-clinics .select2.select2-container {
+  width: 100%!important;
+}
+
+@media screen and (max-width: 768px) {
+  .facetwp-facet.facetwp-facet-clinic_type,
+  .facetwp-facet.facetwp-facet-clinic_day {
+    width: 90%!important;
+    margin: 5px auto 10px!important;
+  }
+  .page-template-page-clinics .facetwp-facet.facetwp-facet-clinic_day, 
+  .page-template-page-clinics .facetwp-facet.facetwp-facet-clinic_day select {
+    width: 90%!important;
+  }
+  .page-template-page-clinics .filter-wrapper {
+    padding: 40px 0 20px;
+  }
+}

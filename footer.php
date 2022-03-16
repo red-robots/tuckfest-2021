@@ -128,6 +128,24 @@ if( !is_page( array(3447) )) {
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+<script type="text/javascript">
+jQuery(document).ready(function($){
 
+  doFacetWPSelect2();
+  function doFacetWPSelect2() {
+    var facetwpSelect = [".facetwp-facet-clinic_type",".facetwp-facet-clinic_day"];
+    $(facetwpSelect).each(function(k,wrap){
+      $(wrap).find('select').select2({
+        allowClear: false,
+        minimumResultsForSearch: -1
+      });
+    }); 
+  }
+
+  $(document).on('facetwp-loaded', function() {
+    doFacetWPSelect2();
+  });
+});
+</script>
 </body>
 </html>

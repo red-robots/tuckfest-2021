@@ -90,6 +90,7 @@ $link_color = get_field('link_color', 'option');
 		color: <?php echo $link_color; ?>
 	}
 </style>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/extra.css' ?>">
 </head>
 <?php
 global $post; 
