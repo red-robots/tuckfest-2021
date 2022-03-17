@@ -1726,14 +1726,20 @@ body.term-deep-water-solo {
     }
   }
 }
-body.page-template-page-clinics {
-  padding: 50px 0;
-  .pagecontent {
-    max-width: 1100px;
-    width: 100%;
-    margin: 0 auto;
-  }
+.anchors {
+  width: 100%;
+  float: left;
+  text-align: center;
+  color: $color-orange;
+  font-size: 18px;
+  text-transform: uppercase;
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: $color-orange;
+    font-weight: bold;
 
+  }
 }
 #primary.single-competition {
   padding: 50px 0;

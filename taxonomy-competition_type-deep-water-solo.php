@@ -11,14 +11,29 @@ get_header();
 
 $comingSoonImage = get_field('coming_soon', 'option');
 $soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
+$obj = get_queried_object();
+$i=0;
+	if ( have_posts() ) :
 ?>
-<div class="content-wrapper pagecontent">
+<div id="banner">
+<?php 
+	$banner = get_field('featured_image', $obj);
+	// echo '<pre>';
+	// print_r($banner);
+	// echo '</pre>';
+	if($banner) { ?>
+		<img src="<?php echo $banner['url']; ?>">
+	<?php } ?>
+</div>
 	<div id="primary" class="content-area-full">
 		<div class="wrapper pagecontent">
+			<div class="anchors">
+				<a href="#the-events">Deep Water Solo Events</a> | <a href="#the-atheletes">Atheletes</a>
+			</div>
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		$obj = get_queried_object();
+		
 		$tax = $obj->taxonomy;
 		// echo $tax;
 		$catArgs = array(
@@ -27,41 +42,18 @@ $soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
 		);
 		?>
 		<?php if( $tax != 'demo_clinic_type') { ?>
-		<div class="drops">
-			<div class="select">
-				<div class="select-styled blue"><?php echo $obj->name; ?></div>
-				<ul class="select-options blue">
-					<?php wp_list_categories($catArgs); ?>
-				</ul>
+			<div class="drops">
+				<div class="select">
+					<div class="select-styled blue"><?php echo $obj->name; ?></div>
+					<ul class="select-options blue">
+						<?php wp_list_categories($catArgs); ?>
+					</ul>
+				</div>
 			</div>
-		</div>
-		<?php } 
+		<?php } ?>
 
-		
 
-		$i=0;
-		if ( have_posts() ) : ?>
-
-		<div id="banner">
-		<?php 
-			$banner = get_field('featured_image', $obj);
-			// echo '<pre>';
-			// print_r($banner);
-			// echo '</pre>';
-			if($banner) { ?>
-				<img src="<?php echo $banner['url']; ?>">
-			<?php } ?>
-		</div>
-
-		
-			<!-- <header class="page-header">
-				<h1 class="entry-title">
-					<?php single_term_title(); ?>
-				</h1>
-				<?php the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
-			</header>.page-header -->
-
-			<div class="repeatable-content-blocks">
+			<div id="the-events" class="repeatable-content-blocks">
 			<?php
 			/* Start the Loop */
 			$n=1;
@@ -85,10 +77,28 @@ $soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
 
 		<?php endif; ?>
 
+		<?php
+			$wp_query = new WP_Query();
+			$wp_query->query(array(
+			'post_type'=>'athlete',
+			'posts_per_page' => -1,
+			'orderby' => 'menu_order',
+			'order' => 'ASC'
+		));
+			if ($wp_query->have_posts()) : ?>
+				<div id="the-atheletes" class="repeatable-content-blocks">
+					<h2>Atheletes</h2>
+		    		<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
+		    			if( $soon != 'soon' ) : 
+							include( locate_template('inc/article-atheletes.php', false, false)); 
+						endif;?>
+					<?php endwhile; ?>
+				</div>
+			<?php endif; ?>
 		</main><!-- #main -->
 	</div>
 	</div><!-- #primary -->
-</div>
+
 <?php
 // get_sidebar();
 get_footer();
