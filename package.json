@@ -44,9 +44,5 @@
 		"translate": "gulp translate",
 		"styles-rtl": "gulp stylesRTL",
 		"cache-clear": "gulp clearCache"
-	},
-	"dependencies": {
-		"caniuse-lite": "^1.0.30001317",
-		"sass": "^1.49.9"
 	}
 }

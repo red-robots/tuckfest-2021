@@ -13,6 +13,7 @@ $comingSoon = get_field('coming_soon');
 $soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
 if($soon !== 'soon') :
 ?>
+<div class="content-wrapper pagecontent">
 	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main" role="main">
 
@@ -62,7 +63,7 @@ if($soon !== 'soon') :
 			<?php endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+</div>
 <?php
 endif;
 // get_sidebar();

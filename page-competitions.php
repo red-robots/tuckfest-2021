@@ -102,6 +102,7 @@ if($soon !== 'soon') : ?>
       // $comingSoon = get_field('coming_soon', 'option');
       // $comingSoonURL = ($comingSoon) ? $comingSoon['url'] : get_images_dir('competition-coming-soon.gif');
       
+      
       ?>
 
       <div class="entries-wrapper">
@@ -120,11 +121,24 @@ if($soon !== 'soon') : ?>
             <?php while ( $entries->have_posts() ) : $entries->the_post(); $i++;
               $eventStartDate = get_field("eventStartDate");
               $start_date = ($eventStartDate) ? date('l, M d, Y',strtotime($eventStartDate)) . '<span>&#8226;</span>' . date('h:i a',strtotime($eventStartDate)) : '';
+              $pId = get_the_ID();
+              $terms = get_the_terms($pId, 'competition_type');
+              // echo "<pre>";
+              // print_r($terms);
+              // echo "</pre>";
+              $termSlug = $terms[0]->slug;
+              if( $termSlug == 'deep-water-solo') {
+                $santi = sanitize_title_with_dashes( get_the_title() );
+                $permalink = get_bloginfo('url').'/competition-type/deep-water-solo/#'.$santi;
+              } else {
+                $permalink = get_the_permalink();
+              }
+              
             ?>
             <div class="entry animated fadeIn">
               <div class="pad">
                 <div class="image">
-                  <a href="<?php echo get_permalink(); ?>">
+                  <a href="<?php echo $permalink; ?>">
                     <?php 
                     if(has_post_thumbnail()) {
                       the_post_thumbnail('tile');
@@ -134,7 +148,7 @@ if($soon !== 'soon') : ?>
                   </a>  
                 </div>
                 <div class="info">
-                  <h2 class="title"><a href="<?php echo get_permalink(); ?>"><?php the_title() ?></a></h2>
+                  <h2 class="title"><a href="<?php echo $permalink; ?>"><?php the_title() ?></a></h2>
                   <?php if ($start_date) { ?>
                   <span class="date"><?php echo $start_date ?></span>
                   <?php } ?>

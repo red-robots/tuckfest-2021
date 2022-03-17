@@ -2043,6 +2043,12 @@ nav.mobilemenu ul.main li,nav.mobilemenu ul.main li a{font-family:"Recoleta",ser
 #primary.single-competition .other-links-btn{width:auto;display:inline-block;margin:5px}
 #primary.single-competition .other-links-btn a{background-color:#0e7379;color:#f4a74e;padding:10px 25px;-webkit-transition:all ease .2s;transition:all ease .2s;text-decoration:none;display:block}
 #primary.single-competition .other-links-btn a:hover{background-color:#f4a74e;color:#0e7379}
+body.term-deep-water-solo h3.comp-date{color:#faf0d0;margin-bottom:10px}
+body.term-deep-water-solo .other-links-btn{width:100%;margin:10px 0;text-align:center}
+body.term-deep-water-solo .other-links-btn a{background-color:#fff;color:#f4a74e !important;padding:10px 25px;-webkit-transition:all ease .2s;transition:all ease .2s;text-decoration:none;display:block}
+body.term-deep-water-solo .other-links-btn a:hover{background-color:#f4a74e;color:#0e7379}
+body.page-template-page-clinics{padding:50px 0}
+body.page-template-page-clinics .pagecontent{max-width:1100px;width:100%;margin:0 auto}
 #primary.single-competition{padding:50px 0}
 #primary.single-competition #main{max-width:1100px;width:100%;margin:0 auto}
 #primary.single-competition .entry-title{margin:0 0 50px}
@@ -2179,6 +2185,7 @@ body.home #primary-menu>li{margin:0 1vw}
 body.subpage .special-title h1{font-size:45px}
 .registrationBtn{bottom:-112px}
 #primary.single-competition .other-links-btn{margin:0 10px 0 0}
+body.term-deep-water-solo .other-links-btn{margin:10px 0}
 #primary.single-competition .event-info .comp-footer{text-align:left}
 ul.tabs-info li{width:auto;margin:0 2px}
 ul.tabs-info a{display:inline-block}
