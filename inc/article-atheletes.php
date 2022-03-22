@@ -15,7 +15,7 @@ $column_class = ( ($title || $text) &&  $image ) ? 'half':'full';
 if( ($title || $text) ||  $image ) { ?>
 <div class="content-block <?php echo $column_class.' '.$i; ?>">
   <?php if ( $title || $text ) { ?>
-  <div class="textcol block">
+  <div class="textcol block athlete">
     <div class="inside">
       <?php if ($title) { ?>
        <h2 class="rb_title"><?php echo $title ?></h2> 
