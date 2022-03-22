@@ -28,7 +28,7 @@ $i=0;
 	<div id="primary" class="content-area-full">
 		<div class="wrapper pagecontent">
 			<div class="anchors">
-				<a href="#the-events">Deep Water Solo Events</a> | <a href="#the-atheletes">Atheletes</a>
+				<a href="#the-events">Deep Water Solo Events</a> | <a href="#the-athletes">Athletes</a>
 			</div>
 		<main id="main" class="site-main" role="main">
 
@@ -86,8 +86,8 @@ $i=0;
 			'order' => 'ASC'
 		));
 			if ($wp_query->have_posts()) : ?>
-				<div id="the-atheletes" class="repeatable-content-blocks">
-					<h2>Atheletes</h2>
+				<div id="the-athletes" class="repeatable-content-blocks">
+					<h2>Athletes</h2>
 		    		<?php while ($wp_query->have_posts()) : $wp_query->the_post(); 
 		    			if( $soon != 'soon' ) : 
 							include( locate_template('inc/article-atheletes.php', false, false)); 
