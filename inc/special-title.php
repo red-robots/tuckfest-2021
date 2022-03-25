@@ -27,16 +27,19 @@ $soon = ( isset($comingSoon[0]) ) ? $comingSoon[0] : '';
       <h1 class="pageTitle"><span class="tan"><?php echo $page_title; ?></span></h1>
     <?php } ?>
 
-    <?php if ($post_name=='competitions' || $obj->post_type == 'competition') { 
+    
+    
+
+	</div>
+  <?php if ($post_name=='competitions' || $obj->post_type == 'competition') { 
     $registration = get_field("registration_link","option");
     ?>
       <?php if($soon !== 'soon') { ?>
+        <div class="reg-wrap">
         <div class="registrationBtn">
           <a href="<?php echo $registration ?>" target="_blank" title="Click Here To Register"  class="register-btn"><span>Register</span></a>
         </div>
+        </div>
     <?php } ?>
     <?php } ?>
-
-	</div>
-  
 </header>

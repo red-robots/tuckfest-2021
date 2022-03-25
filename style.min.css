@@ -1954,7 +1954,8 @@ body.subpage footer.site-footer .footer-content:before{display:none}
 header.special-title{z-index:100}
 header.special-title .wrapper{position:relative}
 header.special-title h1 span.dark-orange,header.special-title h2 span.dark-orange,.left h1 span.dark-orange,.left h2 span.dark-orange,.lefty h1 span.dark-orange,.lefty h2 span.dark-orange{font-family:"EB Garamond",serif;color:#faf0d0}
-.registrationBtn{display:inline-block;position:absolute;left:0;bottom:-102px}
+.reg-wrap{width:100%;margin:0 auto;position:relative;clear:both}
+.registrationBtn{display:inline-block;position:absolute;left:0;bottom:-61px}
 .registrationBtn a.register-btn{display:inline-block;text-decoration:none;color:#FFF;text-transform:uppercase;font-family:"DM Sans",sans-serif;font-size:18px;font-weight:400;line-height:50px;letter-spacing:1px;background:#e43d30;height:52px;width:120px;text-align:center;position:relative;-webkit-box-shadow:-12px 8px 17px rgba(0,0,0,0.3);box-shadow:-12px 8px 17px rgba(0,0,0,0.3);-webkit-transition:none !important;transition:none !important}
 .registrationBtn a.register-btn span{font-family:"DM Sans",sans-serif}
 .registrationBtn a.register-btn:before,.registrationBtn a.register-btn:after{content:"";display:block;width:0;height:0;position:absolute;bottom:-25px}
@@ -2184,7 +2185,7 @@ body.home #primary-menu>li{margin:0 1vw}
 .home-tiles-new .home-tile{margin:0}
 .home-tiles-new .home-tile{width:33.33%}
 body.subpage .special-title h1{font-size:45px}
-.registrationBtn{bottom:-112px}
+.reg-wrap{width:80%}
 #primary.single-competition .other-links-btn{margin:0 10px 0 0}
 body.term-deep-water-solo .other-links-btn{margin:10px 0}
 #primary.single-competition .event-info .comp-footer{text-align:left}

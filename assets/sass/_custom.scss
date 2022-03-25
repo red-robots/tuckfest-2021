@@ -1070,13 +1070,23 @@ header.special-title h2 span.dark-orange,
   font-family: $font5;
   color: $yellowish;
 }
+.reg-wrap {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  clear: both;
+  @media screen and (min-width: $tabwidth) {
+    width: 80%;
+  }
+}
 .registrationBtn {
   display: inline-block;
   position: absolute;
   left: 0;
-  bottom: -102px;
+  // bottom: -102px;
+  bottom: -61px;
   @media screen and (min-width: $tabwidth) {
-    bottom: -112px;
+    // bottom: -112px;
   }
 
   a.register-btn {
