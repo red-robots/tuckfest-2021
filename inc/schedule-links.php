@@ -54,7 +54,7 @@ if( $i == 1 ) {
 	// echo '<h2>'.$queried_object->name.'</h2>';
 }
 
-$wwAct = 'https://usnwc.org/visit/activity-passes/';
+$wwAct = 'https://whitewater.org/visit/activity-passes/';
 
 $thurTime = get_field('thursday_time_p');
 $thurEndTime = get_field('thursday_time_p_end');
@@ -86,7 +86,7 @@ if( $queried_object->slug == 'thursday' ) {
 	$regLink = get_field('friday_time_link', 'option');
 	$regStartTwo = get_field('friday_start_2', 'option');
 	$regEndTwo = get_field('friday_end_2', 'option');
-	$actTime = '10:00 am - 6:00 pm';
+	$actTime = '10:00 am - 7:00 pm';
 }elseif( $queried_object->slug == 'saturday' ) {
 	$startTime = $satTime;
 	$EndTime = $satEndTime;
